@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        android:id="@+id/cb_01"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="20dp"
+        android:lineSpacingExtra="20dp"
+        android:minHeight="40dp"
+        android:padding="10dp"
+        android:text="ADD TO CART"
+        android:textColor="@android:color/white"
+        app:cSelector="standard"
+        app:bgColorNormal="@color/colorBtnDefault"
+        app:cornersRadius="5dp"
+        app:elevation="8dp"
+        app:iconBottom="@drawable/ic_shop_add"
+        app:iconEnd="@drawable/ic_shop_add"
+        app:iconPadding="10dp"
+        app:iconSizeBottom="20dp"
+        app:iconSizeEnd="20dp"
+        app:iconSizeStart="20dp"
+        app:iconSizeTop="20dp"
+        app:iconStart="@drawable/ic_shop_add"
+        app:iconTop="@drawable/ic_shop_add"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlHardcoded" />
+
+    <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        android:id="@+id/cb_02"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:minHeight="40dp"
+        android:text="ADD TO CART"
+        android:textColor="@android:color/white"
+        app:cSelector="standard"
+        app:bgColorNormal="@color/colorBtnDefault"
+        app:cornersRadius="5dp"
+        app:iconSizeStart="20dp"
+        app:iconStart="@drawable/ic_shop_add"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cb_01"
+        tools:ignore="RtlHardcoded" />
+</android.support.constraint.ConstraintLayout>

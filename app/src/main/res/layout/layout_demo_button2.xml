@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@drawable/shape_horizontal_line"
+    android:orientation="vertical"
+    android:showDividers="middle|beginning|end">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="12dp"
+            android:text="@string/shape_title2"
+            android:textColor="@color/colorText"
+            android:textSize="17sp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/shape_vertical_line"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        android:weightSum="4">
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:id="@+id/sb_01"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/shape_tab_1"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:cSelector="standard"
+            app:iconSizeTop="30dp"
+            app:iconTop="@drawable/ic_01" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:id="@+id/sb_02"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/shape_tab_2"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:cSelector="standard"
+            app:iconSizeTop="30dp"
+            app:iconTop="@drawable/ic_02" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:id="@+id/sb_03"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/shape_tab_3"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:cSelector="standard"
+            app:iconSizeTop="30dp"
+            app:iconTop="@drawable/ic_03" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:id="@+id/sb_04"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/shape_tab_4"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:cSelector="standard"
+            app:iconSizeTop="30dp"
+            app:iconTop="@drawable/ic_04" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/shape_vertical_line"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        android:weightSum="4">
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:id="@+id/sb_05"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/shape_tab_5"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:cSelector="standard"
+            app:iconSizeTop="30dp"
+            app:iconTop="@drawable/ic_05" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:id="@+id/sb_06"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/shape_tab_6"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:cSelector="standard"
+            app:iconSizeTop="30dp"
+            app:iconTop="@drawable/ic_06" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:id="@+id/sb_07"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/shape_tab_7"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:cSelector="standard"
+            app:iconSizeTop="30dp"
+            app:iconTop="@drawable/ic_07" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:id="@+id/sb_08"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/shape_tab_8"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:cSelector="standard"
+            app:iconSizeTop="30dp"
+            app:iconTop="@drawable/ic_08" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/shape_vertical_line"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        android:weightSum="4">
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:id="@+id/sb_09"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/shape_tab_9"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:cSelector="standard"
+            app:iconSizeTop="30dp"
+            app:iconTop="@drawable/ic_09" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:id="@+id/sb_10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/shape_tab_10"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:cSelector="standard"
+            app:iconSizeTop="30dp"
+            app:iconTop="@drawable/ic_10" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:id="@+id/sb_11"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/shape_tab_11"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:cSelector="standard"
+            app:iconSizeTop="30dp"
+            app:iconTop="@drawable/ic_11" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:id="@+id/sb_12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/shape_tab_12"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:cSelector="standard"
+            app:iconSizeTop="30dp"
+            app:iconTop="@drawable/ic_12" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="12dp"
+        android:paddingTop="8dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="8dp">
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            android:tag="button"
+            android:text="店铺"
+            android:textColor="#999"
+            android:textSize="13sp"
+            app:iconPadding="0dp"
+            app:iconTop="@drawable/ic_shop" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            android:text="客服"
+            android:textColor="#999"
+            android:textSize="13sp"
+            app:iconPadding="0dp"
+            app:iconTop="@drawable/ic_service" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            android:text="收藏"
+            android:textColor="#999"
+            android:textSize="13sp"
+            app:iconPadding="0dp"
+            app:iconTop="@drawable/ic_favorites" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="40dp"
+            android:text="加入购物车"
+            android:textColor="@android:color/white"
+            app:cSelector="standard"
+            app:bgColorNormal="#F19D39"
+            app:bgColorPressed="#88F19D39"
+            app:cornersBottomLeftRadius="40dp"
+            app:cornersTopLeftRadius="40dp" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="40dp"
+            android:text="立即购买"
+            android:textColor="@android:color/white"
+            app:cSelector="standard"
+            app:bgColorNormal="#EE762F"
+            app:bgColorPressed="#88EE762F"
+            app:cornersBottomRightRadius="40dp"
+            app:cornersTopRightRadius="40dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:divider="@drawable/shape_horizontal_line"
+        android:orientation="vertical"
+        android:showDividers="middle|beginning|end">
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="@string/shape_tab_1"
+            app:cSelector="ripple"
+            app:gravity="left"
+            app:iconEnd="@drawable/ic_arrow_right"
+            app:iconStart="@drawable/ic_01" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="@string/shape_tab_2"
+            app:cSelector="ripple"
+            app:gravity="left"
+            app:iconEnd="@drawable/ic_arrow_right"
+            app:iconStart="@drawable/ic_02" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="@string/shape_tab_3"
+            app:cSelector="ripple"
+            app:gravity="left"
+            app:iconEnd="@drawable/ic_arrow_right"
+            app:iconStart="@drawable/ic_03" />
+
+        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="@string/shape_tab_4"
+            app:cSelector="ripple"
+            app:gravity="left"
+            app:iconEnd="@drawable/ic_arrow_right"
+            app:iconStart="@drawable/ic_04" />
+    </LinearLayout>
+</LinearLayout>
