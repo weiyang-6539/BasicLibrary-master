@@ -105,7 +105,7 @@
             app:labelVisibilityMode="labeled"
             app:menu="@menu/menu_navigation" />
 
-        <com.github.wyang.basiclibrary.widget.bottomnavigation.BottomNavigationBar
+        <com.github.android.common.widget.bottomnavigation.BottomNavigationBar
             android:id="@+id/bottomBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

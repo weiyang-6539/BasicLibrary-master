@@ -47,26 +47,26 @@
             style="@style/Label"
             android:text="Material样式" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
             android:minHeight="36dp"
             android:text="ENABLE"
             android:textColor="#fff"
-            app:bgColorDisable="@color/colorBtnDisable"
-            app:bgColorNormal="@color/colorBtnDefault"
-            app:bgColorPressed="@color/colorBtnPressed"
-            app:cSelector="ripple"
-            app:cornersRadius="4dp"
-            app:elevation="4dp" />
+            app:cvCornersRadius="4dp"
+            app:cvDisableBgColor="@color/colorBtnDisable"
+            app:cvElevation="4dp"
+            app:cvNormalBgColor="@color/colorBtnDefault"
+            app:cvPressedBgColor="@color/colorBtnPressed"
+            app:cvSelector="ripple" />
 
         <TextView
             style="@style/Label"
             android:layout_marginTop="15dp"
             android:text="Icon + 文本" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="64dp"
@@ -75,19 +75,19 @@
             android:paddingEnd="16dp"
             android:text="ENABLE"
             android:textColor="#fff"
-            app:bgColorDisable="@color/colorBtnDisable"
-            app:bgColorNormal="@color/colorBtnDefault"
-            app:bgColorPressed="@color/colorBtnPressed"
-            app:cSelector="ripple"
-            app:cornersRadius="4dp"
-            app:iconStart="@drawable/icon_add" />
+            app:cvCornersRadius="4dp"
+            app:cvDisableBgColor="@color/colorBtnDisable"
+            app:cvIconStart="@drawable/icon_add"
+            app:cvNormalBgColor="@color/colorBtnDefault"
+            app:cvPressedBgColor="@color/colorBtnPressed"
+            app:cvSelector="ripple" />
 
         <TextView
             style="@style/Label"
             android:layout_marginTop="15dp"
             android:text="Icon + 文本" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="64dp"
@@ -96,24 +96,24 @@
             android:paddingEnd="16dp"
             android:text="ENABLE"
             android:textColor="@color/colorBtnDefault"
-            app:cSelector="standard"
-            app:cornersRadius="4dp"
-            app:iconStart="@drawable/icon_add" />
+            app:cvCornersRadius="4dp"
+            app:cvIconStart="@drawable/icon_add"
+            app:cvSelector="standard" />
 
         <TextView
             style="@style/Label"
             android:layout_marginTop="15dp"
             android:text="图标" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
             android:minHeight="36dp"
             android:textSize="0sp"
-            app:bgColorNormal="@color/colorBtnDefault"
-            app:cornersRadius="4dp"
-            app:iconStart="@drawable/icon_add" />
+            app:cvCornersRadius="4dp"
+            app:cvIconStart="@drawable/icon_add"
+            app:cvNormalBgColor="@color/colorBtnDefault" />
     </LinearLayout>
 
     <LinearLayout
@@ -130,68 +130,68 @@
             style="@style/Label"
             android:text="无阴影" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
             android:minHeight="36dp"
             android:text="ENABLE"
             android:textColor="#fff"
-            app:bgColorDisable="@color/colorBtnDisable"
-            app:bgColorNormal="@color/colorBtnDefault"
-            app:bgColorPressed="@color/colorBtnPressed"
-            app:cSelector="ripple"
-            app:cornersRadius="4dp" />
+            app:cvCornersRadius="4dp"
+            app:cvDisableBgColor="@color/colorBtnDisable"
+            app:cvNormalBgColor="@color/colorBtnDefault"
+            app:cvPressedBgColor="@color/colorBtnPressed"
+            app:cvSelector="ripple" />
 
         <TextView
             style="@style/Label"
             android:layout_marginTop="15dp"
             android:text="文本" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
             android:minHeight="36dp"
             android:text="ENABLE"
             android:textColor="@color/colorBtnDefault"
-            app:cornersRadius="4dp" />
+            app:cvCornersRadius="4dp" />
 
         <TextView
             style="@style/Label"
             android:layout_marginTop="15dp"
             android:text="文本" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
             android:minHeight="36dp"
             android:text="ENABLE"
             android:textColor="@color/colorBtnDefault"
-            app:cSelector="standard"
-            app:cornersRadius="4dp"
-            app:strokeColor="@color/colorBtnDefault"
-            app:strokeWidth="1dp" />
+            app:cvCornersRadius="4dp"
+            app:cvSelector="standard"
+            app:cvStrokeColor="@color/colorBtnDefault"
+            app:cvStrokeWidth="1dp" />
 
         <TextView
             style="@style/Label"
             android:layout_marginTop="15dp"
             android:text="图标" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
             android:minHeight="36dp"
             android:textColor="@color/colorBtnDefault"
-            app:cornersRadius="4dp"
-            app:iconStart="@drawable/icon_add"
-            app:strokeColor="@color/colorBtnDefault"
-            app:strokeWidth="1dp" />
+            app:cvCornersRadius="4dp"
+            app:cvIconStart="@drawable/icon_add"
+            app:cvStrokeColor="@color/colorBtnDefault"
+            app:cvStrokeWidth="1dp" />
     </LinearLayout>
 
-    <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+    <com.github.android.common.widget.ComplexView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -199,7 +199,7 @@
         android:minHeight="36dp"
         android:text="ENABLE"
         android:textColor="@android:color/white"
-        app:bgColorNormal="@color/colorBtnDefault"
-        app:iconStart="@drawable/icon_add"
+        app:cvIconStart="@drawable/icon_add"
+        app:cvNormalBgColor="@color/colorBtnDefault"
         app:layout_constraintTop_toBottomOf="@id/ll_left" />
 </android.support.constraint.ConstraintLayout>

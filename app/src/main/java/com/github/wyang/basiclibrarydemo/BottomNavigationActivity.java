@@ -5,10 +5,10 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 
-import com.github.wyang.basiclibrary.widget.bottomnavigation.BottomNavigationBar;
-import com.github.wyang.basiclibrary.widget.bottomnavigation.BottomNavigationItem;
-import com.github.wyang.basiclibrary.widget.bottomnavigation.ShapeBadgeItem;
-import com.github.wyang.basiclibrary.widget.bottomnavigation.TextBadgeItem;
+import com.github.android.common.widget.bottomnavigation.BottomNavigationBar;
+import com.github.android.common.widget.bottomnavigation.BottomNavigationItem;
+import com.github.android.common.widget.bottomnavigation.ShapeBadgeItem;
+import com.github.android.common.widget.bottomnavigation.TextBadgeItem;
 
 /**
  * Created by weiyang on 2019-10-10.

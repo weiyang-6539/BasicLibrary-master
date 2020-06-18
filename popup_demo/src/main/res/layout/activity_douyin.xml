@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#010101"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <VideoView
+            android:id="@+id/mVideoView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+        <ImageView
+            android:id="@+id/iv_player"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_player"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_marginRight="15dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:ignore="RtlHardcoded">
+
+            <com.github.android.common.widget.AvatarImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/img_avatar" />
+
+            <com.github.android.common.widget.ComplexView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="1000W"
+                android:textColor="#eee"
+                android:textSize="15sp"
+                app:cvIconPadding="0dp"
+                app:cvIconSizeTop="35dp"
+                app:cvIconTop="@drawable/ic_favorites" />
+
+            <com.github.android.common.widget.ComplexView
+                android:id="@+id/cv_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="1000W"
+                android:textColor="#eee"
+                android:textSize="15sp"
+                app:cvIconPadding="0dp"
+                app:cvIconSizeTop="35dp"
+                app:cvIconTop="@drawable/ic_comment" />
+
+            <com.github.android.common.widget.ComplexView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="1000W"
+                android:textColor="#eee"
+                android:textSize="15sp"
+                app:cvIconPadding="0dp"
+                app:cvIconSizeTop="35dp"
+                app:cvIconTop="@drawable/ic_transfer" />
+
+            <Space
+                android:layout_width="60dp"
+                android:layout_height="60dp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/mTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#121212"
+        app:tabIndicatorColor="@android:color/white"
+        app:tabIndicatorFullWidth="false"
+        app:tabMode="fixed"
+        app:tabPaddingEnd="-1dp"
+        app:tabPaddingStart="-1dp"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabTextColor="#ddd" />
+</LinearLayout>

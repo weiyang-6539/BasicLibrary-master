@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
             android:text="@string/shape_title2"
             android:textColor="@color/colorText"
             android:textSize="17sp" />
@@ -29,7 +30,7 @@
         android:showDividers="middle"
         android:weightSum="4">
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:id="@+id/sb_01"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -39,11 +40,12 @@
             android:text="@string/shape_tab_1"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cSelector="standard"
-            app:iconSizeTop="30dp"
-            app:iconTop="@drawable/ic_01" />
+            app:cvIconSizeTop="30dp"
+            app:cvIconTop="@drawable/ic_01"
+            app:cvSelector="standard"
+            app:cvTintIconStart="#000" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:id="@+id/sb_02"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -53,11 +55,11 @@
             android:text="@string/shape_tab_2"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cSelector="standard"
-            app:iconSizeTop="30dp"
-            app:iconTop="@drawable/ic_02" />
+            app:cvIconSizeTop="30dp"
+            app:cvIconTop="@drawable/ic_02"
+            app:cvSelector="standard" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:id="@+id/sb_03"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -67,11 +69,11 @@
             android:text="@string/shape_tab_3"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cSelector="standard"
-            app:iconSizeTop="30dp"
-            app:iconTop="@drawable/ic_03" />
+            app:cvIconSizeTop="30dp"
+            app:cvIconTop="@drawable/ic_03"
+            app:cvSelector="standard" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:id="@+id/sb_04"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -81,9 +83,9 @@
             android:text="@string/shape_tab_4"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cSelector="standard"
-            app:iconSizeTop="30dp"
-            app:iconTop="@drawable/ic_04" />
+            app:cvIconSizeTop="30dp"
+            app:cvIconTop="@drawable/ic_04"
+            app:cvSelector="standard" />
     </LinearLayout>
 
     <LinearLayout
@@ -94,7 +96,7 @@
         android:showDividers="middle"
         android:weightSum="4">
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:id="@+id/sb_05"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -104,11 +106,11 @@
             android:text="@string/shape_tab_5"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cSelector="standard"
-            app:iconSizeTop="30dp"
-            app:iconTop="@drawable/ic_05" />
+            app:cvIconSizeTop="30dp"
+            app:cvIconTop="@drawable/ic_05"
+            app:cvSelector="standard" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:id="@+id/sb_06"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -118,11 +120,11 @@
             android:text="@string/shape_tab_6"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cSelector="standard"
-            app:iconSizeTop="30dp"
-            app:iconTop="@drawable/ic_06" />
+            app:cvIconSizeTop="30dp"
+            app:cvIconTop="@drawable/ic_06"
+            app:cvSelector="standard" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:id="@+id/sb_07"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -132,11 +134,11 @@
             android:text="@string/shape_tab_7"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cSelector="standard"
-            app:iconSizeTop="30dp"
-            app:iconTop="@drawable/ic_07" />
+            app:cvIconSizeTop="30dp"
+            app:cvIconTop="@drawable/ic_07"
+            app:cvSelector="standard" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:id="@+id/sb_08"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -146,9 +148,9 @@
             android:text="@string/shape_tab_8"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cSelector="standard"
-            app:iconSizeTop="30dp"
-            app:iconTop="@drawable/ic_08" />
+            app:cvIconSizeTop="30dp"
+            app:cvIconTop="@drawable/ic_08"
+            app:cvSelector="standard" />
     </LinearLayout>
 
     <LinearLayout
@@ -159,7 +161,7 @@
         android:showDividers="middle"
         android:weightSum="4">
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:id="@+id/sb_09"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -169,11 +171,11 @@
             android:text="@string/shape_tab_9"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cSelector="standard"
-            app:iconSizeTop="30dp"
-            app:iconTop="@drawable/ic_09" />
+            app:cvIconSizeTop="30dp"
+            app:cvIconTop="@drawable/ic_09"
+            app:cvSelector="standard" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:id="@+id/sb_10"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -183,11 +185,11 @@
             android:text="@string/shape_tab_10"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cSelector="standard"
-            app:iconSizeTop="30dp"
-            app:iconTop="@drawable/ic_10" />
+            app:cvIconSizeTop="30dp"
+            app:cvIconTop="@drawable/ic_10"
+            app:cvSelector="standard" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:id="@+id/sb_11"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -197,11 +199,11 @@
             android:text="@string/shape_tab_11"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cSelector="standard"
-            app:iconSizeTop="30dp"
-            app:iconTop="@drawable/ic_11" />
+            app:cvIconSizeTop="30dp"
+            app:cvIconTop="@drawable/ic_11"
+            app:cvSelector="standard" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:id="@+id/sb_12"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -211,9 +213,9 @@
             android:text="@string/shape_tab_12"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cSelector="standard"
-            app:iconSizeTop="30dp"
-            app:iconTop="@drawable/ic_12" />
+            app:cvIconSizeTop="30dp"
+            app:cvIconTop="@drawable/ic_12"
+            app:cvSelector="standard" />
     </LinearLayout>
 
     <LinearLayout
@@ -227,7 +229,7 @@
         android:paddingRight="12dp"
         android:paddingBottom="8dp">
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="50dp"
@@ -235,54 +237,54 @@
             android:text="店铺"
             android:textColor="#999"
             android:textSize="13sp"
-            app:iconPadding="0dp"
-            app:iconTop="@drawable/ic_shop" />
+            app:cvIconPadding="0dp"
+            app:cvIconTop="@drawable/ic_shop" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="50dp"
             android:text="客服"
             android:textColor="#999"
             android:textSize="13sp"
-            app:iconPadding="0dp"
-            app:iconTop="@drawable/ic_service" />
+            app:cvIconPadding="0dp"
+            app:cvIconTop="@drawable/ic_service" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="50dp"
             android:text="收藏"
             android:textColor="#999"
             android:textSize="13sp"
-            app:iconPadding="0dp"
-            app:iconTop="@drawable/ic_favorites" />
+            app:cvIconPadding="0dp"
+            app:cvIconTop="@drawable/ic_favorites" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:minHeight="40dp"
             android:text="加入购物车"
             android:textColor="@android:color/white"
-            app:cSelector="standard"
-            app:bgColorNormal="#F19D39"
-            app:bgColorPressed="#88F19D39"
-            app:cornersBottomLeftRadius="40dp"
-            app:cornersTopLeftRadius="40dp" />
+            app:cvCornersBottomLeftRadius="40dp"
+            app:cvCornersTopLeftRadius="40dp"
+            app:cvNormalBgColor="#F19D39"
+            app:cvPressedBgColor="#88F19D39"
+            app:cvSelector="standard" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:minHeight="40dp"
             android:text="立即购买"
             android:textColor="@android:color/white"
-            app:cSelector="standard"
-            app:bgColorNormal="#EE762F"
-            app:bgColorPressed="#88EE762F"
-            app:cornersBottomRightRadius="40dp"
-            app:cornersTopRightRadius="40dp" />
+            app:cvCornersBottomRightRadius="40dp"
+            app:cvCornersTopRightRadius="40dp"
+            app:cvNormalBgColor="#EE762F"
+            app:cvPressedBgColor="#88EE762F"
+            app:cvSelector="standard" />
     </LinearLayout>
 
     <LinearLayout
@@ -293,48 +295,48 @@
         android:orientation="vertical"
         android:showDividers="middle|beginning|end">
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
             android:text="@string/shape_tab_1"
-            app:cSelector="ripple"
-            app:gravity="left"
-            app:iconEnd="@drawable/ic_arrow_right"
-            app:iconStart="@drawable/ic_01" />
+            app:cvGravity="left"
+            app:cvIconEnd="@drawable/ic_arrow_right"
+            app:cvIconStart="@drawable/ic_01"
+            app:cvSelector="ripple" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
             android:text="@string/shape_tab_2"
-            app:cSelector="ripple"
-            app:gravity="left"
-            app:iconEnd="@drawable/ic_arrow_right"
-            app:iconStart="@drawable/ic_02" />
+            app:cvGravity="left"
+            app:cvIconEnd="@drawable/ic_arrow_right"
+            app:cvIconStart="@drawable/ic_02"
+            app:cvSelector="ripple" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
             android:text="@string/shape_tab_3"
-            app:cSelector="ripple"
-            app:gravity="left"
-            app:iconEnd="@drawable/ic_arrow_right"
-            app:iconStart="@drawable/ic_03" />
+            app:cvGravity="left"
+            app:cvIconEnd="@drawable/ic_arrow_right"
+            app:cvIconStart="@drawable/ic_03"
+            app:cvSelector="ripple" />
 
-        <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+        <com.github.android.common.widget.ComplexView
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
             android:text="@string/shape_tab_4"
-            app:cSelector="ripple"
-            app:gravity="left"
-            app:iconEnd="@drawable/ic_arrow_right"
-            app:iconStart="@drawable/ic_04" />
+            app:cvGravity="left"
+            app:cvIconEnd="@drawable/ic_arrow_right"
+            app:cvIconStart="@drawable/ic_04"
+            app:cvSelector="ripple" />
     </LinearLayout>
 </LinearLayout>

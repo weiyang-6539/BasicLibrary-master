@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:background="#fff">
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="#a3f"
+        android:gravity="center"
+        android:text="测试测试" />
+</FrameLayout>

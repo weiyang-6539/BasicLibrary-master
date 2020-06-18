@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BottomNavigationBar">
+        <attr name="bnbElevation" format="dimension" />
+        <attr name="bnbActiveColor" format="color" />
+        <attr name="bnbInactiveColor" format="color" />
+        <attr name="bnbBackgroundColor" format="color" />
+        <attr name="bnbAnimationDuration" format="integer" />
+        <attr name="bnbMode" format="enum">
+            <enum name="mode_default" value="0" />
+            <enum name="mode_fixed" value="1" />
+            <enum name="mode_shifting" value="2" />
+            <enum name="mode_fixed_no_title" value="3" />
+            <enum name="mode_shifting_no_title" value="4" />
+        </attr>
+        <attr name="bnbBackgroundStyle" format="enum">
+            <enum name="background_style_default" value="0" />
+            <enum name="background_style_static" value="1" />
+            <enum name="background_style_ripple" value="2" />
+        </attr>
+        <attr name="bnbAutoHideEnabled" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ComplexView">
+        <attr name="cvGravity" format="enum">
+            <enum name="center" value="0" />
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+            <enum name="top" value="3" />
+            <enum name="bottom" value="4" />
+        </attr>
+
+        <attr name="cvSelector" format="enum">
+            <enum name="none" value="0" />
+            <enum name="standard" value="1" />
+            <enum name="ripple" value="2" />
+        </attr>
+
+        <attr name="cvNormalBgColor" format="color" />
+        <attr name="cvPressedBgColor" format="color" />
+        <attr name="cvDisableBgColor" format="color" />
+        <attr name="cvNormalTextColor" format="color" />
+        <attr name="cvPressedTextColor" format="color" />
+        <attr name="cvDisableTextColor" format="color" />
+
+        <attr name="cvCornersRadius" format="dimension" />
+        <attr name="cvCornersTopLeftRadius" format="dimension" />
+        <attr name="cvCornersTopRightRadius" format="dimension" />
+        <attr name="cvCornersBottomLeftRadius" format="dimension" />
+        <attr name="cvCornersBottomRightRadius" format="dimension" />
+
+        <attr name="cvStrokeWidth" format="dimension" />
+        <attr name="cvStrokeColor" format="color" />
+
+        <attr name="cvElevation" format="dimension" />
+
+        <attr name="cvIconStart" format="reference" />
+        <attr name="cvIconTop" format="reference" />
+        <attr name="cvIconEnd" format="reference" />
+        <attr name="cvIconBottom" format="reference" />
+        <attr name="cvIconSizeStart" format="dimension" />
+        <attr name="cvIconSizeTop" format="dimension" />
+        <attr name="cvIconSizeEnd" format="dimension" />
+        <attr name="cvIconSizeBottom" format="dimension" />
+        <attr name="cvTintIconStart" format="color" />
+        <attr name="cvTintIconTop" format="color" />
+        <attr name="cvTintIconEnd" format="color" />
+        <attr name="cvTintIconBottom" format="color" />
+
+        <attr name="cvIconPadding" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="AvatarImageView">
+        <attr name="aiv_isCircle" format="reference|boolean" />
+        <attr name="aiv_TextSizeRatio" format="reference|float" />
+        <attr name="aiv_TextMaskRatio" format="reference|float" />
+        <attr name="aiv_BoarderColor" format="reference|color" />
+        <attr name="aiv_TextColor" format="reference|color" />
+        <attr name="aiv_BoarderWidth" format="reference|dimension" />
+        <attr name="aiv_ShowBoarder" format="reference|boolean" />
+        <attr name="aiv_CornerRadius" format="reference|dimension" />
+    </declare-styleable>
+    <declare-styleable name="StateLayout">
+        <attr name="slLoadingLayoutId" format="reference" />
+        <attr name="slErrorLayoutId" format="reference" />
+        <attr name="slEmptyLayoutId" format="reference" />
+        <attr name="slSuccessLayoutId" format="reference" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+    <com.github.android.common.widget.AvatarImageView
+        android:id="@+id/aiv_01"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/img_avatar"
+        app:aiv_BoarderColor="#222"
+        app:aiv_BoarderWidth="2dp"
+        app:aiv_ShowBoarder="true" />
+
+    <com.github.android.common.widget.AvatarImageView
+        android:id="@+id/aiv_02"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:src="@drawable/img_avatar" />
+
+    <com.github.android.common.widget.AvatarImageView
+        android:id="@+id/aiv_03"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="190dp"
+        android:layout_marginLeft="190dp"
+        android:src="@drawable/img_avatar"
+        app:aiv_BoarderColor="#222"
+        app:aiv_BoarderWidth="2dp"
+        app:aiv_CornerRadius="5dp"
+        app:aiv_ShowBoarder="true"
+        app:aiv_isCircle="false" />
+</FrameLayout>

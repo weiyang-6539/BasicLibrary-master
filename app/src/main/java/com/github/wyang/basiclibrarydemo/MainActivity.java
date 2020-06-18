@@ -10,7 +10,7 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.github.wyang.basiclibrary.utils.ViewUtil;
+import com.github.android.common.utils.ViewUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +54,6 @@ public class MainActivity extends BaseActivity {
         mData.add(new Item("MD ShapeButton", "结合google md材质设计，自定义Button", ComplexButtonActivity.class));
         mData.add(new Item("底部导航", "结合google md材质设计，自定义Button", BottomNavigationActivity.class));
         mData.add(new Item("Ripple波纹动画", "xml及代码写法", RippleActivity.class));
-        mData.add(new Item("测试用例1", "", null));
         mData.add(new Item("测试用例2", "", null));
         mData.add(new Item("测试用例3", "", null));
         mData.add(new Item("测试用例4", "", null));

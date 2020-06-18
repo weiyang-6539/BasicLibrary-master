@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <com.github.android.common.widget.ComplexView
+            android:id="@+id/cv_01"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:gravity="center"
+            android:text="综合排序"
+            android:textColor="#aaa"
+            app:cvIconEnd="@drawable/arrow_down"
+            app:cvSelector="ripple"
+            app:cvTintIconEnd="#aaa" />
+
+        <com.github.android.common.widget.ComplexView
+            android:id="@+id/cv_02"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:gravity="center"
+            android:text="全部筛选"
+            android:textColor="#aaa"
+            app:cvIconEnd="@drawable/arrow_down"
+            app:cvSelector="standard"
+            app:cvTintIconEnd="#aaa" />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <Button
+                android:id="@+id/btn_show_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="显示Confirm弹窗" />
+
+            <Button
+                android:id="@+id/btn_show_loading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="显示Loading弹窗" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btn_show_left_drawer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="显示左侧弹窗" />
+
+                <Button
+                    android:id="@+id/btn_show_right_drawer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="显示右侧弹窗" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_show_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="显示底部弹窗" />
+
+            <FrameLayout
+                android:id="@+id/fl_long_click"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="#00BCD4">
+
+                <TextView
+                    android:id="@+id/tv_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#03A9F4"
+                    android:padding="5dp"
+                    android:text="点击11"
+                    android:textColor="#fff" />
+
+                <TextView
+                    android:id="@+id/tv_22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:background="#03A9F4"
+                    android:padding="5dp"
+                    android:text="点击22"
+                    android:textColor="#fff" />
+
+                <TextView
+                    android:id="@+id/tv_33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#03A9F4"
+                    android:padding="5dp"
+                    android:text="点击33"
+                    android:textColor="#fff" />
+
+                <TextView
+                    android:id="@+id/tv_44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:background="#03A9F4"
+                    android:padding="5dp"
+                    android:text="点击44"
+                    android:textColor="#fff" />
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/btn_show_anyway"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自由定位弹窗" />
+
+            <com.github.android.common.widget.ComplexView
+                android:id="@+id/cv_show_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/dp_30"
+                android:minWidth="35dp"
+                android:text="··"
+                android:textColor="#00BCD4"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:cvCornersRadius="3dp"
+                app:cvNormalBgColor="#e1e1e1" />
+
+            <Button
+                android:id="@+id/btn_show_bottom_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="输入框弹窗" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="1000dp" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

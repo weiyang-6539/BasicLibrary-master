@@ -33,6 +33,6 @@ ext {
 
             "brvah"               : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44',
             "anim-svg"            : 'com.jaredrummler:animated-svg-view:1.0.5',
-            "anim-boom"           : 'tyrantgit:explosionfield:1.0.1'
+            "anim-boom"           : 'tyrantgit:explosionfield:1.0.1',
     ]
 }

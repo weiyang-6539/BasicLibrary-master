@@ -29,7 +29,6 @@ public class ComplexButtonActivity extends BaseActivity {
     protected void initView() {
         initToolBar(toolbar, "ComplexButton", true);
 
-
         sc_enable.setOnCheckedChangeListener((buttonView, isChecked) -> {
             ViewGroup parent = (ViewGroup) sc_enable.getParent();
             applyEnable(parent, isChecked);

@@ -1,1 +1,1 @@
-include ':app', ':basiclibrary'
+include ':app', ':common', ':popup_demo'

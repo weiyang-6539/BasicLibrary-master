@@ -10,7 +10,7 @@
     app:flexWrap="wrap"
     app:showDivider="middle">
 
-    <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+    <com.github.wyang.basiclibrary.widget.extend.ComplexView
         android:id="@+id/sb_01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,12 +19,12 @@
         android:text="@string/shape_tab_1"
         android:textColor="@color/colorText"
         android:textSize="15sp"
-        app:layout_flexBasisPercent="33.33%"
-        app:cSelector="standard"
-        app:iconTop="@drawable/ic_01"
-        app:iconSizeTop="30dp" />
+        app:cvSelector="standard"
+        app:cvIconSizeTop="30dp"
+        app:cvIconTop="@drawable/ic_01"
+        app:layout_flexBasisPercent="33.33%" />
 
-    <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+    <com.github.wyang.basiclibrary.widget.extend.ComplexView
         android:id="@+id/sb_02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,12 +33,12 @@
         android:text="@string/shape_tab_2"
         android:textColor="@color/colorText"
         android:textSize="15sp"
-        app:layout_flexBasisPercent="33.33%"
-        app:cSelector="standard"
-        app:iconTop="@drawable/ic_02"
-        app:iconSizeTop="30dp" />
+        app:cvIconSizeTop="30dp"
+        app:cvIconTop="@drawable/ic_02"
+        app:cvSelector="standard"
+        app:layout_flexBasisPercent="33.33%" />
 
-    <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+    <com.github.wyang.basiclibrary.widget.extend.ComplexView
         android:id="@+id/sb_03"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,12 +47,12 @@
         android:text="@string/shape_tab_3"
         android:textColor="@color/colorText"
         android:textSize="15sp"
-        app:layout_flexBasisPercent="33.33%"
-        app:cSelector="standard"
-        app:iconTop="@drawable/ic_03"
-        app:iconSizeTop="30dp" />
+        app:cvIconSizeTop="30dp"
+        app:cvIconTop="@drawable/ic_03"
+        app:cvSelector="standard"
+        app:layout_flexBasisPercent="33.33%" />
 
-    <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+    <com.github.wyang.basiclibrary.widget.extend.ComplexView
         android:id="@+id/sb_04"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,12 +61,12 @@
         android:text="@string/shape_tab_4"
         android:textColor="@color/colorText"
         android:textSize="15sp"
-        app:layout_flexBasisPercent="25%"
-        app:cSelector="standard"
-        app:iconTop="@drawable/ic_04"
-        app:iconSizeTop="30dp" />
+        app:cvIconSizeTop="30dp"
+        app:cvIconTop="@drawable/ic_04"
+        app:cvSelector="standard"
+        app:layout_flexBasisPercent="25%" />
 
-    <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+    <com.github.wyang.basiclibrary.widget.extend.ComplexView
         android:id="@+id/sb_05"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,12 +75,12 @@
         android:text="@string/shape_tab_5"
         android:textColor="@color/colorText"
         android:textSize="15sp"
-        app:layout_flexBasisPercent="25%"
-        app:cSelector="standard"
-        app:iconTop="@drawable/ic_05"
-        app:iconSizeTop="30dp" />
+        app:cvIconSizeTop="30dp"
+        app:cvIconTop="@drawable/ic_05"
+        app:cvSelector="standard"
+        app:layout_flexBasisPercent="25%" />
 
-    <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+    <com.github.wyang.basiclibrary.widget.extend.ComplexView
         android:id="@+id/sb_06"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,12 +89,12 @@
         android:text="@string/shape_tab_6"
         android:textColor="@color/colorText"
         android:textSize="15sp"
-        app:layout_flexBasisPercent="25%"
-        app:cSelector="standard"
-        app:iconTop="@drawable/ic_06"
-        app:iconSizeTop="30dp" />
+        app:cvIconSizeTop="30dp"
+        app:cvIconTop="@drawable/ic_06"
+        app:cvSelector="standard"
+        app:layout_flexBasisPercent="25%" />
 
-    <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+    <com.github.wyang.basiclibrary.widget.extend.ComplexView
         android:id="@+id/sb_07"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -103,12 +103,12 @@
         android:text="@string/shape_tab_7"
         android:textColor="@color/colorText"
         android:textSize="15sp"
-        app:layout_flexBasisPercent="25%"
-        app:cSelector="standard"
-        app:iconTop="@drawable/ic_07"
-        app:iconSizeTop="30dp" />
+        app:cvIconSizeTop="30dp"
+        app:cvIconTop="@drawable/ic_07"
+        app:cvSelector="standard"
+        app:layout_flexBasisPercent="25%" />
 
-    <com.github.wyang.basiclibrary.widget.extend.ComplexButton
+    <com.github.wyang.basiclibrary.widget.extend.ComplexView
         android:id="@+id/sb_08"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -117,8 +117,8 @@
         android:text="@string/shape_tab_8"
         android:textColor="@color/colorText"
         android:textSize="15sp"
-        app:layout_flexBasisPercent="25%"
-        app:cSelector="standard"
-        app:iconTop="@drawable/ic_08"
-        app:iconSizeTop="30dp" />
+        app:cvIconSizeTop="30dp"
+        app:cvIconTop="@drawable/ic_08"
+        app:cvSelector="standard"
+        app:layout_flexBasisPercent="25%" />
 </com.github.wyang.basiclibrary.widget.extend.FlexboxLayout>
