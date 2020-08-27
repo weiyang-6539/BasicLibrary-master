@@ -188,11 +188,11 @@ public class XPopupUtils {
         return delta - sDecorViewDelta;
     }
 
-    public static void moveUpToKeyboard(int keyboardHeight, BasePopupView apv) {
-        if (!apv.getPopupAttrs().isMoveUpToKeyboard) return;
+    public static void moveUpToKeyboard(int keyboardHeight, BasePopupView popupView) {
+        if (!popupView.getPopupAttrs().isMoveUpToKeyboard) return;
         //判断是否盖住输入框
         ArrayList<EditText> allEts = new ArrayList<>();
-        findAllEditText(allEts, apv);
+        findAllEditText(allEts, popupView);
         EditText focusEt = null;
         for (EditText et : allEts) {
             if (et.isFocused()) {
@@ -202,13 +202,13 @@ public class XPopupUtils {
         }
 
         int dy = 0;
-        int popupHeight = apv.getPopupContentView().getHeight();
-        int popupWidth = apv.getPopupContentView().getWidth();
-        if (apv.getPopupImplView() != null) {
-            popupHeight = Math.min(popupHeight, apv.getPopupImplView().getMeasuredHeight());
-            popupWidth = Math.min(popupWidth, apv.getPopupImplView().getMeasuredWidth());
+        int popupHeight = popupView.getPopupContentView().getHeight();
+        int popupWidth = popupView.getPopupContentView().getWidth();
+        if (popupView.getPopupImplView() != null) {
+            popupHeight = Math.min(popupHeight, popupView.getPopupImplView().getMeasuredHeight());
+            popupWidth = Math.min(popupWidth, popupView.getPopupImplView().getMeasuredWidth());
         }
-        int windowHeight = getWindowHeight(apv.getContext());
+        int windowHeight = getWindowHeight(popupView.getContext());
         int focusEtTop = 0;
         int focusBottom = 0;
         if (focusEt != null) {
@@ -219,48 +219,48 @@ public class XPopupUtils {
         }
 
         //暂时忽略PartShadow弹窗和AttachPopupView
-        if (apv instanceof AbsAttachPopupView)
+        if (popupView instanceof AbsAttachPopupView)
             return;
         //执行上移
-        /*if (apv instanceof FullScreenPopupView ||
-                (popupWidth == XPopupUtils.getWindowWidth(apv.getContext()) &&
-                        popupHeight == (XPopupUtils.getWindowHeight(apv.getContext()) + XPopupUtils.getStatusBarHeight()))
+        /*if (popupView instanceof FullScreenPopupView ||
+                (popupWidth == XPopupUtils.getWindowWidth(popupView.getContext()) &&
+                        popupHeight == (XPopupUtils.getWindowHeight(popupView.getContext()) + XPopupUtils.getStatusBarHeight()))
         ) {
             // 如果是全屏弹窗，特殊处理，只要输入框没被盖住，就不移动。
             if (focusBottom + keyboardHeight < windowHeight) {
                 return;
             }
         }
-        if (apv instanceof FullScreenPopupView) {
+        if (popupView instanceof FullScreenPopupView) {
             int overflowHeight = (focusBottom + keyboardHeight) - windowHeight;
             if (focusEt != null && overflowHeight > 0) {
                 dy = overflowHeight;
             }
         } else*/
-        if (apv instanceof AbsCenterPopupView) {
+        if (popupView instanceof AbsCenterPopupView) {
             int targetY = keyboardHeight - (windowHeight - popupHeight + getStatusBarHeight()) / 2; //上移到下边贴着输入法的高度
 
             if (focusEt != null && focusEtTop - targetY < 0) {
                 targetY += focusEtTop - targetY - getStatusBarHeight();//限制不能被状态栏遮住
             }
             dy = Math.max(0, targetY);
-        } else if (apv instanceof AbsBottomPopupView) {
+        } else if (popupView instanceof AbsBottomPopupView) {
             dy = keyboardHeight;
             if (focusEt != null && focusEtTop - dy < 0) {
                 dy += focusEtTop - dy - getStatusBarHeight();//限制不能被状态栏遮住
             }
-        } else if (isBottomPartShadow(apv) || apv instanceof AbsDrawerPopupView) {
+        } else if (isBottomPartShadow(popupView) || popupView instanceof AbsDrawerPopupView) {
             int overflowHeight = (focusBottom + keyboardHeight) - windowHeight;
             if (focusEt != null && overflowHeight > 0) {
                 dy = overflowHeight;
             }
-        } else if (isTopPartShadow(apv)) {
+        } else if (isTopPartShadow(popupView)) {
             int overflowHeight = (focusBottom + keyboardHeight) - windowHeight;
             if (focusEt != null && overflowHeight > 0) {
                 dy = overflowHeight;
             }
             if (dy != 0) {
-                apv.getPopupImplView().animate().translationY(-dy)
+                popupView.getPopupImplView().animate().translationY(-dy)
                         .setDuration(200)
                         .setInterpolator(new OvershootInterpolator(0))
                         .start();
@@ -268,8 +268,11 @@ public class XPopupUtils {
             return;
         }
         //dy=0说明没有触发移动，有些弹窗有translationY，不能影响它们
-        if (dy == 0 && apv.getPopupContentView().getTranslationY() != 0) return;
-        apv.getPopupContentView().animate().translationY(-dy)
+        if (dy == 0 && popupView.getPopupContentView().getTranslationY() != 0)
+            return;
+        popupView.getPopupContentView()
+                .animate()
+                .translationY(-dy)
                 .setDuration(200)
                 .setInterpolator(new OvershootInterpolator(0))
                 .start();

@@ -26,4 +26,8 @@ public class Comment2PopupView extends AbsBottomPopupView {
 
         getPopupImplView().setBackgroundDrawable(DrawableCreator.getDrawable(0xffffffff));
     }
+
+
+
+
 }

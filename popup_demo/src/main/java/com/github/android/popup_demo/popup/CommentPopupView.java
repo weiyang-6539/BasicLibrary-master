@@ -54,6 +54,7 @@ public class CommentPopupView extends AbsBottomPopupView {
     public void onClickShowEdit() {
         new XPopup.Builder(getContext())
                 .hasShadowBg(true)
+                .autoOpenSoftInput(true)
                 .asCustom(new Comment2PopupView(getContext()))
                 .show();
     }

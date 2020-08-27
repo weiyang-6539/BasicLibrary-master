@@ -55,6 +55,7 @@ public class DouyinActivity extends AppCompatActivity {
         });
         mVideoView.start();
 
+        onClickContainer();
     }
 
     @OnClick(R.id.fl_container)
@@ -74,6 +75,9 @@ public class DouyinActivity extends AppCompatActivity {
     public void onClickCvComment() {
         new XPopup.Builder(this)
                 .hasShadowBg(true)
+                .dismissOnBackPressed(true)
+                .autoOpenSoftInput(true)
+                .moveUpToKeyboard(false)
                 .asCustom(new CommentPopupView(this))
                 .show();
     }

@@ -49,22 +49,25 @@
         <attr name="cvCornersBottomRightRadius" format="dimension" />
 
         <attr name="cvStrokeWidth" format="dimension" />
-        <attr name="cvStrokeColor" format="color" />
+        <attr name="cvStrokeNormalColor" format="color" />
+        <attr name="cvStrokePressedColor" format="color" />
+        <attr name="cvStrokeDisableColor" format="color" />
 
         <attr name="cvElevation" format="dimension" />
+        <attr name="cvClickable" format="boolean" />
 
         <attr name="cvIconStart" format="reference" />
         <attr name="cvIconTop" format="reference" />
         <attr name="cvIconEnd" format="reference" />
         <attr name="cvIconBottom" format="reference" />
-        <attr name="cvIconSizeStart" format="dimension" />
-        <attr name="cvIconSizeTop" format="dimension" />
-        <attr name="cvIconSizeEnd" format="dimension" />
-        <attr name="cvIconSizeBottom" format="dimension" />
-        <attr name="cvTintIconStart" format="color" />
-        <attr name="cvTintIconTop" format="color" />
-        <attr name="cvTintIconEnd" format="color" />
-        <attr name="cvTintIconBottom" format="color" />
+        <attr name="cvIconStartSize" format="dimension" />
+        <attr name="cvIconTopSize" format="dimension" />
+        <attr name="cvIconEndSize" format="dimension" />
+        <attr name="cvIconBottomSize" format="dimension" />
+        <attr name="cvIconStartTint" format="color" />
+        <attr name="cvIconTopTint" format="color" />
+        <attr name="cvIconEndTint" format="color" />
+        <attr name="cvIconBottomTint" format="color" />
 
         <attr name="cvIconPadding" format="dimension" />
     </declare-styleable>

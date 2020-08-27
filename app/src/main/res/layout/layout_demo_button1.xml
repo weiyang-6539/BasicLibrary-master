@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cl_root1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#eeeeee"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dp_10">
 
     <TextView
         android:id="@+id/tv_title1"
@@ -47,7 +46,7 @@
             style="@style/Label"
             android:text="Material样式" />
 
-        <com.github.android.common.widget.ComplexView
+        <com.github.android.common.widget.simple.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
@@ -66,7 +65,7 @@
             android:layout_marginTop="15dp"
             android:text="Icon + 文本" />
 
-        <com.github.android.common.widget.ComplexView
+        <com.github.android.common.widget.simple.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="64dp"
@@ -87,7 +86,7 @@
             android:layout_marginTop="15dp"
             android:text="Icon + 文本" />
 
-        <com.github.android.common.widget.ComplexView
+        <com.github.android.common.widget.simple.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="64dp"
@@ -98,6 +97,7 @@
             android:textColor="@color/colorBtnDefault"
             app:cvCornersRadius="4dp"
             app:cvIconStart="@drawable/icon_add"
+            app:cvIconStartTint="@color/colorBtnDefault"
             app:cvSelector="standard" />
 
         <TextView
@@ -105,12 +105,11 @@
             android:layout_marginTop="15dp"
             android:text="图标" />
 
-        <com.github.android.common.widget.ComplexView
+        <com.github.android.common.widget.simple.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
             android:minHeight="36dp"
-            android:textSize="0sp"
             app:cvCornersRadius="4dp"
             app:cvIconStart="@drawable/icon_add"
             app:cvNormalBgColor="@color/colorBtnDefault" />
@@ -130,7 +129,7 @@
             style="@style/Label"
             android:text="无阴影" />
 
-        <com.github.android.common.widget.ComplexView
+        <com.github.android.common.widget.simple.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
@@ -148,7 +147,7 @@
             android:layout_marginTop="15dp"
             android:text="文本" />
 
-        <com.github.android.common.widget.ComplexView
+        <com.github.android.common.widget.simple.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
@@ -162,7 +161,7 @@
             android:layout_marginTop="15dp"
             android:text="文本" />
 
-        <com.github.android.common.widget.ComplexView
+        <com.github.android.common.widget.simple.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
@@ -171,7 +170,7 @@
             android:textColor="@color/colorBtnDefault"
             app:cvCornersRadius="4dp"
             app:cvSelector="standard"
-            app:cvStrokeColor="@color/colorBtnDefault"
+            app:cvStrokeNormalColor="@color/colorBtnDefault"
             app:cvStrokeWidth="1dp" />
 
         <TextView
@@ -179,7 +178,7 @@
             android:layout_marginTop="15dp"
             android:text="图标" />
 
-        <com.github.android.common.widget.ComplexView
+        <com.github.android.common.widget.simple.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
@@ -187,11 +186,12 @@
             android:textColor="@color/colorBtnDefault"
             app:cvCornersRadius="4dp"
             app:cvIconStart="@drawable/icon_add"
-            app:cvStrokeColor="@color/colorBtnDefault"
+            app:cvIconStartTint="@color/colorBtnDefault"
+            app:cvStrokeNormalColor="@color/colorBtnDefault"
             app:cvStrokeWidth="1dp" />
     </LinearLayout>
 
-    <com.github.android.common.widget.ComplexView
+    <com.github.android.common.widget.simple.ComplexView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"

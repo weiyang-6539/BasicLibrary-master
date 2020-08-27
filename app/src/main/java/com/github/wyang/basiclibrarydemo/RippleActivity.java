@@ -9,10 +9,7 @@ import android.graphics.drawable.RippleDrawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Build;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
@@ -20,18 +17,20 @@ import android.widget.TextView;
 /**
  * Created by weiyang on 2019-10-14.
  */
-public class RippleActivity extends AppCompatActivity {
+public class RippleActivity extends BaseActivity {
     private TextView tvRippleBg1;
     private TextView tvRippleBg2;
     private TextView tvRippleBg3;
     private TextView tvRippleBg4;
     private TextView tvRippleBg5;
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ripple);
+    public int getLayoutId() {
+        return R.layout.activity_ripple;
+    }
+
+    @Override
+    protected void initView() {
 
         tvRippleBg1 = findViewById(R.id.tv_rippleBg1);
         tvRippleBg2 = findViewById(R.id.tv_rippleBg2);
@@ -39,11 +38,13 @@ public class RippleActivity extends AppCompatActivity {
         tvRippleBg4 = findViewById(R.id.tv_rippleBg4);
         tvRippleBg5 = findViewById(R.id.tv_rippleBg5);
 
-        initTv1RippleBG(R.color.colorRed);
-        initTv2RippleBG();
-        initTv3RippleBG();
-        initTv4RippleBG();
-        initTv5RippleBG();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            initTv1RippleBG(R.color.colorRed);
+            initTv2RippleBG();
+            initTv3RippleBG();
+            initTv4RippleBG();
+            initTv5RippleBG();
+        }
     }
 
     /**

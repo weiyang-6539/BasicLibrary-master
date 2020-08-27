@@ -1,4 +1,4 @@
-package com.github.android.common.widget;
+package com.github.android.common.widget.simple;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -28,24 +28,24 @@ import java.lang.annotation.RetentionPolicy;
 
 /**
  * Created by weiyang on 2019-10-11.
- * 综合型View，支持文本 图标 或者 文本+图标的模式
+ * 综合型View，支持文本 图标 或者 文本 + 图标的模式
  */
 public class ComplexView extends AppCompatTextView {
-    public static final int NONE = 0;
-    public static final int STANDARD = 1;
-    public static final int RIPPLE = 2;
 
-    @IntDef({NONE, STANDARD, RIPPLE})
+    @IntDef({Selector.NONE, Selector.STANDARD, Selector.RIPPLE})
     @Retention(RetentionPolicy.SOURCE)
     @interface Selector {
+        int NONE = 0;
+        int STANDARD = 1;
+        int RIPPLE = 2;
     }
 
     @Selector
-    private int cvSelector = NONE;
+    private int cvSelector = Selector.NONE;
 
     private int cvNormalBgColor = Color.TRANSPARENT;//默认背景色
-    private int cvPressedBgColor = 0xFFE5E5E5;//按下背景色
-    private int cvDisableBgColor = 0xffcccccc;//禁用背景色
+    private int cvPressedBgColor = Color.parseColor("#e5e5e5");//按下背景色
+    private int cvDisableBgColor = Color.parseColor("#d5d5d5");//禁用背景色
 
     private float cvCornersRadius;//圆角半径
     private float cvCornersTopLeftRadius;
@@ -54,26 +54,29 @@ public class ComplexView extends AppCompatTextView {
     private float cvCornersBottomRightRadius;
 
     private int cvStrokeWidth;
-    private int cvStrokeColor = 0xff000000;
+    private int cvStrokeNormalColor = cvNormalBgColor;
+    private int cvStrokePressedColor = cvPressedBgColor;
+    private int cvStrokeDisableColor = cvDisableBgColor;
 
     private int cvGravity;
     private float cvElevation;//使用阴影效果时，需要结合margin使用
+    private boolean cvClickable;//点击是否穿透
 
     private Drawable cvIconStart;
-    private int cvIconSizeStart = 18;
-    private ColorStateList cvTintIconStart;
+    private int cvIconStartSize = 18;
+    private ColorStateList cvIconStartTint;
 
     private Drawable cvIconTop;
-    private int cvIconSizeTop = 18;
-    private ColorStateList cvTintIconTop;
+    private int cvIconTopSize = 18;
+    private ColorStateList cvIconTopTint;
 
     private Drawable cvIconEnd;
-    private int cvIconSizeEnd = 18;
-    private ColorStateList cvTintIconEnd;
+    private int cvIconEndSize = 18;
+    private ColorStateList cvIconEndTint;
 
     private Drawable cvIconBottom;
-    private int cvIconSizeBottom = 18;
-    private ColorStateList cvTintIconBottom;
+    private int cvIconBottomSize = 18;
+    private ColorStateList cvIconBottomTint;
 
     private int cvIconPadding = 8;//单位dp
 
@@ -88,7 +91,7 @@ public class ComplexView extends AppCompatTextView {
     public ComplexView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         parseAttrs(context, attrs);
-        init();
+        apply();
     }
 
     /**
@@ -98,7 +101,7 @@ public class ComplexView extends AppCompatTextView {
         if (attrs != null) {
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ComplexView);
 
-            cvSelector = typedArray.getInt(R.styleable.ComplexView_cvSelector, NONE);
+            cvSelector = typedArray.getInt(R.styleable.ComplexView_cvSelector, cvSelector);
 
             cvNormalBgColor = typedArray.getColor(R.styleable.ComplexView_cvNormalBgColor, cvNormalBgColor);
             cvPressedBgColor = typedArray.getColor(R.styleable.ComplexView_cvPressedBgColor, cvPressedBgColor);
@@ -112,25 +115,28 @@ public class ComplexView extends AppCompatTextView {
 
             cvStrokeWidth = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvStrokeWidth, 0);
 
-            cvStrokeColor = typedArray.getColor(R.styleable.ComplexView_cvStrokeColor, cvStrokeColor);
+            cvStrokeNormalColor = typedArray.getColor(R.styleable.ComplexView_cvStrokeNormalColor, cvStrokeNormalColor);
+            cvStrokePressedColor = typedArray.getColor(R.styleable.ComplexView_cvStrokePressedColor, cvStrokePressedColor);
+            cvStrokeDisableColor = typedArray.getColor(R.styleable.ComplexView_cvStrokeDisableColor, cvStrokeDisableColor);
 
             cvGravity = typedArray.getInt(R.styleable.ComplexView_cvGravity, cvGravity);
             cvElevation = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvElevation, 0);
+            cvClickable = typedArray.getBoolean(R.styleable.ComplexView_cvClickable, true);
 
             cvIconStart = typedArray.getDrawable(R.styleable.ComplexView_cvIconStart);
             cvIconTop = typedArray.getDrawable(R.styleable.ComplexView_cvIconTop);
             cvIconEnd = typedArray.getDrawable(R.styleable.ComplexView_cvIconEnd);
             cvIconBottom = typedArray.getDrawable(R.styleable.ComplexView_cvIconBottom);
 
-            cvIconSizeStart = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvIconSizeStart, dp2px(cvIconSizeStart));
-            cvIconSizeTop = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvIconSizeTop, dp2px(cvIconSizeTop));
-            cvIconSizeEnd = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvIconSizeEnd, dp2px(cvIconSizeEnd));
-            cvIconSizeBottom = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvIconSizeBottom, dp2px(cvIconSizeBottom));
+            cvIconStartSize = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvIconStartSize, dp2px(cvIconStartSize));
+            cvIconTopSize = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvIconTopSize, dp2px(cvIconTopSize));
+            cvIconEndSize = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvIconEndSize, dp2px(cvIconEndSize));
+            cvIconBottomSize = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvIconBottomSize, dp2px(cvIconBottomSize));
 
-            cvTintIconStart = typedArray.getColorStateList(R.styleable.ComplexView_cvTintIconStart);
-            cvTintIconTop = typedArray.getColorStateList(R.styleable.ComplexView_cvTintIconTop);
-            cvTintIconEnd = typedArray.getColorStateList(R.styleable.ComplexView_cvTintIconEnd);
-            cvTintIconBottom = typedArray.getColorStateList(R.styleable.ComplexView_cvTintIconBottom);
+            cvIconStartTint = typedArray.getColorStateList(R.styleable.ComplexView_cvIconStartTint);
+            cvIconTopTint = typedArray.getColorStateList(R.styleable.ComplexView_cvIconTopTint);
+            cvIconEndTint = typedArray.getColorStateList(R.styleable.ComplexView_cvIconEndTint);
+            cvIconBottomTint = typedArray.getColorStateList(R.styleable.ComplexView_cvIconBottomTint);
 
             cvIconPadding = typedArray.getDimensionPixelOffset(R.styleable.ComplexView_cvIconPadding, dp2px(cvIconPadding));
 
@@ -138,18 +144,18 @@ public class ComplexView extends AppCompatTextView {
         }
     }
 
-    private void init() {
-        setClickable(true);
+    private void apply() {
+        setClickable(cvClickable);
         setIncludeFontPadding(true);
 
         switch (cvSelector) {
-            case NONE:
-                ViewCompat.setBackground(this, getDrawable(cvNormalBgColor));
+            case Selector.NONE:
+                ViewCompat.setBackground(this, getDrawable(cvNormalBgColor, cvStrokeNormalColor));
                 break;
-            case STANDARD:
+            case Selector.STANDARD:
                 ViewCompat.setBackground(this, getStandard());
                 break;
-            case RIPPLE:
+            case Selector.RIPPLE:
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     ViewCompat.setBackground(this, getRipple());
                 } else {
@@ -177,10 +183,6 @@ public class ComplexView extends AppCompatTextView {
                 break;
         }
 
-        /*if (getGravity() == Gravity.CENTER) {
-            String text = getText().toString();
-            setText(text.replace("\n", ""));
-        }*/
         setCompoundDrawablePadding(cvIconPadding);
         updateIcon(!isIconNull());
 
@@ -235,16 +237,16 @@ public class ComplexView extends AppCompatTextView {
                 - textWidth
                 - ViewCompat.getPaddingStart(this)
                 - ViewCompat.getPaddingEnd(this)
-                - (cvIconStart == null ? 0 : cvIconSizeStart + cvIconPadding)
-                - (cvIconEnd == null ? 0 : cvIconSizeEnd + cvIconPadding)
+                - (cvIconStart == null ? 0 : cvIconStartSize + cvIconPadding)
+                - (cvIconEnd == null ? 0 : cvIconEndSize + cvIconPadding)
                 >> 1;
 
         offsetY = getMeasuredHeight()
                 - getLayout().getHeight()
                 - getPaddingTop()
                 - getPaddingBottom()
-                - (cvIconTop == null ? 0 : cvIconSizeTop + cvIconPadding)
-                - (cvIconBottom == null ? 0 : cvIconSizeBottom + cvIconPadding)
+                - (cvIconTop == null ? 0 : cvIconTopSize + cvIconPadding)
+                - (cvIconBottom == null ? 0 : cvIconBottomSize + cvIconPadding)
                 >> 1;
 
         updateIcon(false);
@@ -255,28 +257,28 @@ public class ComplexView extends AppCompatTextView {
     private void updateIcon(boolean needsIconUpdate) {
         if (cvIconStart != null) {
             cvIconStart = DrawableCompat.wrap(cvIconStart).mutate();
-            DrawableCompat.setTintList(cvIconStart, cvTintIconStart);
+            DrawableCompat.setTintList(cvIconStart, cvIconStartTint);
 
-            cvIconStart.setBounds(offsetX, 0, offsetX + cvIconSizeStart, cvIconSizeStart);
+            cvIconStart.setBounds(offsetX, 0, offsetX + cvIconStartSize, cvIconStartSize);
         }
         if (cvIconTop != null) {
             cvIconTop = DrawableCompat.wrap(cvIconTop).mutate();
-            DrawableCompat.setTintList(cvIconTop, cvTintIconTop);
+            DrawableCompat.setTintList(cvIconTop, cvIconTopTint);
 
-            cvIconTop.setBounds(0, offsetY, cvIconSizeTop, offsetY + cvIconSizeTop);
+            cvIconTop.setBounds(0, offsetY, cvIconTopSize, offsetY + cvIconTopSize);
         }
         if (cvIconEnd != null) {
             cvIconEnd = DrawableCompat.wrap(cvIconEnd).mutate();
-            DrawableCompat.setTintList(cvIconEnd, cvTintIconEnd);
+            DrawableCompat.setTintList(cvIconEnd, cvIconEndTint);
 
-            cvIconEnd.setBounds(-offsetX, 0, -offsetX + cvIconSizeEnd, cvIconSizeEnd);
+            cvIconEnd.setBounds(-offsetX, 0, -offsetX + cvIconEndSize, cvIconEndSize);
         }
 
         if (cvIconBottom != null) {
             cvIconBottom = DrawableCompat.wrap(cvIconBottom).mutate();
-            DrawableCompat.setTintList(cvIconBottom, cvTintIconBottom);
+            DrawableCompat.setTintList(cvIconBottom, cvIconBottomTint);
 
-            cvIconBottom.setBounds(0, -offsetY, cvIconSizeBottom, -offsetY + cvIconSizeBottom);
+            cvIconBottom.setBounds(0, -offsetY, cvIconBottomSize, -offsetY + cvIconBottomSize);
         }
 
         // Reset icon drawable if needed
@@ -303,11 +305,11 @@ public class ComplexView extends AppCompatTextView {
         TextViewCompat.setCompoundDrawablesRelative(this, cvIconStart, cvIconTop, cvIconEnd, cvIconBottom);
     }
 
-    private GradientDrawable getDrawable(@ColorInt int color) {
+    private GradientDrawable getDrawable(@ColorInt int color, @ColorInt int strokeColor) {
         GradientDrawable drawable = new GradientDrawable();
         drawable.setShape(GradientDrawable.RECTANGLE);
         drawable.setColor(color);
-        drawable.setStroke(cvStrokeWidth, cvStrokeColor);
+        drawable.setStroke(cvStrokeWidth, strokeColor);
 
         if (cvCornersRadius != 0)
             drawable.setCornerRadius(cvCornersRadius);
@@ -323,15 +325,15 @@ public class ComplexView extends AppCompatTextView {
 
     private Drawable getStandard() {
         StateListDrawable drawable = new StateListDrawable();
-        drawable.addState(new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled}, getDrawable(cvPressedBgColor));
-        drawable.addState(new int[]{-android.R.attr.state_enabled}, getDrawable(cvDisableBgColor));
-        drawable.addState(new int[]{}, getDrawable(cvNormalBgColor));
+        drawable.addState(new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled}, getDrawable(cvPressedBgColor, cvStrokePressedColor));
+        drawable.addState(new int[]{-android.R.attr.state_enabled}, getDrawable(cvDisableBgColor, cvStrokeDisableColor));
+        drawable.addState(new int[]{}, getDrawable(cvNormalBgColor, cvStrokeNormalColor));
         return drawable;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private Drawable getRipple() {
-        int[][] stateList = new int[][]{
+        /*int[][] stateList = new int[][]{
                 new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled},
                 new int[]{android.R.attr.state_focused, android.R.attr.state_enabled},
                 new int[]{android.R.attr.state_activated, android.R.attr.state_enabled},
@@ -346,13 +348,15 @@ public class ComplexView extends AppCompatTextView {
                 cvDisableBgColor,
                 cvPressedBgColor
         };
-        ColorStateList colorStateList = new ColorStateList(stateList, stateColorList);
+        ColorStateList colorStateList = new ColorStateList(stateList, stateColorList);*/
 
-        GradientDrawable maskDrawable = getDrawable(cvPressedBgColor);
-        GradientDrawable contentDrawable = getDrawable(cvNormalBgColor);
-
+        GradientDrawable maskDrawable = getDrawable(cvPressedBgColor, cvStrokePressedColor);
+        //GradientDrawable contentDrawable = getDrawable(cvNormalBgColor);
+        StateListDrawable drawable = new StateListDrawable();
+        drawable.addState(new int[]{-android.R.attr.state_enabled}, getDrawable(cvDisableBgColor, cvStrokeDisableColor));
+        drawable.addState(new int[]{}, getDrawable(cvNormalBgColor, cvStrokeNormalColor));
         //contentDrawable实际是默认初始化时展示的；maskDrawable 控制了rippleDrawable的范围
-        return new RippleDrawable(colorStateList, contentDrawable, maskDrawable);
+        return new RippleDrawable(ColorStateList.valueOf(cvPressedBgColor), drawable, maskDrawable);
     }
 
     public int dp2px(float dp) {

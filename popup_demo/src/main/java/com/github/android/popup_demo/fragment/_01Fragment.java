@@ -1,5 +1,7 @@
 package com.github.android.popup_demo.fragment;
 
+import android.content.Intent;
+import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -10,10 +12,11 @@ import com.github.android.common.popup.XPopup;
 import com.github.android.common.popup.animator.AnimationFactory;
 import com.github.android.common.popup.annotation.AttachType;
 import com.github.android.common.popup.annotation.Position;
-import com.github.android.common.widget.ComplexView;
+import com.github.android.common.widget.simple.ComplexView;
+import com.github.android.popup_demo.DouyinActivity;
 import com.github.android.popup_demo.R;
-import com.github.android.popup_demo.popup.BottomInputPopupView;
 import com.github.android.popup_demo.popup.BottomPopupView;
+import com.github.android.popup_demo.popup.CommentPopupView;
 import com.github.android.popup_demo.popup.ConfirmPopupView;
 import com.github.android.popup_demo.popup.DrawerPopupView;
 import com.github.android.popup_demo.popup.HorizontalPopupView;
@@ -94,6 +97,10 @@ public class _01Fragment extends BaseFragment {
                 .animation(AnimationFactory.scaleFromCenter(false))
                 .asCustom(new LoadingPopupView(getContext()));
         loadingPopup.show();
+
+        new Handler().postDelayed(() -> {
+            startActivity(new Intent(getContext(), DouyinActivity.class));
+        }, 1500);
     }
 
     @OnClick(R.id.btn_show_left_drawer)
@@ -208,10 +215,17 @@ public class _01Fragment extends BaseFragment {
 
     @OnClick(R.id.btn_show_bottom_input)
     public void onClickShowBottomInput(View v) {
-        new XPopup.Builder(getContext())
+        /*new XPopup.Builder(getContext())
                 .hasShadowBg(true)
                 .autoOpenSoftInput(true)
                 .asCustom(new BottomInputPopupView(getContext()))
+                .show();*/
+        new XPopup.Builder(getContext())
+                .hasShadowBg(true)
+                .dismissOnBackPressed(true)
+                .autoOpenSoftInput(true)
+                .moveUpToKeyboard(false)
+                .asCustom(new CommentPopupView(getContext()))
                 .show();
 
     }

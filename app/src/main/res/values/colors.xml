@@ -10,5 +10,5 @@
     <color name="colorText">#131420</color>
     <color name="colorBtnDefault">#5727E5</color>
     <color name="colorBtnPressed">#BCA9E2</color>
-    <color name="colorBtnDisable">#E5E5E5</color>
+    <color name="colorBtnDisable">#d5d5d5</color>
 </resources>

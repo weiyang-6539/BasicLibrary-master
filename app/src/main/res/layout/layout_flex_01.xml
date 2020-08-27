@@ -20,7 +20,7 @@
         android:textColor="@color/colorText"
         android:textSize="15sp"
         app:cvSelector="standard"
-        app:cvIconSizeTop="30dp"
+        app:cvIconTopSize="30dp"
         app:cvIconTop="@drawable/ic_01"
         app:layout_flexBasisPercent="33.33%" />
 
@@ -33,7 +33,7 @@
         android:text="@string/shape_tab_2"
         android:textColor="@color/colorText"
         android:textSize="15sp"
-        app:cvIconSizeTop="30dp"
+        app:cvIconTopSize="30dp"
         app:cvIconTop="@drawable/ic_02"
         app:cvSelector="standard"
         app:layout_flexBasisPercent="33.33%" />
@@ -47,7 +47,7 @@
         android:text="@string/shape_tab_3"
         android:textColor="@color/colorText"
         android:textSize="15sp"
-        app:cvIconSizeTop="30dp"
+        app:cvIconTopSize="30dp"
         app:cvIconTop="@drawable/ic_03"
         app:cvSelector="standard"
         app:layout_flexBasisPercent="33.33%" />
@@ -61,7 +61,7 @@
         android:text="@string/shape_tab_4"
         android:textColor="@color/colorText"
         android:textSize="15sp"
-        app:cvIconSizeTop="30dp"
+        app:cvIconTopSize="30dp"
         app:cvIconTop="@drawable/ic_04"
         app:cvSelector="standard"
         app:layout_flexBasisPercent="25%" />
@@ -75,7 +75,7 @@
         android:text="@string/shape_tab_5"
         android:textColor="@color/colorText"
         android:textSize="15sp"
-        app:cvIconSizeTop="30dp"
+        app:cvIconTopSize="30dp"
         app:cvIconTop="@drawable/ic_05"
         app:cvSelector="standard"
         app:layout_flexBasisPercent="25%" />
@@ -89,7 +89,7 @@
         android:text="@string/shape_tab_6"
         android:textColor="@color/colorText"
         android:textSize="15sp"
-        app:cvIconSizeTop="30dp"
+        app:cvIconTopSize="30dp"
         app:cvIconTop="@drawable/ic_06"
         app:cvSelector="standard"
         app:layout_flexBasisPercent="25%" />
@@ -103,7 +103,7 @@
         android:text="@string/shape_tab_7"
         android:textColor="@color/colorText"
         android:textSize="15sp"
-        app:cvIconSizeTop="30dp"
+        app:cvIconTopSize="30dp"
         app:cvIconTop="@drawable/ic_07"
         app:cvSelector="standard"
         app:layout_flexBasisPercent="25%" />
@@ -117,7 +117,7 @@
         android:text="@string/shape_tab_8"
         android:textColor="@color/colorText"
         android:textSize="15sp"
-        app:cvIconSizeTop="30dp"
+        app:cvIconTopSize="30dp"
         app:cvIconTop="@drawable/ic_08"
         app:cvSelector="standard"
         app:layout_flexBasisPercent="25%" />

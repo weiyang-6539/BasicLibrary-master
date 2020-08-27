@@ -51,11 +51,10 @@ public class MainActivity extends BaseActivity {
 
         //设置data
         mData = new ArrayList<>();
-        mData.add(new Item("MD ShapeButton", "结合google md材质设计，自定义Button", ComplexButtonActivity.class));
+        mData.add(new Item("ComplexView", "结合google md材质设计，自定义Button", ComplexViewActivity.class));
         mData.add(new Item("底部导航", "结合google md材质设计，自定义Button", BottomNavigationActivity.class));
         mData.add(new Item("Ripple波纹动画", "xml及代码写法", RippleActivity.class));
-        mData.add(new Item("测试用例2", "", null));
-        mData.add(new Item("测试用例3", "", null));
+        mData.add(new Item("自定义View", "", TestActivity.class));
         mData.add(new Item("测试用例4", "", null));
         mData.add(new Item("测试用例4", "", null));
         mData.add(new Item("测试用例4", "", null));
@@ -85,7 +84,7 @@ class Item {
     String description;
     Class activity;
 
-    public Item(String title, String description, Class activity) {
+    Item(String title, String description, Class activity) {
         this.title = title;
         this.description = description;
         this.activity = activity;
@@ -97,7 +96,7 @@ class ItemDecoration extends RecyclerView.ItemDecoration {
     private int spacing;
     private boolean includeEdge;
 
-    public ItemDecoration(int spanCount, int spacing, boolean includeEdge) {
+    ItemDecoration(int spanCount, int spacing, boolean includeEdge) {
         this.spanCount = spanCount;
         this.spacing = spacing;
         this.includeEdge = includeEdge;
@@ -106,21 +105,20 @@ class ItemDecoration extends RecyclerView.ItemDecoration {
     @Override
     public void getItemOffsets(@NonNull Rect outRect, @NonNull View view,
                                @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
-
-        int position = parent.getChildAdapterPosition(view); // item position
-        int column = position % spanCount; // item column
+        int position = parent.getChildAdapterPosition(view);
+        int column = position % spanCount;
         if (includeEdge) {
-            outRect.left = spacing - column * spacing / spanCount; // spacing - column * ((1f / spanCount) * spacing)
-            outRect.right = (column + 1) * spacing / spanCount; // (column + 1) * ((1f / spanCount) * spacing)
-            if (position < spanCount) { // top edge
+            outRect.left = spacing - column * spacing / spanCount;
+            outRect.right = (column + 1) * spacing / spanCount;
+            if (position < spanCount) {
                 outRect.top = spacing;
             }
-            outRect.bottom = spacing; // item bottom
+            outRect.bottom = spacing;
         } else {
-            outRect.left = column * spacing / spanCount; // column * ((1f / spanCount) * spacing)
-            outRect.right = spacing - (column + 1) * spacing / spanCount; // spacing - (column + 1) * ((1f /  spanCount) * spacing)
+            outRect.left = column * spacing / spanCount;
+            outRect.right = spacing - (column + 1) * spacing / spanCount;
             if (position >= spanCount) {
-                outRect.top = spacing; // item top
+                outRect.top = spacing;
             }
         }
     }

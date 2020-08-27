@@ -6,23 +6,23 @@
     android:background="@drawable/shape_corner_radius5"
     android:orientation="horizontal">
 
-    <com.github.android.common.widget.ComplexView
+    <com.github.android.common.widget.simple.ComplexView
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dp_35"
         android:minWidth="60dp"
         android:text="赞"
         android:textColor="@android:color/white"
         app:cvIconPadding="3dp"
-        app:cvIconSizeStart="15dp"
+        app:cvIconStartSize="15dp"
         app:cvIconStart="@drawable/ic_favorites" />
 
-    <com.github.android.common.widget.ComplexView
+    <com.github.android.common.widget.simple.ComplexView
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dp_35"
         android:minWidth="60dp"
         android:text="评论"
         android:textColor="@android:color/white"
         app:cvIconPadding="3dp"
-        app:cvIconSizeStart="15dp"
+        app:cvIconStartSize="15dp"
         app:cvIconStart="@drawable/ic_comment" />
 </LinearLayout>

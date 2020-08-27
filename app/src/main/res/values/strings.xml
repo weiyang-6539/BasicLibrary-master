@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">BasicLibrary-master</string>
 
-    <string name="shape_title1">ComplexButton使用效果</string>
-    <string name="shape_title2">ComplexButton应用</string>
+    <string name="shape_title1">ComplexView使用效果</string>
+    <string name="shape_title2">ComplexView应用</string>
 
     <string name="shape_tab_1">充值中心</string>
     <string name="shape_tab_2">信用卡还款</string>

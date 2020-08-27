@@ -1,9 +1,6 @@
 package com.github.wyang.basiclibrarydemo;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
 
 import com.github.android.common.widget.bottomnavigation.BottomNavigationBar;
 import com.github.android.common.widget.bottomnavigation.BottomNavigationItem;
@@ -13,7 +10,7 @@ import com.github.android.common.widget.bottomnavigation.TextBadgeItem;
 /**
  * Created by weiyang on 2019-10-10.
  */
-public class BottomNavigationActivity extends AppCompatActivity {
+public class BottomNavigationActivity extends BaseActivity {
     private BottomNavigationBar bottomBar;
     private TextBadgeItem shopBadge;
     private ShapeBadgeItem discoverBadge;
@@ -21,9 +18,12 @@ public class BottomNavigationActivity extends AppCompatActivity {
     private BottomNavigationView mNavigationView;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bottom_navigation);
+    public int getLayoutId() {
+        return R.layout.activity_bottom_navigation;
+    }
+
+    @Override
+    protected void initView() {
 
         mNavigationView = findViewById(R.id.mNavigationView);
 
@@ -80,4 +80,6 @@ public class BottomNavigationActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }

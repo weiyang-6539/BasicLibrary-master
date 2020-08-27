@@ -13,7 +13,7 @@ import butterknife.BindView;
  *
  * @url https://www.jb51.net/article/145309.htm
  */
-public class ComplexButtonActivity extends BaseActivity {
+public class ComplexViewActivity extends BaseActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
@@ -22,7 +22,7 @@ public class ComplexButtonActivity extends BaseActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_complex_button;
+        return R.layout.activity_complex_view;
     }
 
     @Override

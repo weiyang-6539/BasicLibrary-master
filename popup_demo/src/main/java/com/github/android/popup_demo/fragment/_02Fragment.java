@@ -3,8 +3,10 @@ package com.github.android.popup_demo.fragment;
 import android.content.Intent;
 
 import com.github.android.common.base.BaseFragment;
+import com.github.android.common.popup.XPopup;
 import com.github.android.popup_demo.DouyinActivity;
 import com.github.android.popup_demo.R;
+import com.github.android.popup_demo.popup.CommentPopupView;
 
 import butterknife.OnClick;
 
@@ -29,5 +31,12 @@ public class _02Fragment extends BaseFragment {
 
     @OnClick(R.id.btn_test)
     public void onClickTest() {
+        new XPopup.Builder(getContext())
+                .hasShadowBg(true)
+                .dismissOnBackPressed(true)
+                .autoOpenSoftInput(true)
+                .moveUpToKeyboard(false)
+                .asCustom(new CommentPopupView(getContext()))
+                .show();
     }
 }

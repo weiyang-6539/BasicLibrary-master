@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:padding="12dp">
 
-    <com.github.android.common.widget.ComplexView
+    <com.github.android.common.widget.simple.ComplexView
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:clickable="true"
@@ -21,7 +21,7 @@
         app:cvPressedBgColor="#ccc"
         app:cvSelector="standard" />
 
-    <com.github.android.common.widget.ComplexView
+    <com.github.android.common.widget.simple.ComplexView
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:gravity="center"
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="10dp" />
 
-    <com.github.android.common.widget.ComplexView
+    <com.github.android.common.widget.simple.ComplexView
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:gravity="center"

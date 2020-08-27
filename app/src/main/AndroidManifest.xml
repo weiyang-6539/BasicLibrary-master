@@ -20,10 +20,11 @@
         </activity>
         <activity android:name=".BottomNavigationActivity" />
         <activity
-            android:name=".ComplexButtonActivity"
+            android:name=".ComplexViewActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".RippleActivity" />
         <activity android:name=".TestButtonActivity" />
+        <activity android:name=".TestActivity" />
     </application>
 
 </manifest>

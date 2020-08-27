@@ -371,7 +371,8 @@ public abstract class BasePopupView extends FrameLayout implements OnNavigationB
         }
         // 此处焦点可能被内容的EditText抢走，也需要给EditText也设置返回按下监听
         setOnKeyListener(new BackPressListener());
-        if (!popupAttrs.autoFocusEditText) showSoftInput(this);
+        if (!popupAttrs.autoFocusEditText)
+            showSoftInput(this);
 
         //let all EditText can process back pressed.
         ArrayList<EditText> list = new ArrayList<>();
