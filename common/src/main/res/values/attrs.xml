@@ -20,6 +20,196 @@
         </attr>
         <attr name="bnbAutoHideEnabled" format="boolean" />
     </declare-styleable>
+    <declare-styleable name="ShapeView">
+        <attr name="shapeSelectorNormalColor" format="color" />
+        <attr name="shapeSelectorPressedColor" format="color" />
+        <attr name="shapeSelectorDisableColor" format="color" />
+        <attr name="shapeSelectorSelectedColor" format="color" />
+        <attr name="shapeSelectorFocusedColor" format="color" />
+        <attr name="shapeSelectorCheckedColor" format="color" />
+        <attr name="shapeGradientStartColor" format="color" />
+        <attr name="shapeGradientCenterColor" format="color" />
+        <attr name="shapeGradientEndColor" format="color" />
+        <attr name="shapeGradientAngle" format="enum">
+            <enum name="angle45_0" value="0" />
+            <enum name="angle45_1" value="1" />
+            <enum name="angle45_2" value="2" />
+            <enum name="angle45_3" value="3" />
+            <enum name="angle45_4" value="4" />
+            <enum name="angle45_5" value="5" />
+            <enum name="angle45_6" value="6" />
+            <enum name="angle45_7" value="7" />
+        </attr>
+        <attr name="shapeGradientUseLevel" format="boolean" />
+        <attr name="shapeCornersRadius" format="dimension" />
+        <attr name="shapeCornersTopLeftRadius" format="dimension" />
+        <attr name="shapeCornersTopRightRadius" format="dimension" />
+        <attr name="shapeCornersBotLeftRadius" format="dimension" />
+        <attr name="shapeCornersBotRightRadius" format="dimension" />
+        <attr name="shapeStrokeWidth" format="dimension" />
+        <attr name="shapeStrokeNormalColor" format="color" />
+        <attr name="shapeStrokePressedColor" format="color" />
+        <attr name="shapeStrokeDisableColor" format="color" />
+        <attr name="shapeStrokeSelectedColor" format="color" />
+        <attr name="shapeStrokeFocusedColor" format="color" />
+        <attr name="shapeStrokeCheckedColor" format="color" />
+        <attr name="shapeStrokeDashWidth" format="dimension" />
+        <attr name="shapeStrokeDashGap" format="dimension" />
+        <attr name="shapeElevation" format="dimension" />
+        <attr name="shapeClickable" format="boolean" />
+        <attr name="shapeRipple" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ShapeConstraintLayout">
+        <attr name="shapeSelectorNormalColor" />
+        <attr name="shapeSelectorPressedColor" />
+        <attr name="shapeSelectorDisableColor" />
+        <attr name="shapeSelectorSelectedColor" />
+        <attr name="shapeSelectorFocusedColor" />
+        <attr name="shapeSelectorCheckedColor" />
+        <attr name="shapeGradientStartColor" />
+        <attr name="shapeGradientCenterColor" />
+        <attr name="shapeGradientEndColor" />
+        <attr name="shapeGradientAngle" />
+        <attr name="shapeGradientUseLevel" />
+        <attr name="shapeCornersRadius" />
+        <attr name="shapeCornersTopLeftRadius" />
+        <attr name="shapeCornersTopRightRadius" />
+        <attr name="shapeCornersBotLeftRadius" />
+        <attr name="shapeCornersBotRightRadius" />
+        <attr name="shapeStrokeWidth" />
+        <attr name="shapeStrokeNormalColor" />
+        <attr name="shapeStrokePressedColor" />
+        <attr name="shapeStrokeDisableColor" />
+        <attr name="shapeStrokeSelectedColor" />
+        <attr name="shapeStrokeFocusedColor" />
+        <attr name="shapeStrokeCheckedColor" />
+        <attr name="shapeStrokeDashWidth" />
+        <attr name="shapeStrokeDashGap" />
+        <attr name="shapeElevation" />
+        <attr name="shapeClickable" />
+        <attr name="shapeRipple" />
+    </declare-styleable>
+    <declare-styleable name="ShapeFrameLayout">
+        <attr name="shapeSelectorNormalColor" />
+        <attr name="shapeSelectorPressedColor" />
+        <attr name="shapeSelectorDisableColor" />
+        <attr name="shapeSelectorSelectedColor" />
+        <attr name="shapeSelectorFocusedColor" />
+        <attr name="shapeSelectorCheckedColor" />
+        <attr name="shapeGradientStartColor" />
+        <attr name="shapeGradientCenterColor" />
+        <attr name="shapeGradientEndColor" />
+        <attr name="shapeGradientAngle" />
+        <attr name="shapeGradientUseLevel" />
+        <attr name="shapeCornersRadius" />
+        <attr name="shapeCornersTopLeftRadius" />
+        <attr name="shapeCornersTopRightRadius" />
+        <attr name="shapeCornersBotLeftRadius" />
+        <attr name="shapeCornersBotRightRadius" />
+        <attr name="shapeStrokeWidth" />
+        <attr name="shapeStrokeNormalColor" />
+        <attr name="shapeStrokePressedColor" />
+        <attr name="shapeStrokeDisableColor" />
+        <attr name="shapeStrokeSelectedColor" />
+        <attr name="shapeStrokeFocusedColor" />
+        <attr name="shapeStrokeCheckedColor" />
+        <attr name="shapeStrokeDashWidth" />
+        <attr name="shapeStrokeDashGap" />
+        <attr name="shapeElevation" />
+        <attr name="shapeClickable" />
+        <attr name="shapeRipple" />
+    </declare-styleable>
+    <declare-styleable name="ShapeLinearLayout">
+        <attr name="shapeSelectorNormalColor" />
+        <attr name="shapeSelectorPressedColor" />
+        <attr name="shapeSelectorDisableColor" />
+        <attr name="shapeSelectorSelectedColor" />
+        <attr name="shapeSelectorFocusedColor" />
+        <attr name="shapeSelectorCheckedColor" />
+        <attr name="shapeGradientStartColor" />
+        <attr name="shapeGradientCenterColor" />
+        <attr name="shapeGradientEndColor" />
+        <attr name="shapeGradientAngle" />
+        <attr name="shapeGradientUseLevel" />
+        <attr name="shapeCornersRadius" />
+        <attr name="shapeCornersTopLeftRadius" />
+        <attr name="shapeCornersTopRightRadius" />
+        <attr name="shapeCornersBotLeftRadius" />
+        <attr name="shapeCornersBotRightRadius" />
+        <attr name="shapeStrokeWidth" />
+        <attr name="shapeStrokeNormalColor" />
+        <attr name="shapeStrokePressedColor" />
+        <attr name="shapeStrokeDisableColor" />
+        <attr name="shapeStrokeSelectedColor" />
+        <attr name="shapeStrokeFocusedColor" />
+        <attr name="shapeStrokeCheckedColor" />
+        <attr name="shapeStrokeDashWidth" />
+        <attr name="shapeStrokeDashGap" />
+        <attr name="shapeElevation" />
+        <attr name="shapeClickable" />
+        <attr name="shapeRipple" />
+    </declare-styleable>
+    <declare-styleable name="ShapeRelativeLayout">
+        <attr name="shapeSelectorNormalColor" />
+        <attr name="shapeSelectorPressedColor" />
+        <attr name="shapeSelectorDisableColor" />
+        <attr name="shapeSelectorSelectedColor" />
+        <attr name="shapeSelectorFocusedColor" />
+        <attr name="shapeSelectorCheckedColor" />
+        <attr name="shapeGradientStartColor" />
+        <attr name="shapeGradientCenterColor" />
+        <attr name="shapeGradientEndColor" />
+        <attr name="shapeGradientAngle" />
+        <attr name="shapeGradientUseLevel" />
+        <attr name="shapeCornersRadius" />
+        <attr name="shapeCornersTopLeftRadius" />
+        <attr name="shapeCornersTopRightRadius" />
+        <attr name="shapeCornersBotLeftRadius" />
+        <attr name="shapeCornersBotRightRadius" />
+        <attr name="shapeStrokeWidth" />
+        <attr name="shapeStrokeNormalColor" />
+        <attr name="shapeStrokePressedColor" />
+        <attr name="shapeStrokeDisableColor" />
+        <attr name="shapeStrokeSelectedColor" />
+        <attr name="shapeStrokeFocusedColor" />
+        <attr name="shapeStrokeCheckedColor" />
+        <attr name="shapeStrokeDashWidth" />
+        <attr name="shapeStrokeDashGap" />
+        <attr name="shapeElevation" />
+        <attr name="shapeClickable" />
+        <attr name="shapeRipple" />
+    </declare-styleable>
+    <declare-styleable name="ShapeTextView">
+        <attr name="shapeSelectorNormalColor" />
+        <attr name="shapeSelectorPressedColor" />
+        <attr name="shapeSelectorDisableColor" />
+        <attr name="shapeSelectorSelectedColor" />
+        <attr name="shapeSelectorFocusedColor" />
+        <attr name="shapeSelectorCheckedColor" />
+        <attr name="shapeGradientStartColor" />
+        <attr name="shapeGradientCenterColor" />
+        <attr name="shapeGradientEndColor" />
+        <attr name="shapeGradientAngle" />
+        <attr name="shapeGradientUseLevel" />
+        <attr name="shapeCornersRadius" />
+        <attr name="shapeCornersTopLeftRadius" />
+        <attr name="shapeCornersTopRightRadius" />
+        <attr name="shapeCornersBotLeftRadius" />
+        <attr name="shapeCornersBotRightRadius" />
+        <attr name="shapeStrokeWidth" />
+        <attr name="shapeStrokeNormalColor" />
+        <attr name="shapeStrokePressedColor" />
+        <attr name="shapeStrokeDisableColor" />
+        <attr name="shapeStrokeSelectedColor" />
+        <attr name="shapeStrokeFocusedColor" />
+        <attr name="shapeStrokeCheckedColor" />
+        <attr name="shapeStrokeDashWidth" />
+        <attr name="shapeStrokeDashGap" />
+        <attr name="shapeElevation" />
+        <attr name="shapeClickable" />
+        <attr name="shapeRipple" />
+    </declare-styleable>
+
     <declare-styleable name="ComplexView">
         <attr name="cvGravity" format="enum">
             <enum name="center" value="0" />

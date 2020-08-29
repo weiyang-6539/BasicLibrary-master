@@ -32,7 +32,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        initToolBar(mToolbar, "Demo列表", false);
+        initToolBar(mToolbar, "控件Demo列表", false);
 
         //init RecyclerView
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
@@ -54,7 +54,7 @@ public class MainActivity extends BaseActivity {
         mData.add(new Item("ComplexView", "结合google md材质设计，自定义Button", ComplexViewActivity.class));
         mData.add(new Item("底部导航", "结合google md材质设计，自定义Button", BottomNavigationActivity.class));
         mData.add(new Item("Ripple波纹动画", "xml及代码写法", RippleActivity.class));
-        mData.add(new Item("自定义View", "", TestActivity.class));
+        mData.add(new Item("自定义Shape", "", ShapeActivity.class));
         mData.add(new Item("测试用例4", "", null));
         mData.add(new Item("测试用例4", "", null));
         mData.add(new Item("测试用例4", "", null));

@@ -1,4 +1,4 @@
-package com.github.android.common.widget.simple;
+package com.github.android.common.widget.shape_extend;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -17,7 +17,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.TextViewCompat;
-import android.support.v7.widget.AppCompatTextView;
+import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.view.Gravity;
 
@@ -30,7 +30,7 @@ import java.lang.annotation.RetentionPolicy;
  * Created by weiyang on 2019-10-11.
  * 综合型View，支持文本 图标 或者 文本 + 图标的模式
  */
-public class ComplexView extends AppCompatTextView {
+public class ComplexView extends AppCompatButton {
 
     @IntDef({Selector.NONE, Selector.STANDARD, Selector.RIPPLE})
     @Retention(RetentionPolicy.SOURCE)

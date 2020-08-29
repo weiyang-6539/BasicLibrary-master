@@ -30,7 +30,7 @@
         android:showDividers="middle"
         android:weightSum="4">
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:id="@+id/sb_01"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
             app:cvIconTopSize="30dp"
             app:cvSelector="ripple" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:id="@+id/sb_02"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
             app:cvIconTopSize="30dp"
             app:cvSelector="ripple" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:id="@+id/sb_03"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
             app:cvIconTopSize="30dp"
             app:cvSelector="ripple" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:id="@+id/sb_04"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -96,7 +96,7 @@
         android:showDividers="middle"
         android:weightSum="4">
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:id="@+id/sb_05"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -110,7 +110,7 @@
             app:cvIconTopSize="30dp"
             app:cvSelector="standard" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:id="@+id/sb_06"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
             app:cvIconTopSize="30dp"
             app:cvSelector="standard" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:id="@+id/sb_07"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -138,7 +138,7 @@
             app:cvIconTopSize="30dp"
             app:cvSelector="standard" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:id="@+id/sb_08"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -161,7 +161,7 @@
         android:showDividers="middle"
         android:weightSum="4">
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:id="@+id/sb_09"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -175,7 +175,7 @@
             app:cvIconTopSize="30dp"
             app:cvSelector="standard" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:id="@+id/sb_10"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -189,7 +189,7 @@
             app:cvIconTopSize="30dp"
             app:cvSelector="standard" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:id="@+id/sb_11"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -203,7 +203,7 @@
             app:cvIconTopSize="30dp"
             app:cvSelector="standard" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:id="@+id/sb_12"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -229,7 +229,7 @@
         android:paddingRight="12dp"
         android:paddingBottom="8dp">
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="50dp"
@@ -240,7 +240,7 @@
             app:cvIconPadding="0dp"
             app:cvIconTop="@drawable/ic_shop" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="50dp"
@@ -250,7 +250,7 @@
             app:cvIconPadding="0dp"
             app:cvIconTop="@drawable/ic_service" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="50dp"
@@ -260,7 +260,7 @@
             app:cvIconPadding="0dp"
             app:cvIconTop="@drawable/ic_favorites" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -273,7 +273,7 @@
             app:cvPressedBgColor="#88F19D39"
             app:cvSelector="standard" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -295,7 +295,7 @@
         android:orientation="vertical"
         android:showDividers="middle|beginning|end">
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:paddingLeft="12dp"
@@ -306,7 +306,7 @@
             app:cvIconStart="@drawable/ic_01"
             app:cvSelector="ripple" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:paddingLeft="12dp"
@@ -317,7 +317,7 @@
             app:cvIconStart="@drawable/ic_02"
             app:cvSelector="ripple" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:paddingLeft="12dp"
@@ -328,7 +328,7 @@
             app:cvIconStart="@drawable/ic_03"
             app:cvSelector="ripple" />
 
-        <com.github.android.common.widget.simple.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexView
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:paddingLeft="12dp"

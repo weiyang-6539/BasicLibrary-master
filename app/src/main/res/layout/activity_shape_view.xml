@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1f1f1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <com.github.android.common.widget.shape.ShapeConstraintLayout
+            android:id="@+id/cl_shape"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="@dimen/dp_20"
+            app:shapeCornersRadius="5dp"
+            app:shapeElevation="@dimen/dp_5"
+            app:shapeSelectorNormalColor="@color/white"
+            app:shapeSelectorPressedColor="#d5d5f5"
+            app:shapeSelectorSelectedColor="@color/black"
+            app:shapeStrokeNormalColor="@color/gray_a"
+            app:shapeStrokePressedColor="@color/colorBtnDefault"
+            app:shapeStrokeWidth="@dimen/dp_0_5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="约束布局"
+                android:textColor="@color/gray_a"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.github.android.common.widget.shape.ShapeConstraintLayout>
+
+        <com.github.android.common.widget.shape.ShapeFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            app:shapeCornersRadius="25dp"
+            app:shapeElevation="@dimen/dp_5"
+            app:shapeSelectorFocusedColor="#fff"
+            app:shapeSelectorNormalColor="@color/colorBtnDefault"
+            app:shapeSelectorPressedColor="#d5d5f5">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/img"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="帧布局"
+                android:textColor="#fff" />
+        </com.github.android.common.widget.shape.ShapeFrameLayout>
+
+        <com.github.android.common.widget.shape.ShapeLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:enabled="false"
+            android:minHeight="@dimen/dp_35"
+            app:shapeCornersRadius="5dp"
+            app:shapeElevation="@dimen/dp_5"
+            app:shapeSelectorDisableColor="@color/colorBtnDisable"
+            app:shapeSelectorFocusedColor="#fff"
+            app:shapeSelectorNormalColor="@color/colorBtnDefault"
+            app:shapeSelectorPressedColor="#d5d5f5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:text="线性布局"
+                android:textColor="#fff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:text="线性布局"
+                android:textColor="#fff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:text="线性布局"
+                android:textColor="#fff" />
+        </com.github.android.common.widget.shape.ShapeLinearLayout>
+
+        <com.github.android.common.widget.shape.ShapeRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="@dimen/dp_20"
+            app:shapeCornersRadius="5dp"
+            app:shapeElevation="@dimen/dp_5"
+            app:shapeSelectorFocusedColor="#fff"
+            app:shapeSelectorNormalColor="@color/colorBtnDefault"
+            app:shapeSelectorPressedColor="#d5d5f5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:text="相对布局"
+                android:textColor="#fff" />
+        </com.github.android.common.widget.shape.ShapeRelativeLayout>
+
+        <com.github.android.common.widget.shape.ShapeTextView
+            android:id="@+id/tv_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:gravity="center"
+            android:minHeight="@dimen/dp_40"
+            android:text="测试按钮"
+            android:textColor="#fff"
+            android:textSize="@dimen/sp_17"
+            app:shapeCornersRadius="@dimen/dp_20"
+            app:shapeRipple="true"
+            app:shapeSelectorDisableColor="@color/colorBtnDisable"
+            app:shapeSelectorNormalColor="@color/colorBtnDefault"
+            app:shapeSelectorPressedColor="@color/colorBtnPressed"
+            app:shapeSelectorSelectedColor="@color/white" />
+
+        <com.github.android.common.widget.shape.ShapeTextView
+            android:id="@+id/tv_test2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:gravity="center"
+            android:minHeight="@dimen/dp_40"
+            android:text="关联测试按钮"
+            android:textColor="#fff"
+            android:textSize="@dimen/sp_17"
+            app:shapeCornersRadius="@dimen/dp_20"
+            app:shapeRipple="true"
+            app:shapeSelectorNormalColor="@color/colorBtnDefault"
+            app:shapeSelectorPressedColor="@color/colorBtnPressed" />
+
+
+        <com.github.android.common.widget.shape.ShapeTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:gravity="center"
+            android:minHeight="@dimen/dp_40"
+            android:text="关联测试按钮"
+            android:textColor="#fff"
+            android:textSize="@dimen/sp_17"
+            app:shapeCornersRadius="@dimen/dp_20"
+            app:shapeGradientEndColor="@color/colorBtnPressed"
+            app:shapeGradientStartColor="@color/colorBtnDefault"
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="@color/colorBtnPressed" />
+
+
+        <android.support.v4.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
+

@@ -6,7 +6,7 @@
     android:background="@drawable/shape_corner_radius5"
     android:orientation="horizontal">
 
-    <com.github.android.common.widget.simple.ComplexView
+    <com.github.android.common.widget.shape_extend.ComplexView
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dp_35"
         android:minWidth="60dp"
@@ -16,7 +16,7 @@
         app:cvIconStartSize="15dp"
         app:cvIconStart="@drawable/ic_favorites" />
 
-    <com.github.android.common.widget.simple.ComplexView
+    <com.github.android.common.widget.shape_extend.ComplexView
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dp_35"
         android:minWidth="60dp"

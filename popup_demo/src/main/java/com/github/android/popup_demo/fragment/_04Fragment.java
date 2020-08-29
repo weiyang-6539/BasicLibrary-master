@@ -1,7 +1,7 @@
 package com.github.android.popup_demo.fragment;
 
 import com.github.android.common.base.BaseFragment;
-import com.github.android.common.widget.simple.ComplexView;
+import com.github.android.common.widget.shape_extend.ComplexView;
 import com.github.android.popup_demo.R;
 
 import butterknife.BindView;
