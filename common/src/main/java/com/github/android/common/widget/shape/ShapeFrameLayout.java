@@ -6,17 +6,13 @@ import android.graphics.RectF;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.widget.FrameLayout;
-
-import com.github.android.common.widget.shape.helper.ShapeAttrsHelper;
-import com.github.android.common.widget.shape.helper.ShapeBuilder;
 
 /**
  * Created by fxb on 2020/8/28.
  */
 public class ShapeFrameLayout extends FrameLayout {
-    private ShapeBuilder builder;
+    private ShapeBuilder shapeBuilder = new ShapeBuilder();
 
     public ShapeFrameLayout(@NonNull Context context) {
         this(context, null);
@@ -29,16 +25,14 @@ public class ShapeFrameLayout extends FrameLayout {
     public ShapeFrameLayout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        builder = ShapeAttrsHelper.initShapeBuilderByAttrs(context, attrs);
-        builder.apply(this);
+        shapeBuilder.initAttrs(context, attrs).apply(this);
     }
-
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
-        builder.onSizeChanged(this, w, h);
+        shapeBuilder.onSizeChanged(this, w, h);
     }
 
     @Override
@@ -46,14 +40,14 @@ public class ShapeFrameLayout extends FrameLayout {
         canvas.saveLayer(new RectF(0, 0, canvas.getWidth(), canvas.getHeight()),
                 null, Canvas.ALL_SAVE_FLAG);
         super.dispatchDraw(canvas);
-        builder.dispatchDraw(canvas);
+        shapeBuilder.dispatchDraw(canvas);
     }
 
-    @Override
+    /*@Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         if (!builder.isEffective(ev)) {
             return false;
         }
         return super.dispatchTouchEvent(ev);
-    }
+    }*/
 }

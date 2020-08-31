@@ -1,84 +1,39 @@
 package com.github.android.common.widget.shape_extend;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.RippleDrawable;
-import android.graphics.drawable.StateListDrawable;
-import android.os.Build;
-import android.support.annotation.ColorInt;
-import android.support.annotation.IntDef;
-import android.support.annotation.RequiresApi;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.TextViewCompat;
-import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.view.Gravity;
 
 import com.github.android.common.R;
-
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import com.github.android.common.utils.ViewUtil;
+import com.github.android.common.widget.shape.ShapeBuilder;
 
 /**
- * Created by weiyang on 2019-10-11.
- * 综合型View，支持文本 图标 或者 文本 + 图标的模式
+ * Created by fxb on 2020/8/31.
  */
-public class ComplexView extends AppCompatButton {
+public class ComplexView extends AppCompatTextView {
+    private ShapeBuilder shapeBuilder = new ShapeBuilder();
 
-    @IntDef({Selector.NONE, Selector.STANDARD, Selector.RIPPLE})
-    @Retention(RetentionPolicy.SOURCE)
-    @interface Selector {
-        int NONE = 0;
-        int STANDARD = 1;
-        int RIPPLE = 2;
-    }
+    private int gravity;
 
-    @Selector
-    private int cvSelector = Selector.NONE;
+    private Drawable startIcon;
+    private Drawable topIcon;
+    private Drawable endIcon;
+    private Drawable bottomIcon;
 
-    private int cvNormalBgColor = Color.TRANSPARENT;//默认背景色
-    private int cvPressedBgColor = Color.parseColor("#e5e5e5");//按下背景色
-    private int cvDisableBgColor = Color.parseColor("#d5d5d5");//禁用背景色
+    private int startIconSize = 18;
+    private int topIconSize = 18;
+    private int endIconSize = 18;
+    private int bottomIconSize = 18;
 
-    private float cvCornersRadius;//圆角半径
-    private float cvCornersTopLeftRadius;
-    private float cvCornersTopRightRadius;
-    private float cvCornersBottomLeftRadius;
-    private float cvCornersBottomRightRadius;
-
-    private int cvStrokeWidth;
-    private int cvStrokeNormalColor = cvNormalBgColor;
-    private int cvStrokePressedColor = cvPressedBgColor;
-    private int cvStrokeDisableColor = cvDisableBgColor;
-
-    private int cvGravity;
-    private float cvElevation;//使用阴影效果时，需要结合margin使用
-    private boolean cvClickable;//点击是否穿透
-
-    private Drawable cvIconStart;
-    private int cvIconStartSize = 18;
-    private ColorStateList cvIconStartTint;
-
-    private Drawable cvIconTop;
-    private int cvIconTopSize = 18;
-    private ColorStateList cvIconTopTint;
-
-    private Drawable cvIconEnd;
-    private int cvIconEndSize = 18;
-    private ColorStateList cvIconEndTint;
-
-    private Drawable cvIconBottom;
-    private int cvIconBottomSize = 18;
-    private ColorStateList cvIconBottomTint;
-
-    private int cvIconPadding = 8;//单位dp
+    private int iconPadding = 5;
 
     public ComplexView(Context context) {
         this(context, null);
@@ -90,82 +45,21 @@ public class ComplexView extends AppCompatButton {
 
     public ComplexView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        parseAttrs(context, attrs);
-        apply();
-    }
 
-    /**
-     * 初始化xml中设置属性
-     */
-    private void parseAttrs(Context context, AttributeSet attrs) {
-        if (attrs != null) {
-            TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ComplexView);
-
-            cvSelector = typedArray.getInt(R.styleable.ComplexView_cvSelector, cvSelector);
-
-            cvNormalBgColor = typedArray.getColor(R.styleable.ComplexView_cvNormalBgColor, cvNormalBgColor);
-            cvPressedBgColor = typedArray.getColor(R.styleable.ComplexView_cvPressedBgColor, cvPressedBgColor);
-            cvDisableBgColor = typedArray.getColor(R.styleable.ComplexView_cvDisableBgColor, cvDisableBgColor);
-
-            cvCornersRadius = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvCornersRadius, 0);
-            cvCornersTopLeftRadius = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvCornersTopLeftRadius, 0);
-            cvCornersTopRightRadius = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvCornersTopRightRadius, 0);
-            cvCornersBottomLeftRadius = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvCornersBottomLeftRadius, 0);
-            cvCornersBottomRightRadius = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvCornersBottomRightRadius, 0);
-
-            cvStrokeWidth = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvStrokeWidth, 0);
-
-            cvStrokeNormalColor = typedArray.getColor(R.styleable.ComplexView_cvStrokeNormalColor, cvStrokeNormalColor);
-            cvStrokePressedColor = typedArray.getColor(R.styleable.ComplexView_cvStrokePressedColor, cvStrokePressedColor);
-            cvStrokeDisableColor = typedArray.getColor(R.styleable.ComplexView_cvStrokeDisableColor, cvStrokeDisableColor);
-
-            cvGravity = typedArray.getInt(R.styleable.ComplexView_cvGravity, cvGravity);
-            cvElevation = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvElevation, 0);
-            cvClickable = typedArray.getBoolean(R.styleable.ComplexView_cvClickable, true);
-
-            cvIconStart = typedArray.getDrawable(R.styleable.ComplexView_cvIconStart);
-            cvIconTop = typedArray.getDrawable(R.styleable.ComplexView_cvIconTop);
-            cvIconEnd = typedArray.getDrawable(R.styleable.ComplexView_cvIconEnd);
-            cvIconBottom = typedArray.getDrawable(R.styleable.ComplexView_cvIconBottom);
-
-            cvIconStartSize = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvIconStartSize, dp2px(cvIconStartSize));
-            cvIconTopSize = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvIconTopSize, dp2px(cvIconTopSize));
-            cvIconEndSize = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvIconEndSize, dp2px(cvIconEndSize));
-            cvIconBottomSize = typedArray.getDimensionPixelSize(R.styleable.ComplexView_cvIconBottomSize, dp2px(cvIconBottomSize));
-
-            cvIconStartTint = typedArray.getColorStateList(R.styleable.ComplexView_cvIconStartTint);
-            cvIconTopTint = typedArray.getColorStateList(R.styleable.ComplexView_cvIconTopTint);
-            cvIconEndTint = typedArray.getColorStateList(R.styleable.ComplexView_cvIconEndTint);
-            cvIconBottomTint = typedArray.getColorStateList(R.styleable.ComplexView_cvIconBottomTint);
-
-            cvIconPadding = typedArray.getDimensionPixelOffset(R.styleable.ComplexView_cvIconPadding, dp2px(cvIconPadding));
-
-            typedArray.recycle();
-        }
-    }
-
-    private void apply() {
-        setClickable(cvClickable);
-        setIncludeFontPadding(true);
-
-        switch (cvSelector) {
-            case Selector.NONE:
-                ViewCompat.setBackground(this, getDrawable(cvNormalBgColor, cvStrokeNormalColor));
-                break;
-            case Selector.STANDARD:
-                ViewCompat.setBackground(this, getStandard());
-                break;
-            case Selector.RIPPLE:
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    ViewCompat.setBackground(this, getRipple());
-                } else {
-                    ViewCompat.setBackground(this, getStandard());
-                }
-                break;
-        }
+        shapeBuilder.initAttrs(context, attrs, a -> {
+            startIcon = a.getDrawable(R.styleable.ShapeView_shapeStartIcon);
+            topIcon = a.getDrawable(R.styleable.ShapeView_shapeTopIcon);
+            endIcon = a.getDrawable(R.styleable.ShapeView_shapeEndIcon);
+            bottomIcon = a.getDrawable(R.styleable.ShapeView_shapeBottomIcon);
+            startIconSize = a.getDimensionPixelSize(R.styleable.ShapeView_shapeStartIconSize, dp2px(startIconSize));
+            topIconSize = a.getDimensionPixelSize(R.styleable.ShapeView_shapeTopIconSize, dp2px(topIconSize));
+            endIconSize = a.getDimensionPixelSize(R.styleable.ShapeView_shapeEndIconSize, dp2px(endIconSize));
+            bottomIconSize = a.getDimensionPixelSize(R.styleable.ShapeView_shapeBottomIconSize, dp2px(bottomIconSize));
+            iconPadding = a.getDimensionPixelSize(R.styleable.ShapeView_shapeIconPadding, dp2px(iconPadding));
+        }).apply(this);
 
         //设置文本位置
-        switch (cvGravity) {
+        switch (gravity) {
             case 0:
                 setGravity(Gravity.CENTER);
                 break;
@@ -183,20 +77,9 @@ public class ComplexView extends AppCompatButton {
                 break;
         }
 
-        setCompoundDrawablePadding(cvIconPadding);
-        updateIcon(!isIconNull());
 
-        //设置阴影
-        if (cvElevation > 0)
-            ViewCompat.setElevation(this, cvElevation);
-
-        /*setTextColor(new ColorStateList(new int[][]{
-                new int[]{},
-                new int[]{-android.R.attr.state_enabled}
-        }, new int[]{
-                0xffffffff,
-                0x88888888
-        }));*/
+        //setCompoundDrawablePadding(cvIconPadding);
+        updateIcon();
     }
 
     @Override
@@ -217,15 +100,13 @@ public class ComplexView extends AppCompatButton {
         }
 
         if (getGravity() != Gravity.CENTER) {
-            updateIcon(false);
+            updateIcon();
             return;
         }
 
         Paint textPaint = getPaint();
         String text = getText().toString();
         if (getTransformationMethod() != null) {
-            // if text is transformed, add that transformation to to ensure correct calculation
-            // of icon padding.
             text = getTransformationMethod().getTransformation(text, this).toString();
         }
         int textWidth = Math.min((int) textPaint.measureText(text), getLayout().getEllipsizedWidth());
@@ -237,139 +118,67 @@ public class ComplexView extends AppCompatButton {
                 - textWidth
                 - ViewCompat.getPaddingStart(this)
                 - ViewCompat.getPaddingEnd(this)
-                - (cvIconStart == null ? 0 : cvIconStartSize + cvIconPadding)
-                - (cvIconEnd == null ? 0 : cvIconEndSize + cvIconPadding)
+                - (startIcon == null ? 0 : startIconSize + iconPadding)
+                - (endIcon == null ? 0 : endIconSize + iconPadding)
                 >> 1;
 
         offsetY = getMeasuredHeight()
                 - getLayout().getHeight()
                 - getPaddingTop()
                 - getPaddingBottom()
-                - (cvIconTop == null ? 0 : cvIconTopSize + cvIconPadding)
-                - (cvIconBottom == null ? 0 : cvIconBottomSize + cvIconPadding)
+                - (topIcon == null ? 0 : topIconSize + iconPadding)
+                - (bottomIcon == null ? 0 : bottomIconSize + iconPadding)
                 >> 1;
 
-        updateIcon(false);
+        updateIcon();
     }
 
     private int offsetX, offsetY;
 
-    private void updateIcon(boolean needsIconUpdate) {
-        if (cvIconStart != null) {
-            cvIconStart = DrawableCompat.wrap(cvIconStart).mutate();
-            DrawableCompat.setTintList(cvIconStart, cvIconStartTint);
+    private void updateIcon() {
+        if (startIcon != null) {
+            startIcon = DrawableCompat.wrap(startIcon).mutate();
+            //DrawableCompat.setTintList(startIcon, cvIconStartTint);
 
-            cvIconStart.setBounds(offsetX, 0, offsetX + cvIconStartSize, cvIconStartSize);
+            startIcon.setBounds(offsetX, 0, offsetX + startIconSize, startIconSize);
         }
-        if (cvIconTop != null) {
-            cvIconTop = DrawableCompat.wrap(cvIconTop).mutate();
-            DrawableCompat.setTintList(cvIconTop, cvIconTopTint);
+        if (topIcon != null) {
+            topIcon = DrawableCompat.wrap(topIcon).mutate();
+            //DrawableCompat.setTintList(cvIconTop, cvIconTopTint);
 
-            cvIconTop.setBounds(0, offsetY, cvIconTopSize, offsetY + cvIconTopSize);
+            topIcon.setBounds(0, offsetY, topIconSize, offsetY + topIconSize);
         }
-        if (cvIconEnd != null) {
-            cvIconEnd = DrawableCompat.wrap(cvIconEnd).mutate();
-            DrawableCompat.setTintList(cvIconEnd, cvIconEndTint);
+        if (endIcon != null) {
+            endIcon = DrawableCompat.wrap(endIcon).mutate();
+            //DrawableCompat.setTintList(cvIconEnd, cvIconEndTint);
 
-            cvIconEnd.setBounds(-offsetX, 0, -offsetX + cvIconEndSize, cvIconEndSize);
-        }
-
-        if (cvIconBottom != null) {
-            cvIconBottom = DrawableCompat.wrap(cvIconBottom).mutate();
-            DrawableCompat.setTintList(cvIconBottom, cvIconBottomTint);
-
-            cvIconBottom.setBounds(0, -offsetY, cvIconBottomSize, -offsetY + cvIconBottomSize);
+            endIcon.setBounds(-offsetX, 0, -offsetX + endIconSize, endIconSize);
         }
 
-        // Reset icon drawable if needed
-        // Forced icon update
-        if (needsIconUpdate) {
-            resetIconDrawable();
-            return;
+        if (bottomIcon != null) {
+            bottomIcon = DrawableCompat.wrap(bottomIcon).mutate();
+            //DrawableCompat.setTintList(cvIconBottom, cvIconBottomTint);
+
+            bottomIcon.setBounds(0, -offsetY, bottomIconSize, -offsetY + bottomIconSize);
         }
 
-        // Otherwise only update if the icon or the position has changed
         Drawable[] existingDrawables = TextViewCompat.getCompoundDrawablesRelative(this);
         Drawable drawableStart = existingDrawables[0];
         Drawable drawableTop = existingDrawables[1];
         Drawable drawableEnd = existingDrawables[2];
         Drawable drawableBottom = existingDrawables[3];
 
-        if (cvIconStart != drawableStart || cvIconTop != drawableTop ||
-                cvIconEnd != drawableEnd || cvIconBottom != drawableBottom) {
-            resetIconDrawable();
+        if (startIcon != drawableStart || topIcon != drawableTop ||
+                endIcon != drawableEnd || bottomIcon != drawableBottom) {
+            TextViewCompat.setCompoundDrawablesRelative(this, startIcon, topIcon, endIcon, bottomIcon);
         }
     }
 
-    private void resetIconDrawable() {
-        TextViewCompat.setCompoundDrawablesRelative(this, cvIconStart, cvIconTop, cvIconEnd, cvIconBottom);
-    }
-
-    private GradientDrawable getDrawable(@ColorInt int color, @ColorInt int strokeColor) {
-        GradientDrawable drawable = new GradientDrawable();
-        drawable.setShape(GradientDrawable.RECTANGLE);
-        drawable.setColor(color);
-        drawable.setStroke(cvStrokeWidth, strokeColor);
-
-        if (cvCornersRadius != 0)
-            drawable.setCornerRadius(cvCornersRadius);
-        else
-            drawable.setCornerRadii(new float[]{
-                    cvCornersTopLeftRadius, cvCornersTopLeftRadius,
-                    cvCornersTopRightRadius, cvCornersTopRightRadius,
-                    cvCornersBottomRightRadius, cvCornersBottomRightRadius,
-                    cvCornersBottomLeftRadius, cvCornersBottomLeftRadius
-            });
-        return drawable;
-    }
-
-    private Drawable getStandard() {
-        StateListDrawable drawable = new StateListDrawable();
-        drawable.addState(new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled}, getDrawable(cvPressedBgColor, cvStrokePressedColor));
-        drawable.addState(new int[]{-android.R.attr.state_enabled}, getDrawable(cvDisableBgColor, cvStrokeDisableColor));
-        drawable.addState(new int[]{}, getDrawable(cvNormalBgColor, cvStrokeNormalColor));
-        return drawable;
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    private Drawable getRipple() {
-        /*int[][] stateList = new int[][]{
-                new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled},
-                new int[]{android.R.attr.state_focused, android.R.attr.state_enabled},
-                new int[]{android.R.attr.state_activated, android.R.attr.state_enabled},
-                new int[]{-android.R.attr.state_enabled},
-                new int[]{}
-        };
-
-        int[] stateColorList = new int[]{
-                cvPressedBgColor,
-                cvPressedBgColor,
-                cvPressedBgColor,
-                cvDisableBgColor,
-                cvPressedBgColor
-        };
-        ColorStateList colorStateList = new ColorStateList(stateList, stateColorList);*/
-
-        GradientDrawable maskDrawable = getDrawable(cvPressedBgColor, cvStrokePressedColor);
-        //GradientDrawable contentDrawable = getDrawable(cvNormalBgColor);
-        StateListDrawable drawable = new StateListDrawable();
-        drawable.addState(new int[]{-android.R.attr.state_enabled}, getDrawable(cvDisableBgColor, cvStrokeDisableColor));
-        drawable.addState(new int[]{}, getDrawable(cvNormalBgColor, cvStrokeNormalColor));
-        //contentDrawable实际是默认初始化时展示的；maskDrawable 控制了rippleDrawable的范围
-        return new RippleDrawable(ColorStateList.valueOf(cvPressedBgColor), drawable, maskDrawable);
-    }
-
-    public int dp2px(float dp) {
-        final float scale = getResources().getDisplayMetrics().density;
-        return (int) (dp * scale + 0.5f);
-    }
-
     private boolean isIconNull() {
-        return cvIconStart == null && cvIconTop == null && cvIconEnd == null && cvIconBottom == null;
+        return startIcon == null && topIcon == null && endIcon == null && bottomIcon == null;
     }
 
-    private boolean isLayoutRTL() {
-        return ViewCompat.getLayoutDirection(this) == ViewCompat.LAYOUT_DIRECTION_RTL;
+    private int dp2px(float dpValue) {
+        return ViewUtil.dp2px(getContext(), dpValue);
     }
-
 }

@@ -1,6 +1,8 @@
-package com.github.android.common.widget.shape.helper;
+package com.github.android.common.widget.shape;
 
+import android.content.Context;
 import android.content.res.ColorStateList;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -16,8 +18,11 @@ import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 import android.support.annotation.IntDef;
 import android.support.v4.view.ViewCompat;
+import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.github.android.common.R;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -46,10 +51,6 @@ public class ShapeBuilder {
     private int gradientAngle;
     private boolean gradientUseLevel;
     /**
-     * shape圆角半径
-     */
-    private float[] radii = new float[8];
-    /**
      * shape边框线，颜色与shape背景色数量一样
      */
     private int strokeWidth;
@@ -61,6 +62,10 @@ public class ShapeBuilder {
     private int strokeCheckedColor;
     private int strokeDashWidth;
     private int strokeDashGap;
+    /**
+     * shape圆角半径
+     */
+    private float[] radii = new float[8];
     /**
      * 阴影
      */
@@ -74,149 +79,83 @@ public class ShapeBuilder {
      */
     private boolean ripple;
 
-    ShapeBuilder setSelectorNormalColor(int selectorNormalColor) {
-        this.selectorNormalColor = selectorNormalColor;
+    public ShapeBuilder initAttrs(Context context, AttributeSet attrs) {
+        initAttrs(context, attrs, null);
         return this;
     }
 
-    ShapeBuilder setSelectorPressedColor(int selectorPressedColor) {
-        this.selectorPressedColor = selectorPressedColor;
+    public ShapeBuilder initAttrs(Context context, AttributeSet attrs, ExposeListener listener) {
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ShapeView);
+        selectorNormalColor = a.getColor(R.styleable.ShapeView_shapeSelectorNormalColor, Color.TRANSPARENT);
+        selectorPressedColor = a.getColor(R.styleable.ShapeView_shapeSelectorPressedColor, Color.TRANSPARENT);
+        selectorDisableColor = a.getColor(R.styleable.ShapeView_shapeSelectorDisableColor, Color.TRANSPARENT);
+        selectorSelectedColor = a.getColor(R.styleable.ShapeView_shapeSelectorSelectedColor, Color.TRANSPARENT);
+        selectorFocusedColor = a.getColor(R.styleable.ShapeView_shapeSelectorFocusedColor, Color.TRANSPARENT);
+        selectorCheckedColor = a.getColor(R.styleable.ShapeView_shapeSelectorCheckedColor, Color.TRANSPARENT);
+        gradientStartColor = a.getColor(R.styleable.ShapeView_shapeGradientStartColor, Color.TRANSPARENT);
+        gradientCenterColor = a.getColor(R.styleable.ShapeView_shapeGradientCenterColor, Color.TRANSPARENT);
+        gradientEndColor = a.getColor(R.styleable.ShapeView_shapeGradientEndColor, Color.TRANSPARENT);
+        gradientAngle = a.getInt(R.styleable.ShapeView_shapeGradientAngle, 0);
+        gradientUseLevel = a.getBoolean(R.styleable.ShapeView_shapeGradientUseLevel, false);
+        strokeWidth = a.getDimensionPixelSize(R.styleable.ShapeView_shapeStrokeWidth, 0);
+        strokeNormalColor = a.getColor(R.styleable.ShapeView_shapeStrokeNormalColor, Color.TRANSPARENT);
+        strokePressedColor = a.getColor(R.styleable.ShapeView_shapeStrokePressedColor, Color.TRANSPARENT);
+        strokeDisableColor = a.getColor(R.styleable.ShapeView_shapeStrokeDisableColor, Color.TRANSPARENT);
+        strokeSelectedColor = a.getColor(R.styleable.ShapeView_shapeStrokeSelectedColor, Color.TRANSPARENT);
+        strokeFocusedColor = a.getColor(R.styleable.ShapeView_shapeStrokeFocusedColor, Color.TRANSPARENT);
+        strokeCheckedColor = a.getColor(R.styleable.ShapeView_shapeStrokeCheckedColor, Color.TRANSPARENT);
+        strokeDashWidth = a.getDimensionPixelSize(R.styleable.ShapeView_shapeStrokeDashWidth, 0);
+        strokeDashGap = a.getDimensionPixelSize(R.styleable.ShapeView_shapeStrokeDashGap, 0);
+        //设置圆角
+        setCornersTopLeftRadius(a.getDimensionPixelSize(R.styleable.ShapeView_shapeCornersTopLeftRadius, 0));
+        setCornersTopRightRadius(a.getDimensionPixelSize(R.styleable.ShapeView_shapeCornersTopRightRadius, 0));
+        setCornersBotLeftRadius(a.getDimensionPixelSize(R.styleable.ShapeView_shapeCornersBotLeftRadius, 0));
+        setCornersBotRightRadius(a.getDimensionPixelSize(R.styleable.ShapeView_shapeCornersBotRightRadius, 0));
+        setCornersRadius(a.getDimensionPixelSize(R.styleable.ShapeView_shapeCornersRadius, 0));
+        elevation = a.getDimensionPixelSize(R.styleable.ShapeView_shapeElevation, 0);
+        clickable = a.getBoolean(R.styleable.ShapeView_shapeClickable, true);
+        ripple = a.getBoolean(R.styleable.ShapeView_shapeRipple, false);
+
+        //拓展非Shape属性
+        if (listener != null)
+            listener.expose(a);
+
+        a.recycle();
         return this;
     }
 
-    ShapeBuilder setSelectorDisableColor(int selectorDisableColor) {
-        this.selectorDisableColor = selectorDisableColor;
-        return this;
+    public interface ExposeListener {
+        void expose(TypedArray a);
     }
 
-    ShapeBuilder setSelectorSelectedColor(int selectorSelectedColor) {
-        this.selectorSelectedColor = selectorSelectedColor;
-        return this;
-    }
-
-    ShapeBuilder setSelectorFocusedColor(int selectorFocusedColor) {
-        this.selectorFocusedColor = selectorFocusedColor;
-        return this;
-    }
-
-    ShapeBuilder setSelectorCheckedColor(int selectorCheckedColor) {
-        this.selectorCheckedColor = selectorCheckedColor;
-        return this;
-    }
-
-    ShapeBuilder setGradientStartColor(int gradientStartColor) {
-        this.gradientStartColor = gradientStartColor;
-        return this;
-    }
-
-    ShapeBuilder setGradientCenterColor(int gradientCenterColor) {
-        this.gradientCenterColor = gradientCenterColor;
-        return this;
-    }
-
-    ShapeBuilder setGradientEndColor(int gradientEndColor) {
-        this.gradientEndColor = gradientEndColor;
-        return this;
-    }
-
-    ShapeBuilder setGradientAngle(int gradientAngle) {
-        this.gradientAngle = gradientAngle;
-        return this;
-    }
-
-    ShapeBuilder setGradientUseLevel(boolean gradientUseLevel) {
-        this.gradientUseLevel = gradientUseLevel;
-        return this;
-    }
-
-    ShapeBuilder setCornersTopLeftRadius(float cornersTopLeftRadius) {
+    private ShapeBuilder setCornersTopLeftRadius(float cornersTopLeftRadius) {
         this.radii[0] = cornersTopLeftRadius;
         this.radii[1] = cornersTopLeftRadius;
         return this;
     }
 
-    ShapeBuilder setCornersTopRightRadius(float cornersTopRightRadius) {
+    private ShapeBuilder setCornersTopRightRadius(float cornersTopRightRadius) {
         this.radii[2] = cornersTopRightRadius;
         this.radii[3] = cornersTopRightRadius;
         return this;
     }
 
-    ShapeBuilder setCornersBotRightRadius(float cornersBotRightRadius) {
+    private ShapeBuilder setCornersBotRightRadius(float cornersBotRightRadius) {
         this.radii[4] = cornersBotRightRadius;
         this.radii[5] = cornersBotRightRadius;
         return this;
     }
 
-    ShapeBuilder setCornersBotLeftRadius(float cornersBotLeftRadius) {
+    private ShapeBuilder setCornersBotLeftRadius(float cornersBotLeftRadius) {
         this.radii[6] = cornersBotLeftRadius;
         this.radii[7] = cornersBotLeftRadius;
         return this;
     }
 
-    ShapeBuilder setCornersRadius(float cornersRadius) {
+    private ShapeBuilder setCornersRadius(float cornersRadius) {
         if (cornersRadius != 0) {
             Arrays.fill(radii, cornersRadius);
         }
-        return this;
-    }
-
-    ShapeBuilder setStrokeWidth(int strokeWidth) {
-        this.strokeWidth = strokeWidth;
-        return this;
-    }
-
-    ShapeBuilder setStrokeNormalColor(int strokeNormalColor) {
-        this.strokeNormalColor = strokeNormalColor;
-        return this;
-    }
-
-    ShapeBuilder setStrokePressedColor(int strokePressedColor) {
-        this.strokePressedColor = strokePressedColor;
-        return this;
-    }
-
-    ShapeBuilder setStrokeDisableColor(int strokeDisableColor) {
-        this.strokeDisableColor = strokeDisableColor;
-        return this;
-    }
-
-    ShapeBuilder setStrokeSelectedColor(int strokeSelectedColor) {
-        this.strokeSelectedColor = strokeSelectedColor;
-        return this;
-    }
-
-    ShapeBuilder setStrokeFocusedColor(int strokeFocusedColor) {
-        this.strokeFocusedColor = strokeFocusedColor;
-        return this;
-    }
-
-    ShapeBuilder setStrokeCheckedColor(int strokeCheckedColor) {
-        this.strokeCheckedColor = strokeCheckedColor;
-        return this;
-    }
-
-    ShapeBuilder setStrokeDashWidth(int strokeDashWidth) {
-        this.strokeDashWidth = strokeDashWidth;
-        return this;
-    }
-
-    ShapeBuilder setStrokeDashGap(int strokeDashGap) {
-        this.strokeDashGap = strokeDashGap;
-        return this;
-    }
-
-    ShapeBuilder setElevation(int elevation) {
-        this.elevation = elevation;
-        return this;
-    }
-
-    ShapeBuilder setClickable(boolean clickable) {
-        this.clickable = clickable;
-        return this;
-    }
-
-    ShapeBuilder setRipple(boolean ripple) {
-        this.ripple = ripple;
         return this;
     }
 
@@ -376,8 +315,7 @@ public class ShapeBuilder {
         mClipPath.reset();
         mClipPath.addRoundRect(areas, radii, Path.Direction.CW);
 
-        Region clip = new Region((int) areas.left, (int) areas.top,
-                (int) areas.right, (int) areas.bottom);
+        Region clip = new Region((int) areas.left, (int) areas.top, (int) areas.right, (int) areas.bottom);
         mAreaRegion.setPath(mClipPath, clip);
     }
 

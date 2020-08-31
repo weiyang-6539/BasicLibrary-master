@@ -22,8 +22,6 @@
         <activity
             android:name=".ComplexViewActivity"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".RippleActivity" />
-        <activity android:name=".TestButtonActivity" />
         <activity android:name=".ShapeActivity" />
     </application>
 

@@ -42,7 +42,7 @@
                 android:layout_height="56dp"
                 android:src="@drawable/img_avatar" />
 
-            <com.github.android.common.widget.shape_extend.ComplexView
+            <com.github.android.common.widget.shape_extend.ComplexButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -55,7 +55,7 @@
                 app:cvIconTopSize="35dp"
                 app:cvIconTop="@drawable/ic_favorites" />
 
-            <com.github.android.common.widget.shape_extend.ComplexView
+            <com.github.android.common.widget.shape_extend.ComplexButton
                 android:id="@+id/cv_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                 app:cvIconTopSize="35dp"
                 app:cvIconTop="@drawable/ic_comment" />
 
-            <com.github.android.common.widget.shape_extend.ComplexView
+            <com.github.android.common.widget.shape_extend.ComplexButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"

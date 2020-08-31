@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp">
 
-        <com.github.android.common.widget.shape_extend.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexButton
             android:id="@+id/cv_01"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -21,7 +21,7 @@
             app:cvSelector="ripple"
             app:cvIconEndTint="#aaa" />
 
-        <com.github.android.common.widget.shape_extend.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexButton
             android:id="@+id/cv_02"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -136,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:text="自由定位弹窗" />
 
-            <com.github.android.common.widget.shape_extend.ComplexView
+            <com.github.android.common.widget.shape_extend.ComplexButton
                 android:id="@+id/cv_show_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -16,15 +16,14 @@
             android:id="@+id/cl_shape"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_margin="@dimen/dp_20"
+            android:layout_margin="@dimen/dp_10"
             app:shapeCornersRadius="5dp"
-            app:shapeElevation="@dimen/dp_5"
             app:shapeSelectorNormalColor="@color/white"
             app:shapeSelectorPressedColor="#d5d5f5"
             app:shapeSelectorSelectedColor="@color/black"
             app:shapeStrokeNormalColor="@color/gray_a"
             app:shapeStrokePressedColor="@color/colorBtnDefault"
-            app:shapeStrokeWidth="@dimen/dp_0_5">
+            app:shapeStrokeWidth="@dimen/dp_1">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -40,13 +39,26 @@
 
         <com.github.android.common.widget.shape.ShapeFrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_20"
-            app:shapeCornersRadius="25dp"
-            app:shapeElevation="@dimen/dp_5"
+            android:layout_height="@dimen/dp_50"
+            android:layout_margin="@dimen/dp_10"
+            app:shapeCornersRadius="@dimen/dp_10"
             app:shapeSelectorFocusedColor="#fff"
             app:shapeSelectorNormalColor="@color/colorBtnDefault"
             app:shapeSelectorPressedColor="#d5d5f5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="帧布局"
+                android:textColor="#fff" />
+        </com.github.android.common.widget.shape.ShapeFrameLayout>
+
+        <com.github.android.common.widget.shape.ShapeFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            app:shapeCornersRadius="@dimen/dp_15">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -58,15 +70,68 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="帧布局"
-                android:textColor="#fff" />
+                android:layout_margin="@dimen/dp_10"
+                android:text="子view不超出圆角"
+                android:textColor="@color/colorBtnDefault"
+                android:textSize="@dimen/sp_15" />
         </com.github.android.common.widget.shape.ShapeFrameLayout>
 
         <com.github.android.common.widget.shape.ShapeLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_20"
+            android:layout_margin="@dimen/dp_10"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:shapeCornersRadius="@dimen/dp_10"
+            app:shapeSelectorNormalColor="@android:color/holo_blue_bright">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_12"
+                android:text="对话框标题"
+                android:textColor="#222"
+                android:textSize="@dimen/sp_17" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_12"
+                android:lines="4"
+                android:text="测试圆角对话框布局，子View不超出圆角"
+                android:textSize="@dimen/sp_15" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#8333"
+                    android:gravity="center"
+                    android:text="取消"
+                    android:textColor="@color/gray_a"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#8111"
+                    android:gravity="center"
+                    android:text="确认"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </com.github.android.common.widget.shape.ShapeLinearLayout>
+
+        <com.github.android.common.widget.shape.ShapeLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
             android:enabled="false"
             android:minHeight="@dimen/dp_35"
             app:shapeCornersRadius="5dp"
@@ -104,7 +169,7 @@
         <com.github.android.common.widget.shape.ShapeRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_margin="@dimen/dp_20"
+            android:layout_margin="@dimen/dp_10"
             app:shapeCornersRadius="5dp"
             app:shapeElevation="@dimen/dp_5"
             app:shapeSelectorFocusedColor="#fff"
@@ -123,61 +188,6 @@
                 android:text="相对布局"
                 android:textColor="#fff" />
         </com.github.android.common.widget.shape.ShapeRelativeLayout>
-
-        <com.github.android.common.widget.shape.ShapeTextView
-            android:id="@+id/tv_test"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp_20"
-            android:layout_marginTop="@dimen/dp_20"
-            android:layout_marginRight="@dimen/dp_20"
-            android:gravity="center"
-            android:minHeight="@dimen/dp_40"
-            android:text="测试按钮"
-            android:textColor="#fff"
-            android:textSize="@dimen/sp_17"
-            app:shapeCornersRadius="@dimen/dp_20"
-            app:shapeRipple="true"
-            app:shapeSelectorDisableColor="@color/colorBtnDisable"
-            app:shapeSelectorNormalColor="@color/colorBtnDefault"
-            app:shapeSelectorPressedColor="@color/colorBtnPressed"
-            app:shapeSelectorSelectedColor="@color/white" />
-
-        <com.github.android.common.widget.shape.ShapeTextView
-            android:id="@+id/tv_test2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp_20"
-            android:layout_marginTop="@dimen/dp_20"
-            android:layout_marginRight="@dimen/dp_20"
-            android:gravity="center"
-            android:minHeight="@dimen/dp_40"
-            android:text="关联测试按钮"
-            android:textColor="#fff"
-            android:textSize="@dimen/sp_17"
-            app:shapeCornersRadius="@dimen/dp_20"
-            app:shapeRipple="true"
-            app:shapeSelectorNormalColor="@color/colorBtnDefault"
-            app:shapeSelectorPressedColor="@color/colorBtnPressed" />
-
-
-        <com.github.android.common.widget.shape.ShapeTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp_20"
-            android:layout_marginTop="@dimen/dp_20"
-            android:layout_marginRight="@dimen/dp_20"
-            android:gravity="center"
-            android:minHeight="@dimen/dp_40"
-            android:text="关联测试按钮"
-            android:textColor="#fff"
-            android:textSize="@dimen/sp_17"
-            app:shapeCornersRadius="@dimen/dp_20"
-            app:shapeGradientEndColor="@color/colorBtnPressed"
-            app:shapeGradientStartColor="@color/colorBtnDefault"
-            app:shapeRipple="true"
-            app:shapeSelectorPressedColor="@color/colorBtnPressed" />
-
 
         <android.support.v4.widget.Space
             android:layout_width="wrap_content"

@@ -27,7 +27,7 @@
         android:layout_height="40dp"
         android:background="#222">
 
-        <com.github.android.common.widget.shape_extend.ComplexView
+        <com.github.android.common.widget.shape_extend.ComplexButton
             android:id="@+id/cv_show_edit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

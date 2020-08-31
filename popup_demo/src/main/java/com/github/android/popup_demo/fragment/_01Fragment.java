@@ -12,7 +12,7 @@ import com.github.android.common.popup.XPopup;
 import com.github.android.common.popup.animator.AnimationFactory;
 import com.github.android.common.popup.annotation.AttachType;
 import com.github.android.common.popup.annotation.Position;
-import com.github.android.common.widget.shape_extend.ComplexView;
+import com.github.android.common.widget.shape_extend.ComplexButton;
 import com.github.android.popup_demo.DouyinActivity;
 import com.github.android.popup_demo.R;
 import com.github.android.popup_demo.popup.BottomPopupView;
@@ -55,9 +55,9 @@ public class _01Fragment extends BaseFragment {
     }
 
     @BindView(R.id.cv_01)
-    ComplexView cv_01;
+    ComplexButton cv_01;
     @BindView(R.id.cv_02)
-    ComplexView cv_02;
+    ComplexButton cv_02;
 
     @OnClick(R.id.cv_01)
     public void onClickCv01() {
@@ -201,7 +201,7 @@ public class _01Fragment extends BaseFragment {
     }
 
     @BindView(R.id.cv_show_horizontal)
-    ComplexView cv_show_horizontal;
+    ComplexButton cv_show_horizontal;
 
     @OnClick(R.id.cv_show_horizontal)
     public void onClickCvShowHorizontal() {

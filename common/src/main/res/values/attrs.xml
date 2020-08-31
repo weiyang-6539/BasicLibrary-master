@@ -58,6 +58,22 @@
         <attr name="shapeElevation" format="dimension" />
         <attr name="shapeClickable" format="boolean" />
         <attr name="shapeRipple" format="boolean" />
+
+        <attr name="shapeTextNormalColor" format="color" />
+        <attr name="shapeTextPressedColor" format="color" />
+        <attr name="shapeTextDisableColor" format="color" />
+        <attr name="shapeTextSelectedColor" format="color" />
+        <attr name="shapeTextFocusedColor" format="color" />
+        <attr name="shapeTextCheckedColor" format="color" />
+        <attr name="shapeStartIcon" format="reference" />
+        <attr name="shapeTopIcon" format="reference" />
+        <attr name="shapeEndIcon" format="reference" />
+        <attr name="shapeBottomIcon" format="reference" />
+        <attr name="shapeStartIconSize" format="dimension" />
+        <attr name="shapeTopIconSize" format="dimension" />
+        <attr name="shapeEndIconSize" format="dimension" />
+        <attr name="shapeBottomIconSize" format="dimension" />
+        <attr name="shapeIconPadding" format="dimension" />
     </declare-styleable>
     <declare-styleable name="ShapeConstraintLayout">
         <attr name="shapeSelectorNormalColor" />
@@ -179,7 +195,7 @@
         <attr name="shapeClickable" />
         <attr name="shapeRipple" />
     </declare-styleable>
-    <declare-styleable name="ShapeTextView">
+    <declare-styleable name="ComplexView">
         <attr name="shapeSelectorNormalColor" />
         <attr name="shapeSelectorPressedColor" />
         <attr name="shapeSelectorDisableColor" />
@@ -208,9 +224,17 @@
         <attr name="shapeElevation" />
         <attr name="shapeClickable" />
         <attr name="shapeRipple" />
+        <attr name="shapeStartIcon" />
+        <attr name="shapeTopIcon" />
+        <attr name="shapeEndIcon" />
+        <attr name="shapeBottomIcon" />
+        <attr name="shapeStartIconSize" />
+        <attr name="shapeTopIconSize" />
+        <attr name="shapeEndIconSize" />
+        <attr name="shapeBottomIconSize" />
+        <attr name="shapeIconPadding"/>
     </declare-styleable>
-
-    <declare-styleable name="ComplexView">
+    <declare-styleable name="ComplexButton">
         <attr name="cvGravity" format="enum">
             <enum name="center" value="0" />
             <enum name="left" value="1" />

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -15,6 +16,34 @@
             android:layout_height="wrap_content"
             android:background="@android:color/white"
             android:orientation="vertical">
+
+            <com.github.android.common.widget.shape_extend.ComplexView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="退出登录"
+                android:textColor="@color/white"
+                app:shapeBottomIcon="@drawable/ic_04"
+                app:shapeEndIcon="@drawable/ic_03"
+                app:shapeSelectorNormalColor="@color/black"
+                app:shapeStartIcon="@drawable/ic_02"
+                app:shapeTopIcon="@drawable/ic_01" />
+
+
+            <com.github.android.common.widget.shape_extend.ComplexButton
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="@dimen/dp_10"
+                android:gravity="center"
+                android:text="退出登录"
+                android:textColor="@color/white"
+                app:cvIconBottom="@drawable/ic_04"
+                app:cvIconEnd="@drawable/ic_03"
+                app:cvIconStart="@drawable/ic_02"
+                app:cvIconTop="@drawable/ic_01"
+                app:cvNormalBgColor="@color/black" />
 
             <include layout="@layout/layout_demo_button1" />
 

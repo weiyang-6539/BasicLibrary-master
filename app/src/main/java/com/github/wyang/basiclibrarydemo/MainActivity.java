@@ -51,10 +51,9 @@ public class MainActivity extends BaseActivity {
 
         //设置data
         mData = new ArrayList<>();
+        mData.add(new Item("自定义Shape", "约束布局，帧布局，线性布局，相对布局的应用", ShapeActivity.class));
         mData.add(new Item("ComplexView", "结合google md材质设计，自定义Button", ComplexViewActivity.class));
         mData.add(new Item("底部导航", "结合google md材质设计，自定义Button", BottomNavigationActivity.class));
-        mData.add(new Item("Ripple波纹动画", "xml及代码写法", RippleActivity.class));
-        mData.add(new Item("自定义Shape", "", ShapeActivity.class));
         mData.add(new Item("测试用例4", "", null));
         mData.add(new Item("测试用例4", "", null));
         mData.add(new Item("测试用例4", "", null));
