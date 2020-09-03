@@ -18,6 +18,7 @@
             android:layout_height="100dp"
             android:layout_margin="@dimen/dp_10"
             app:shapeCornersRadius="5dp"
+            app:shapeRipple="true"
             app:shapeSelectorNormalColor="@color/white"
             app:shapeSelectorPressedColor="#d5d5f5"
             app:shapeSelectorSelectedColor="@color/black"
@@ -42,6 +43,7 @@
             android:layout_height="@dimen/dp_50"
             android:layout_margin="@dimen/dp_10"
             app:shapeCornersRadius="@dimen/dp_10"
+            app:shapeRipple="true"
             app:shapeSelectorFocusedColor="#fff"
             app:shapeSelectorNormalColor="@color/colorBtnDefault"
             app:shapeSelectorPressedColor="#d5d5f5">

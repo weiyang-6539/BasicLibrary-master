@@ -30,7 +30,7 @@
         android:showDividers="middle"
         android:weightSum="4">
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/sb_01"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -40,11 +40,13 @@
             android:text="@string/shape_tab_1"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_01"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="ripple" />
+            app:shapeRipple="true"
+            app:shapeSelectorDisableColor="#d5d5d5"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_01"
+            app:shapeTopIconSize="30dp" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/sb_02"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -54,11 +56,12 @@
             android:text="@string/shape_tab_2"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_02"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="ripple" />
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_02"
+            app:shapeTopIconSize="30dp" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/sb_03"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -68,11 +71,12 @@
             android:text="@string/shape_tab_3"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_03"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="ripple" />
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_03"
+            app:shapeTopIconSize="30dp" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/sb_04"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -82,9 +86,10 @@
             android:text="@string/shape_tab_4"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_04"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="ripple" />
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_04"
+            app:shapeTopIconSize="30dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -95,7 +100,7 @@
         android:showDividers="middle"
         android:weightSum="4">
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/sb_05"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -105,11 +110,12 @@
             android:text="@string/shape_tab_5"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_05"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="standard" />
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_05"
+            app:shapeTopIconSize="30dp" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/sb_06"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -119,11 +125,12 @@
             android:text="@string/shape_tab_6"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_06"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="standard" />
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_06"
+            app:shapeTopIconSize="30dp" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/sb_07"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -133,11 +140,12 @@
             android:text="@string/shape_tab_7"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_07"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="standard" />
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_07"
+            app:shapeTopIconSize="30dp" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/sb_08"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -147,9 +155,10 @@
             android:text="@string/shape_tab_8"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_08"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="standard" />
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_08"
+            app:shapeTopIconSize="30dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -160,7 +169,7 @@
         android:showDividers="middle"
         android:weightSum="4">
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/sb_09"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -170,11 +179,12 @@
             android:text="@string/shape_tab_9"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_09"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="standard" />
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_09"
+            app:shapeTopIconSize="30dp" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/sb_10"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -184,11 +194,12 @@
             android:text="@string/shape_tab_10"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_10"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="standard" />
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_10"
+            app:shapeTopIconSize="30dp" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/sb_11"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -198,11 +209,12 @@
             android:text="@string/shape_tab_11"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_11"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="standard" />
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_11"
+            app:shapeTopIconSize="30dp" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/sb_12"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -212,9 +224,10 @@
             android:text="@string/shape_tab_12"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_12"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="standard" />
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_12"
+            app:shapeTopIconSize="30dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -225,7 +238,7 @@
         android:showDividers="middle"
         android:weightSum="4">
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -234,11 +247,12 @@
             android:text="@string/shape_tab_9"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_test"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="standard" />
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_test"
+            app:shapeTopIconSize="30dp" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -247,11 +261,12 @@
             android:text="@string/shape_tab_9"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_test2"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="standard" />
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_test2"
+            app:shapeTopIconSize="30dp" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -260,11 +275,12 @@
             android:text="@string/shape_tab_2"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_02"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="ripple" />
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_02"
+            app:shapeTopIconSize="30dp" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -273,16 +289,17 @@
             android:text="@string/shape_tab_2"
             android:textColor="@color/colorText"
             android:textSize="15sp"
-            app:cvIconTop="@drawable/ic_02"
-            app:cvIconTopSize="30dp"
-            app:cvSelector="ripple" />
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5"
+            app:shapeTopIcon="@drawable/ic_02"
+            app:shapeTopIconSize="30dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_20"
-        android:background="#ffffff"
+        android:background="#000"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingLeft="12dp"
@@ -290,7 +307,7 @@
         android:paddingRight="12dp"
         android:paddingBottom="8dp">
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="50dp"
@@ -298,53 +315,57 @@
             android:text="店铺"
             android:textColor="#999"
             android:textSize="13sp"
-            app:cvIconPadding="0dp"
-            app:cvIconTop="@drawable/ic_shop" />
+            app:shapeIconPadding="0dp"
+            app:shapeTopIcon="@drawable/ic_shop" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="50dp"
             android:text="客服"
             android:textColor="#999"
             android:textSize="13sp"
-            app:cvIconPadding="0dp"
-            app:cvIconTop="@drawable/ic_service" />
+            app:shapeIconPadding="0dp"
+            app:shapeTopIcon="@drawable/ic_service" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="50dp"
             android:text="收藏"
             android:textColor="#999"
             android:textSize="13sp"
-            app:cvIconPadding="0dp"
-            app:cvIconTop="@drawable/ic_favorites" />
+            app:shapeIconPadding="0dp"
+            app:shapeTopIcon="@drawable/ic_favorites" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:minHeight="40dp"
             android:text="加入购物车"
             android:textColor="@android:color/white"
-            app:cvCornersBottomLeftRadius="40dp"
-            app:cvCornersTopLeftRadius="40dp"
-            app:cvNormalBgColor="#F19D39"
-            app:cvPressedBgColor="#88F19D39"
-            app:cvSelector="standard" />
+            app:shapeCornersBotLeftRadius="40dp"
+            app:shapeCornersTopLeftRadius="40dp"
+            app:shapeGradientEndColor="#F88904"
+            app:shapeGradientStartColor="#F6CF9F"
+            app:shapeSelectorPressedColor="#88F19D39" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:minHeight="40dp"
             android:text="立即购买"
             android:textColor="@android:color/white"
-            app:cvCornersBottomRightRadius="40dp"
-            app:cvCornersTopRightRadius="40dp"
-            app:cvNormalBgColor="#EE762F"
-            app:cvPressedBgColor="#88EE762F"
-            app:cvSelector="standard" />
+            app:shapeCornersBotRightRadius="40dp"
+            app:shapeCornersTopRightRadius="40dp"
+            app:shapeGradientStartColor="#F15D06"
+            app:shapeGradientEndColor="#EDA174"
+            app:shapeSelectorPressedColor="#88EE762F" />
     </LinearLayout>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="100dp" />
 </LinearLayout>

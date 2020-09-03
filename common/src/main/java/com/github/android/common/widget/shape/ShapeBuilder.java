@@ -16,7 +16,6 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.RippleDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
-import android.support.annotation.IntDef;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -24,8 +23,6 @@ import android.view.View;
 
 import com.github.android.common.R;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 import java.util.Arrays;
 
 /**
@@ -254,7 +251,7 @@ public class ShapeBuilder {
     private Drawable getBackground() {
         StateListDrawable background = new StateListDrawable();
         //添加按压色
-        if (!isTransparent(selectorPressedColor) || !isTransparent(strokePressedColor))
+        if (!ripple && !isTransparent(selectorPressedColor) || !isTransparent(strokePressedColor))
             background.addState(new int[]{State.PRESSED, State.ENABLED}, getDrawable(State.PRESSED));
         //禁用填充色
         if (!isTransparent(selectorDisableColor) || !isTransparent(strokeDisableColor))
@@ -290,23 +287,11 @@ public class ShapeBuilder {
         return color == Color.TRANSPARENT;
     }
 
-    @IntDef({State.NONE, State.ENABLED, State.PRESSED, State.DISABLE, State.SELECTED, State.FOCUSED, State.CHECKED})
-    @Retention(RetentionPolicy.SOURCE)
-    @interface State {
-        int NONE = 0;
-        int ENABLED = android.R.attr.state_enabled;
-        int PRESSED = android.R.attr.state_pressed;
-        int DISABLE = -android.R.attr.state_enabled;
-        int SELECTED = android.R.attr.state_selected;
-        int FOCUSED = android.R.attr.state_focused;
-        int CHECKED = android.R.attr.state_checked;
-    }
-
     private Path mClipPath = new Path();
     private Region mAreaRegion = new Region();
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
-    public void onSizeChanged(View view, int w, int h) {
+    void onSizeChanged(View view, int w, int h) {
         RectF areas = new RectF();
         areas.left = view.getPaddingLeft();
         areas.top = view.getPaddingTop();
@@ -319,7 +304,7 @@ public class ShapeBuilder {
         mAreaRegion.setPath(mClipPath, clip);
     }
 
-    public void dispatchDraw(Canvas canvas) {
+    void dispatchDraw(Canvas canvas) {
         // 剪裁
         mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         mPaint.setStrokeWidth(0);

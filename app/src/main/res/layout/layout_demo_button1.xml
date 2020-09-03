@@ -46,26 +46,27 @@
             style="@style/Label"
             android:text="Material样式" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
             android:minHeight="36dp"
             android:text="ENABLE"
-            android:textColor="#fff"
-            app:cvCornersRadius="4dp"
-            app:cvDisableBgColor="@color/colorBtnDisable"
-            app:cvElevation="4dp"
-            app:cvNormalBgColor="@color/colorBtnDefault"
-            app:cvPressedBgColor="@color/colorBtnPressed"
-            app:cvSelector="ripple" />
+            app:shapeCornersRadius="4dp"
+            app:shapeElevation="4dp"
+            app:shapeRipple="true"
+            app:shapeSelectorDisableColor="@color/colorBtnDisable"
+            app:shapeSelectorNormalColor="@color/colorBtnDefault"
+            app:shapeSelectorPressedColor="@color/colorBtnPressed"
+            app:shapeTextDisableColor="@color/gray_9"
+            app:shapeTextNormalColor="@color/white" />
 
         <TextView
             style="@style/Label"
             android:layout_marginTop="15dp"
             android:text="Icon + 文本" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="64dp"
@@ -73,20 +74,22 @@
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:text="ENABLE"
-            android:textColor="#fff"
-            app:cvCornersRadius="4dp"
-            app:cvDisableBgColor="@color/colorBtnDisable"
-            app:cvIconStart="@drawable/icon_add"
-            app:cvNormalBgColor="@color/colorBtnDefault"
-            app:cvPressedBgColor="@color/colorBtnPressed"
-            app:cvSelector="ripple" />
+            app:shapeCornersRadius="4dp"
+            app:shapeRipple="true"
+            app:shapeSelectorDisableColor="@color/colorBtnDisable"
+            app:shapeSelectorNormalColor="@color/colorBtnDefault"
+            app:shapeSelectorPressedColor="@color/colorBtnPressed"
+            app:shapeStartIcon="@drawable/icon_add"
+            app:shapeStartIconDisableColor="@color/gray_9"
+            app:shapeTextDisableColor="@color/gray_9"
+            app:shapeTextNormalColor="@color/white" />
 
         <TextView
             style="@style/Label"
             android:layout_marginTop="15dp"
             android:text="Icon + 文本" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="64dp"
@@ -94,25 +97,32 @@
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:text="ENABLE"
-            android:textColor="@color/colorBtnDefault"
-            app:cvCornersRadius="4dp"
-            app:cvIconStart="@drawable/icon_add"
-            app:cvIconStartTint="@color/colorBtnDefault"
-            app:cvSelector="standard" />
+            app:shapeCornersRadius="4dp"
+            app:shapeRipple="true"
+            app:shapeSelectorDisableColor="@color/colorBtnDisable"
+            app:shapeSelectorPressedColor="@color/colorBtnLightGray"
+            app:shapeStartIcon="@drawable/icon_add"
+            app:shapeStartIconDisableColor="@color/gray_9"
+            app:shapeStartIconNormalColor="@color/colorBtnDefault"
+            app:shapeTextDisableColor="@color/gray_9"
+            app:shapeTextNormalColor="@color/colorBtnDefault" />
 
         <TextView
             style="@style/Label"
             android:layout_marginTop="15dp"
             android:text="图标" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
             android:minHeight="36dp"
-            app:cvCornersRadius="4dp"
-            app:cvIconStart="@drawable/icon_add"
-            app:cvNormalBgColor="@color/colorBtnDefault" />
+            app:shapeCornersRadius="4dp"
+            app:shapeSelectorDisableColor="@color/colorBtnDisable"
+            app:shapeSelectorNormalColor="@color/colorBtnDefault"
+            app:shapeSelectorPressedColor="@color/colorBtnPressed"
+            app:shapeStartIcon="@drawable/icon_add"
+            app:shapeStartIconDisableColor="@color/gray_9" />
     </LinearLayout>
 
     <LinearLayout
@@ -129,77 +139,92 @@
             style="@style/Label"
             android:text="无阴影" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
             android:minHeight="36dp"
             android:text="ENABLE"
-            android:textColor="#fff"
-            app:cvCornersRadius="4dp"
-            app:cvDisableBgColor="@color/colorBtnDisable"
-            app:cvNormalBgColor="@color/colorBtnDefault"
-            app:cvPressedBgColor="@color/colorBtnPressed"
-            app:cvSelector="ripple" />
+            app:shapeCornersRadius="4dp"
+            app:shapeRipple="true"
+            app:shapeSelectorDisableColor="@color/colorBtnDisable"
+            app:shapeSelectorNormalColor="@color/colorBtnDefault"
+            app:shapeSelectorPressedColor="@color/colorBtnPressed"
+            app:shapeTextDisableColor="@color/gray_9"
+            app:shapeTextNormalColor="@color/white" />
 
         <TextView
             style="@style/Label"
             android:layout_marginTop="15dp"
             android:text="文本" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
             android:minHeight="36dp"
             android:text="ENABLE"
-            android:textColor="@color/colorBtnDefault"
-            app:cvCornersRadius="4dp" />
+            app:shapeCornersRadius="4dp"
+            app:shapeSelectorDisableColor="@color/colorBtnDisable"
+            app:shapeSelectorPressedColor="@color/colorBtnLightGray"
+            app:shapeTextDisableColor="@color/gray_9"
+            app:shapeTextNormalColor="@color/colorBtnDefault" />
 
         <TextView
             style="@style/Label"
             android:layout_marginTop="15dp"
             android:text="文本" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
             android:minHeight="36dp"
             android:text="ENABLE"
-            android:textColor="@color/colorBtnDefault"
-            app:cvCornersRadius="4dp"
-            app:cvSelector="standard"
-            app:cvStrokeNormalColor="@color/colorBtnDefault"
-            app:cvStrokeWidth="1dp" />
+            app:shapeCornersRadius="4dp"
+            app:shapeSelectorDisableColor="@color/colorBtnDisable"
+            app:shapeSelectorPressedColor="@color/colorBtnPressed"
+            app:shapeStrokeDisableColor="@color/transparent"
+            app:shapeStrokeNormalColor="@color/colorBtnDefault"
+            app:shapeStrokeWidth="1dp"
+            app:shapeTextDisableColor="@color/gray_9"
+            app:shapeTextNormalColor="@color/colorBtnDefault" />
 
         <TextView
             style="@style/Label"
             android:layout_marginTop="15dp"
             android:text="图标" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="96dp"
             android:minHeight="36dp"
             android:textColor="@color/colorBtnDefault"
-            app:cvCornersRadius="4dp"
-            app:cvIconStart="@drawable/icon_add"
-            app:cvIconStartTint="@color/colorBtnDefault"
-            app:cvStrokeNormalColor="@color/colorBtnDefault"
-            app:cvStrokeWidth="1dp" />
+            app:shapeCornersRadius="4dp"
+            app:shapeSelectorDisableColor="@color/colorBtnDisable"
+            app:shapeSelectorPressedColor="@color/colorBtnLightGray"
+            app:shapeStartIcon="@drawable/icon_add"
+            app:shapeStartIconDisableColor="@color/gray_9"
+            app:shapeStartIconNormalColor="@color/colorBtnDefault"
+            app:shapeStrokeDisableColor="@color/transparent"
+            app:shapeStrokeNormalColor="@color/colorBtnDefault"
+            app:shapeStrokeWidth="1dp" />
     </LinearLayout>
 
-    <com.github.android.common.widget.shape_extend.ComplexButton
+    <com.github.android.common.widget.shape.extend.ComplexView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:enabled="false"
         android:minHeight="36dp"
         android:text="ENABLE"
-        android:textColor="@android:color/white"
-        app:cvIconStart="@drawable/icon_add"
-        app:cvNormalBgColor="@color/colorBtnDefault"
-        app:layout_constraintTop_toBottomOf="@id/ll_left" />
+        app:layout_constraintTop_toBottomOf="@id/ll_left"
+        app:shapeCornersRadius="@dimen/dp_5"
+        app:shapeGradientEndColor="@color/colorBtnPressed"
+        app:shapeGradientStartColor="@color/colorBtnDefault"
+        app:shapeSelectorDisableColor="@color/colorBtnDisable"
+        app:shapeStartIcon="@drawable/icon_add"
+        app:shapeStartIconDisableColor="@color/gray_9"
+        app:shapeTextDisableColor="@color/gray_9"
+        app:shapeTextNormalColor="@color/white" />
 </android.support.constraint.ConstraintLayout>

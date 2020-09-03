@@ -68,12 +68,35 @@
         <attr name="shapeStartIcon" format="reference" />
         <attr name="shapeTopIcon" format="reference" />
         <attr name="shapeEndIcon" format="reference" />
+        <attr name="shapeStartIconNormalColor" format="color" />
+        <attr name="shapeStartIconPressedColor" format="color" />
+        <attr name="shapeStartIconDisableColor" format="color" />
+        <attr name="shapeStartIconSelectedColor" format="color" />
+        <attr name="shapeTopIconNormalColor" format="color" />
+        <attr name="shapeTopIconPressedColor" format="color" />
+        <attr name="shapeTopIconDisableColor" format="color" />
+        <attr name="shapeTopIconSelectedColor" format="color" />
+        <attr name="shapeEndIconNormalColor" format="color" />
+        <attr name="shapeEndIconPressedColor" format="color" />
+        <attr name="shapeEndIconDisableColor" format="color" />
+        <attr name="shapeEndIconSelectedColor" format="color" />
+        <attr name="shapeBottomIconNormalColor" format="color" />
+        <attr name="shapeBottomIconPressedColor" format="color" />
+        <attr name="shapeBottomIconDisableColor" format="color" />
+        <attr name="shapeBottomIconSelectedColor" format="color" />
         <attr name="shapeBottomIcon" format="reference" />
         <attr name="shapeStartIconSize" format="dimension" />
         <attr name="shapeTopIconSize" format="dimension" />
         <attr name="shapeEndIconSize" format="dimension" />
         <attr name="shapeBottomIconSize" format="dimension" />
         <attr name="shapeIconPadding" format="dimension" />
+        <attr name="shapeGravity" format="enum">
+            <enum name="center" value="0" />
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+            <enum name="top" value="3" />
+            <enum name="bottom" value="4" />
+        </attr>
     </declare-styleable>
     <declare-styleable name="ShapeConstraintLayout">
         <attr name="shapeSelectorNormalColor" />
@@ -224,15 +247,36 @@
         <attr name="shapeElevation" />
         <attr name="shapeClickable" />
         <attr name="shapeRipple" />
+        <attr name="shapeTextNormalColor" />
+        <attr name="shapeTextPressedColor" />
+        <attr name="shapeTextDisableColor" />
+        <attr name="shapeTextSelectedColor" />
         <attr name="shapeStartIcon" />
         <attr name="shapeTopIcon" />
         <attr name="shapeEndIcon" />
         <attr name="shapeBottomIcon" />
+        <attr name="shapeStartIconNormalColor" />
+        <attr name="shapeStartIconPressedColor" />
+        <attr name="shapeStartIconDisableColor" />
+        <attr name="shapeStartIconSelectedColor" />
+        <attr name="shapeTopIconNormalColor" />
+        <attr name="shapeTopIconPressedColor" />
+        <attr name="shapeTopIconDisableColor" />
+        <attr name="shapeTopIconSelectedColor" />
+        <attr name="shapeEndIconNormalColor" />
+        <attr name="shapeEndIconPressedColor" />
+        <attr name="shapeEndIconDisableColor" />
+        <attr name="shapeEndIconSelectedColor" />
+        <attr name="shapeBottomIconNormalColor" />
+        <attr name="shapeBottomIconPressedColor" />
+        <attr name="shapeBottomIconDisableColor" />
+        <attr name="shapeBottomIconSelectedColor" />
         <attr name="shapeStartIconSize" />
         <attr name="shapeTopIconSize" />
         <attr name="shapeEndIconSize" />
         <attr name="shapeBottomIconSize" />
-        <attr name="shapeIconPadding"/>
+        <attr name="shapeIconPadding" />
+        <attr name="shapeGravity" />
     </declare-styleable>
     <declare-styleable name="ComplexButton">
         <attr name="cvGravity" format="enum">

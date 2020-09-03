@@ -11,7 +11,6 @@ public class ShapeActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
     }
 
 }
