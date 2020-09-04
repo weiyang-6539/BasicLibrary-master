@@ -233,71 +233,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="@drawable/shape_vertical_line"
-        android:orientation="horizontal"
-        android:showDividers="middle"
-        android:weightSum="4">
-
-        <com.github.android.common.widget.shape.extend.ComplexView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            android:text="@string/shape_tab_9"
-            android:textColor="@color/colorText"
-            android:textSize="15sp"
-            app:shapeRipple="true"
-            app:shapeSelectorPressedColor="#e5e5e5"
-            app:shapeTopIcon="@drawable/ic_test"
-            app:shapeTopIconSize="30dp" />
-
-        <com.github.android.common.widget.shape.extend.ComplexView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            android:text="@string/shape_tab_9"
-            android:textColor="@color/colorText"
-            android:textSize="15sp"
-            app:shapeRipple="true"
-            app:shapeSelectorPressedColor="#e5e5e5"
-            app:shapeTopIcon="@drawable/ic_test2"
-            app:shapeTopIconSize="30dp" />
-
-        <com.github.android.common.widget.shape.extend.ComplexView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            android:text="@string/shape_tab_2"
-            android:textColor="@color/colorText"
-            android:textSize="15sp"
-            app:shapeRipple="true"
-            app:shapeSelectorPressedColor="#e5e5e5"
-            app:shapeTopIcon="@drawable/ic_02"
-            app:shapeTopIconSize="30dp" />
-
-        <com.github.android.common.widget.shape.extend.ComplexView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            android:text="@string/shape_tab_2"
-            android:textColor="@color/colorText"
-            android:textSize="15sp"
-            app:shapeRipple="true"
-            app:shapeSelectorPressedColor="#e5e5e5"
-            app:shapeTopIcon="@drawable/ic_02"
-            app:shapeTopIconSize="30dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_20"
         android:background="#000"
         android:gravity="center_vertical"
@@ -313,9 +248,9 @@
             android:minWidth="50dp"
             android:tag="button"
             android:text="店铺"
-            android:textColor="#999"
             android:textSize="13sp"
             app:shapeIconPadding="0dp"
+            app:shapeTextNormalColor="@color/gray_9"
             app:shapeTopIcon="@drawable/ic_shop" />
 
         <com.github.android.common.widget.shape.extend.ComplexView
@@ -323,9 +258,9 @@
             android:layout_height="wrap_content"
             android:minWidth="50dp"
             android:text="客服"
-            android:textColor="#999"
             android:textSize="13sp"
             app:shapeIconPadding="0dp"
+            app:shapeTextNormalColor="@color/gray_9"
             app:shapeTopIcon="@drawable/ic_service" />
 
         <com.github.android.common.widget.shape.extend.ComplexView
@@ -333,9 +268,9 @@
             android:layout_height="wrap_content"
             android:minWidth="50dp"
             android:text="收藏"
-            android:textColor="#999"
             android:textSize="13sp"
             app:shapeIconPadding="0dp"
+            app:shapeTextNormalColor="@color/gray_9"
             app:shapeTopIcon="@drawable/ic_favorites" />
 
         <com.github.android.common.widget.shape.extend.ComplexView
@@ -344,12 +279,12 @@
             android:layout_weight="1"
             android:minHeight="40dp"
             android:text="加入购物车"
-            android:textColor="@android:color/white"
             app:shapeCornersBotLeftRadius="40dp"
             app:shapeCornersTopLeftRadius="40dp"
             app:shapeGradientEndColor="#F88904"
             app:shapeGradientStartColor="#F6CF9F"
-            app:shapeSelectorPressedColor="#88F19D39" />
+            app:shapeSelectorPressedColor="#88F19D39"
+            app:shapeTextNormalColor="@color/white" />
 
         <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="0dp"
@@ -357,12 +292,205 @@
             android:layout_weight="1"
             android:minHeight="40dp"
             android:text="立即购买"
-            android:textColor="@android:color/white"
             app:shapeCornersBotRightRadius="40dp"
             app:shapeCornersTopRightRadius="40dp"
-            app:shapeGradientStartColor="#F15D06"
             app:shapeGradientEndColor="#EDA174"
-            app:shapeSelectorPressedColor="#88EE762F" />
+            app:shapeGradientStartColor="#F15D06"
+            app:shapeSelectorPressedColor="#88EE762F"
+            app:shapeTextNormalColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:divider="@drawable/shape_padding_dp10"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/shape_padding_dp10"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:weightSum="4">
+
+            <com.github.android.common.widget.shape.extend.ComplexView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_36"
+                android:layout_weight="1"
+                android:text="按钮1"
+                app:shapeCornersRadius="@dimen/dp_5"
+                app:shapeSelectorNormalColor="@color/gray_e"
+                app:shapeSelectorSelectedColor="@color/white"
+                app:shapeStrokeSelectedColor="@color/colorBtnDefault"
+                app:shapeStrokeWidth="@dimen/dp_1"
+                app:shapeTextNormalColor="@color/gray_9"
+                app:shapeTextSelectedColor="@color/colorBtnDefault" />
+
+            <com.github.android.common.widget.shape.extend.ComplexView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_36"
+                android:layout_weight="1"
+                android:text="按钮2"
+                app:shapeCornersRadius="@dimen/dp_5"
+                app:shapeSelectorNormalColor="@color/gray_e"
+                app:shapeSelectorSelectedColor="@color/white"
+                app:shapeStrokeSelectedColor="@color/colorBtnDefault"
+                app:shapeStrokeWidth="@dimen/dp_1"
+                app:shapeTextNormalColor="@color/gray_9"
+                app:shapeTextSelectedColor="@color/colorBtnDefault" />
+
+            <com.github.android.common.widget.shape.extend.ComplexView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_36"
+                android:layout_weight="1"
+                android:text="按钮3"
+                app:shapeCornersRadius="@dimen/dp_5"
+                app:shapeSelectorNormalColor="@color/gray_e"
+                app:shapeSelectorSelectedColor="@color/white"
+                app:shapeStrokeSelectedColor="@color/colorBtnDefault"
+                app:shapeStrokeWidth="@dimen/dp_1"
+                app:shapeTextNormalColor="@color/gray_9"
+                app:shapeTextSelectedColor="@color/colorBtnDefault" />
+
+            <com.github.android.common.widget.shape.extend.ComplexView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_36"
+                android:layout_weight="1"
+                android:text="按钮4"
+                app:shapeCornersRadius="@dimen/dp_5"
+                app:shapeSelectorNormalColor="@color/gray_e"
+                app:shapeSelectorSelectedColor="@color/white"
+                app:shapeStrokeSelectedColor="@color/colorBtnDefault"
+                app:shapeStrokeWidth="@dimen/dp_1"
+                app:shapeTextNormalColor="@color/gray_9"
+                app:shapeTextSelectedColor="@color/colorBtnDefault" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/shape_padding_dp10"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:weightSum="4">
+
+            <com.github.android.common.widget.shape.extend.ComplexView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_36"
+                android:layout_weight="1"
+                android:text="按钮5"
+                app:shapeCornersRadius="@dimen/dp_5"
+                app:shapeSelectorNormalColor="@color/gray_e"
+                app:shapeSelectorSelectedColor="@color/white"
+                app:shapeStrokeSelectedColor="@color/colorBtnDefault"
+                app:shapeStrokeWidth="@dimen/dp_1"
+                app:shapeTextNormalColor="@color/gray_9"
+                app:shapeTextSelectedColor="@color/colorBtnDefault" />
+
+            <com.github.android.common.widget.shape.extend.ComplexView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_36"
+                android:layout_weight="1"
+                android:text="按钮6"
+                app:shapeCornersRadius="@dimen/dp_5"
+                app:shapeSelectorNormalColor="@color/gray_e"
+                app:shapeSelectorSelectedColor="@color/white"
+                app:shapeStrokeSelectedColor="@color/colorBtnDefault"
+                app:shapeStrokeWidth="@dimen/dp_1"
+                app:shapeTextNormalColor="@color/gray_9"
+                app:shapeTextSelectedColor="@color/colorBtnDefault" />
+
+            <com.github.android.common.widget.shape.extend.ComplexView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_36"
+                android:layout_weight="1"
+                android:text="按钮7"
+                app:shapeCornersRadius="@dimen/dp_5"
+                app:shapeSelectorNormalColor="@color/gray_e"
+                app:shapeSelectorSelectedColor="@color/white"
+                app:shapeStrokeSelectedColor="@color/colorBtnDefault"
+                app:shapeStrokeWidth="@dimen/dp_1"
+                app:shapeTextNormalColor="@color/gray_9"
+                app:shapeTextSelectedColor="@color/colorBtnDefault" />
+
+            <com.github.android.common.widget.shape.extend.ComplexView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_36"
+                android:layout_weight="1"
+                android:text="按钮8"
+                app:shapeCornersRadius="@dimen/dp_5"
+                app:shapeSelectorNormalColor="@color/gray_e"
+                app:shapeSelectorSelectedColor="@color/white"
+                app:shapeStrokeSelectedColor="@color/colorBtnDefault"
+                app:shapeStrokeWidth="@dimen/dp_1"
+                app:shapeTextNormalColor="@color/gray_9"
+                app:shapeTextSelectedColor="@color/colorBtnDefault" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/shape_padding_dp10"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:weightSum="4">
+
+            <com.github.android.common.widget.shape.extend.ComplexView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_36"
+                android:layout_weight="1"
+                android:text="按钮9"
+                app:shapeCornersRadius="@dimen/dp_5"
+                app:shapeSelectorNormalColor="@color/gray_e"
+                app:shapeSelectorSelectedColor="@color/white"
+                app:shapeStrokeSelectedColor="@color/colorBtnDefault"
+                app:shapeStrokeWidth="@dimen/dp_1"
+                app:shapeTextNormalColor="@color/gray_9"
+                app:shapeTextSelectedColor="@color/colorBtnDefault" />
+
+            <com.github.android.common.widget.shape.extend.ComplexView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_36"
+                android:layout_weight="1"
+                android:text="按钮10"
+                app:shapeCornersRadius="@dimen/dp_5"
+                app:shapeSelectorNormalColor="@color/gray_e"
+                app:shapeSelectorSelectedColor="@color/white"
+                app:shapeStrokeSelectedColor="@color/colorBtnDefault"
+                app:shapeStrokeWidth="@dimen/dp_1"
+                app:shapeTextNormalColor="@color/gray_9"
+                app:shapeTextSelectedColor="@color/colorBtnDefault" />
+
+            <com.github.android.common.widget.shape.extend.ComplexView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_36"
+                android:layout_weight="1"
+                android:text="按钮11"
+                app:shapeCornersRadius="@dimen/dp_5"
+                app:shapeSelectorNormalColor="@color/gray_e"
+                app:shapeSelectorSelectedColor="@color/white"
+                app:shapeStrokeSelectedColor="@color/colorBtnDefault"
+                app:shapeStrokeWidth="@dimen/dp_1"
+                app:shapeTextNormalColor="@color/gray_9"
+                app:shapeTextSelectedColor="@color/colorBtnDefault" />
+
+            <com.github.android.common.widget.shape.extend.ComplexView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_36"
+                android:layout_weight="1"
+                android:text="按钮12"
+                app:shapeCornersRadius="@dimen/dp_5"
+                app:shapeSelectorNormalColor="@color/gray_e"
+                app:shapeSelectorSelectedColor="@color/white"
+                app:shapeStrokeSelectedColor="@color/colorBtnDefault"
+                app:shapeStrokeWidth="@dimen/dp_1"
+                app:shapeTextNormalColor="@color/gray_9"
+                app:shapeTextSelectedColor="@color/colorBtnDefault" />
+        </LinearLayout>
     </LinearLayout>
 
     <Space

@@ -60,7 +60,7 @@ public class MainActivity extends BaseActivity {
         mData.add(new Item("测试用例4", "", null));
         mData.add(new Item("测试用例4", "", null));
         mData.add(new Item("测试用例4", "", null));
-        mData.add(new Item("测试用例4", "", null));
+        mData.add(new Item("test用例", "测试", TestActivity.class));
         mAdapter.setNewData(mData);
     }
 }

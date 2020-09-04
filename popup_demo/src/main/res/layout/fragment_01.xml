@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp">
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/cv_01"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -17,11 +17,12 @@
             android:gravity="center"
             android:text="综合排序"
             android:textColor="#aaa"
-            app:cvIconEnd="@drawable/arrow_down"
-            app:cvSelector="ripple"
-            app:cvIconEndTint="#aaa" />
+            app:shapeEndIcon="@drawable/arrow_down"
+            app:shapeEndIconNormalColor="#aaa"
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5" />
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/cv_02"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -31,9 +32,10 @@
             android:gravity="center"
             android:text="全部筛选"
             android:textColor="#aaa"
-            app:cvIconEnd="@drawable/arrow_down"
-            app:cvSelector="standard"
-            app:cvIconEndTint="#aaa" />
+            app:shapeEndIcon="@drawable/arrow_down"
+            app:shapeEndIconNormalColor="#aaa"
+            app:shapeRipple="true"
+            app:shapeSelectorPressedColor="#e5e5e5" />
     </FrameLayout>
 
     <ScrollView
@@ -136,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:text="自由定位弹窗" />
 
-            <com.github.android.common.widget.shape_extend.ComplexButton
+            <com.github.android.common.widget.shape.extend.ComplexView
                 android:id="@+id/cv_show_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -144,11 +146,11 @@
                 android:layout_marginTop="@dimen/dp_30"
                 android:minWidth="35dp"
                 android:text="··"
-                android:textColor="#00BCD4"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                app:cvCornersRadius="3dp"
-                app:cvNormalBgColor="#e1e1e1" />
+                app:shapeCornersRadius="3dp"
+                app:shapeSelectorNormalColor="#e1e1e1"
+                app:shapeTextNormalColor="#00BCD4" />
 
             <Button
                 android:id="@+id/btn_show_bottom_input"

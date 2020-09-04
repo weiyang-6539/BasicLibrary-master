@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.github.android.common.widget.shape.extend.ComplexView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:text="@string/shape_tab_9"
+        android:textColor="@color/colorText"
+        android:textSize="15sp"
+        app:shapeBottomIcon="@drawable/ic_arrow_down"
+        app:shapeBottomIconSize="30dp"
+        app:shapeEndIcon="@drawable/ic_arrow_right"
+        app:shapeEndIconSize="30dp"
+        app:shapeIconPadding="@dimen/dp_0"
+        app:shapeRipple="true"
+        app:shapeSelectorNormalColor="@color/gray_e"
+        app:shapeSelectorPressedColor="#e5e5e5"
+        app:shapeStartIcon="@drawable/ic_arrow_left"
+        app:shapeStartIconSize="30dp"
+        app:shapeTopIcon="@drawable/ic_arrow_up"
+        app:shapeTopIconSize="30dp" />
+
+    <com.github.android.common.widget.shape.extend.ComplexView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/shape_tab_9"
+        android:textColor="@color/colorText"
+        android:textSize="15sp"
+        app:shapeBottomIcon="@drawable/ic_04"
+        app:shapeBottomIconSize="30dp"
+        app:shapeEndIcon="@drawable/ic_03"
+        app:shapeEndIconSize="30dp"
+        app:shapeIconPadding="@dimen/dp_10"
+        app:shapeRipple="true"
+        app:shapeSelectorNormalColor="@color/gray_e"
+        app:shapeSelectorPressedColor="#e5e5e5"
+        app:shapeStartIcon="@drawable/ic_01"
+        app:shapeStartIconSize="30dp"
+        app:shapeTopIcon="@drawable/ic_02"
+        app:shapeTopIconSize="30dp" />
+</LinearLayout>

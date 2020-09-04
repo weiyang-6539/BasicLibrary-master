@@ -31,14 +31,14 @@
         <attr name="shapeGradientCenterColor" format="color" />
         <attr name="shapeGradientEndColor" format="color" />
         <attr name="shapeGradientAngle" format="enum">
-            <enum name="angle45_0" value="0" />
-            <enum name="angle45_1" value="1" />
-            <enum name="angle45_2" value="2" />
-            <enum name="angle45_3" value="3" />
-            <enum name="angle45_4" value="4" />
-            <enum name="angle45_5" value="5" />
-            <enum name="angle45_6" value="6" />
-            <enum name="angle45_7" value="7" />
+            <enum name="angle45_0" value="0" /><!--45°的0倍 水平从左只右-->
+            <enum name="angle45_1" value="1" /><!--45°的1倍 基于前一个角度逆时针旋转-->
+            <enum name="angle45_2" value="2" /><!--45°的2倍-->
+            <enum name="angle45_3" value="3" /><!--45°的3倍-->
+            <enum name="angle45_4" value="4" /><!--45°的4倍-->
+            <enum name="angle45_5" value="5" /><!--45°的5倍-->
+            <enum name="angle45_6" value="6" /><!--45°的6倍-->
+            <enum name="angle45_7" value="7" /><!--45°的7倍-->
         </attr>
         <attr name="shapeGradientUseLevel" format="boolean" />
         <attr name="shapeCornersRadius" format="dimension" />
@@ -68,6 +68,7 @@
         <attr name="shapeStartIcon" format="reference" />
         <attr name="shapeTopIcon" format="reference" />
         <attr name="shapeEndIcon" format="reference" />
+        <attr name="shapeBottomIcon" format="reference" />
         <attr name="shapeStartIconNormalColor" format="color" />
         <attr name="shapeStartIconPressedColor" format="color" />
         <attr name="shapeStartIconDisableColor" format="color" />
@@ -84,7 +85,6 @@
         <attr name="shapeBottomIconPressedColor" format="color" />
         <attr name="shapeBottomIconDisableColor" format="color" />
         <attr name="shapeBottomIconSelectedColor" format="color" />
-        <attr name="shapeBottomIcon" format="reference" />
         <attr name="shapeStartIconSize" format="dimension" />
         <attr name="shapeTopIconSize" format="dimension" />
         <attr name="shapeEndIconSize" format="dimension" />
@@ -277,57 +277,6 @@
         <attr name="shapeBottomIconSize" />
         <attr name="shapeIconPadding" />
         <attr name="shapeGravity" />
-    </declare-styleable>
-    <declare-styleable name="ComplexButton">
-        <attr name="cvGravity" format="enum">
-            <enum name="center" value="0" />
-            <enum name="left" value="1" />
-            <enum name="right" value="2" />
-            <enum name="top" value="3" />
-            <enum name="bottom" value="4" />
-        </attr>
-
-        <attr name="cvSelector" format="enum">
-            <enum name="none" value="0" />
-            <enum name="standard" value="1" />
-            <enum name="ripple" value="2" />
-        </attr>
-
-        <attr name="cvNormalBgColor" format="color" />
-        <attr name="cvPressedBgColor" format="color" />
-        <attr name="cvDisableBgColor" format="color" />
-        <attr name="cvNormalTextColor" format="color" />
-        <attr name="cvPressedTextColor" format="color" />
-        <attr name="cvDisableTextColor" format="color" />
-
-        <attr name="cvCornersRadius" format="dimension" />
-        <attr name="cvCornersTopLeftRadius" format="dimension" />
-        <attr name="cvCornersTopRightRadius" format="dimension" />
-        <attr name="cvCornersBottomLeftRadius" format="dimension" />
-        <attr name="cvCornersBottomRightRadius" format="dimension" />
-
-        <attr name="cvStrokeWidth" format="dimension" />
-        <attr name="cvStrokeNormalColor" format="color" />
-        <attr name="cvStrokePressedColor" format="color" />
-        <attr name="cvStrokeDisableColor" format="color" />
-
-        <attr name="cvElevation" format="dimension" />
-        <attr name="cvClickable" format="boolean" />
-
-        <attr name="cvIconStart" format="reference" />
-        <attr name="cvIconTop" format="reference" />
-        <attr name="cvIconEnd" format="reference" />
-        <attr name="cvIconBottom" format="reference" />
-        <attr name="cvIconStartSize" format="dimension" />
-        <attr name="cvIconTopSize" format="dimension" />
-        <attr name="cvIconEndSize" format="dimension" />
-        <attr name="cvIconBottomSize" format="dimension" />
-        <attr name="cvIconStartTint" format="color" />
-        <attr name="cvIconTopTint" format="color" />
-        <attr name="cvIconEndTint" format="color" />
-        <attr name="cvIconBottomTint" format="color" />
-
-        <attr name="cvIconPadding" format="dimension" />
     </declare-styleable>
     <declare-styleable name="AvatarImageView">
         <attr name="aiv_isCircle" format="reference|boolean" />

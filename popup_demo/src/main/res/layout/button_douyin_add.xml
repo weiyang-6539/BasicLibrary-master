@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.github.android.common.widget.shape_extend.ComplexButton
+    <com.github.android.common.widget.shape.extend.ComplexView
         android:id="@+id/cv_add"
         android:layout_width="40dp"
         android:layout_height="25dp"
@@ -13,7 +13,6 @@
         android:gravity="center"
         android:text="+"
         android:textSize="15sp"
-        app:cvCornersRadius="3dp"
-        app:cvNormalBgColor="@android:color/white"
-        app:cvSelector="none" />
+        app:shapeCornersRadius="3dp"
+        app:shapeSelectorNormalColor="@android:color/white" />
 </FrameLayout>

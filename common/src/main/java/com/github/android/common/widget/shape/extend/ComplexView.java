@@ -16,6 +16,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.TextViewCompat;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 
 import com.github.android.common.R;
@@ -25,6 +26,7 @@ import com.github.android.common.widget.shape.State;
 
 /**
  * Created by fxb on 2020/8/31.
+ * 综合型View，支持单文本 单图标 或者 文本 + 图标的模式，支持图标，文字，线框变色
  */
 public class ComplexView extends AppCompatTextView {
     private ShapeBuilder shapeBuilder = new ShapeBuilder();
@@ -94,11 +96,12 @@ public class ComplexView extends AppCompatTextView {
             gravity = a.getInt(R.styleable.ShapeView_shapeGravity, 0);
         }).apply(this);
 
-        setTextColor(getTextColor());
-
+        //设置文本颜色
+        setTextColor(createTextColor());
+        //设置文字图标间距
         setCompoundDrawablePadding(iconPadding);
-        updateIcon();
-
+        //设置icon
+        //updateIcon();
         //设置文本位置
         switch (gravity) {
             case 0:
@@ -119,7 +122,7 @@ public class ComplexView extends AppCompatTextView {
         }
     }
 
-    private ColorStateList getTextColor() {
+    private ColorStateList createTextColor() {
         for (int i = 0; i < textColors.length; i++) {
             if (isTransparent(textColors[i]))
                 textColors[i] = textColors[textColors.length - 1];
@@ -135,24 +138,27 @@ public class ComplexView extends AppCompatTextView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        updateIconPosition();
+        updateIcon();
     }
 
     @Override
     protected void onTextChanged(CharSequence text, int start, int lengthBefore, int lengthAfter) {
         super.onTextChanged(text, start, lengthBefore, lengthAfter);
-        updateIconPosition();
+        updateIcon();
     }
 
-    private void updateIconPosition() {
+    private void updateIcon() {
         if (isIconNull() || getLayout() == null) {
             return;
         }
 
-        if (getGravity() != Gravity.CENTER) {
-            updateIcon();
-            return;
-        }
+        Drawable startIcon = getDrawable(0);
+
+        Drawable topIcon = getDrawable(1);
+
+        Drawable endIcon = getDrawable(2);
+
+        Drawable bottomIcon = getDrawable(3);
 
         Paint textPaint = getPaint();
         String text = getText().toString();
@@ -164,43 +170,46 @@ public class ComplexView extends AppCompatTextView {
         Rect rect = new Rect();
         textPaint.getTextBounds(text, 0, text.length(), rect);
 
-        offsetX = getMeasuredWidth()
+        int offsetX = getMeasuredWidth()
                 - textWidth
                 - ViewCompat.getPaddingStart(this)
                 - ViewCompat.getPaddingEnd(this)
-                - (iconIds[0] == 0 ? 0 : startIconSize + iconPadding)
-                - (iconIds[2] == 0 ? 0 : endIconSize + iconPadding)
+                - (startIcon == null ? 0 : startIcon.getBounds().width() + (textWidth == 0 ? 0 : iconPadding))
+                - (endIcon == null ? 0 : endIcon.getBounds().width() + (textWidth == 0 ? 0 : iconPadding))
                 >> 1;
 
-        offsetY = getMeasuredHeight()
+        int offsetY = getMeasuredHeight()
                 - getLayout().getHeight()
                 - getPaddingTop()
                 - getPaddingBottom()
-                - (iconIds[1] == 0 ? 0 : topIconSize + iconPadding)
-                - (iconIds[3] == 0 ? 0 : bottomIconSize + iconPadding)
+                - (topIcon == null ? 0 : topIcon.getBounds().height() + (textWidth == 0 ? 0 : iconPadding))
+                - (bottomIcon == null ? 0 : bottomIcon.getBounds().height() + (textWidth == 0 ? 0 : iconPadding))
                 >> 1;
 
-        updateIcon();
-    }
-
-    private int offsetX, offsetY;
-
-    private void updateIcon() {
-        Drawable startIcon = getDrawable(0);
-        if (startIcon != null)
-            startIcon.setBounds(offsetX, 0, offsetX + startIconSize, startIconSize);
-
-        Drawable topIcon = getDrawable(1);
-        if (topIcon != null)
-            topIcon.setBounds(0, offsetY, topIconSize, offsetY + topIconSize);
-
-        Drawable endIcon = getDrawable(2);
-        if (endIcon != null)
-            endIcon.setBounds(-offsetX, 0, -offsetX + endIconSize, endIconSize);
-
-        Drawable bottomIcon = getDrawable(3);
-        if (bottomIcon != null)
-            bottomIcon.setBounds(0, -offsetY, bottomIconSize, -offsetY + bottomIconSize);
+        if (startIcon != null) {
+            Rect bounds = startIcon.copyBounds();
+            bounds.left += offsetX;
+            bounds.right += offsetX;
+            startIcon.setBounds(bounds);
+        }
+        if (topIcon != null) {
+            Rect bounds = topIcon.copyBounds();
+            bounds.top += offsetY;
+            bounds.bottom += offsetY;
+            topIcon.setBounds(bounds);
+        }
+        if (endIcon != null) {
+            Rect bounds = endIcon.copyBounds();
+            bounds.left -= offsetX;
+            bounds.right -= offsetX;
+            endIcon.setBounds(bounds);
+        }
+        if (bottomIcon != null) {
+            Rect bounds = bottomIcon.copyBounds();
+            bounds.top -= offsetY;
+            bounds.bottom -= offsetY;
+            bottomIcon.setBounds(bounds);
+        }
 
         TextViewCompat.setCompoundDrawablesRelative(this, startIcon, topIcon, endIcon, bottomIcon);
     }
@@ -229,14 +238,50 @@ public class ComplexView extends AppCompatTextView {
             drawable.addState(new int[]{}, getStateIcon(bitmap, iconColors[index][3]));
         else
             drawable.addState(new int[]{}, new BitmapDrawable(bitmap));
+
+        //计算图片的宽高比,解决非方形icon的留白问题
+        float ratio = bitmap.getWidth() * 1f / bitmap.getHeight();
+        int left, top, right, bottom;
+        switch (index) {
+            case 0:
+                left = 0;
+                right = (int) (startIconSize * Math.min(ratio, 1f));
+                top = (int) (startIconSize * (1 - 1f / Math.max(ratio, 1f)) / 2);
+                bottom = startIconSize - top;
+                drawable.setBounds(left, top, right, bottom);
+                break;
+            case 1:
+                left = (int) (topIconSize * (1 - Math.min(ratio, 1f)) / 2);
+                top = 0;
+                right = topIconSize - left;
+                bottom = (int) (topIconSize / Math.max(ratio, 1f));
+                drawable.setBounds(left, top, right, bottom);
+                break;
+            case 2:
+                left = 0;
+                top = (int) (endIconSize * (1 - 1f / Math.max(ratio, 1f)) / 2);
+                right = (int) (endIconSize * Math.min(ratio, 1f));
+                bottom = endIconSize - top;
+                drawable.setBounds(left, top, right, bottom);
+                break;
+            case 3:
+                left = (int) (bottomIconSize * (1 - Math.min(ratio, 1f)) / 2);
+                top = 0;
+                right = bottomIconSize - left;
+                bottom = (int) (bottomIconSize / Math.max(ratio, 1f));
+                drawable.setBounds(left, top, right, bottom);
+                break;
+        }
+
         return drawable;
     }
 
-    private boolean isIconNull() {
+
+    private boolean isIconNull() {//是否没有设置图标
         return iconIds != null && iconIds[0] == 0 && iconIds[1] == 0 && iconIds[2] == 0 && iconIds[3] == 0;
     }
 
-    private boolean isTransparent(int color) {
+    private boolean isTransparent(int color) {//判断某个颜色是否为透明色
         return color == Color.TRANSPARENT;
     }
 

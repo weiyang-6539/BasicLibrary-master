@@ -12,7 +12,6 @@ import com.github.android.common.popup.XPopup;
 import com.github.android.common.popup.animator.AnimationFactory;
 import com.github.android.common.popup.annotation.AttachType;
 import com.github.android.common.popup.annotation.Position;
-import com.github.android.common.widget.shape_extend.ComplexButton;
 import com.github.android.popup_demo.DouyinActivity;
 import com.github.android.popup_demo.R;
 import com.github.android.popup_demo.popup.BottomPopupView;

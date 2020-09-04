@@ -27,14 +27,14 @@
         android:layout_height="40dp"
         android:background="#222">
 
-        <com.github.android.common.widget.shape_extend.ComplexButton
+        <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/cv_show_edit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:paddingLeft="12dp"
             android:text="有爱评论，说点好听的~"
-            android:textColor="#ccc"
-            app:cvGravity="left" />
+            app:shapeGravity="left"
+            app:shapeTextNormalColor="#ccc" />
     </LinearLayout>
 </LinearLayout>

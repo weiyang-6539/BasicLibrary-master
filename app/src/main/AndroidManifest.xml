@@ -23,6 +23,7 @@
             android:name=".ComplexViewActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".ShapeActivity" />
+        <activity android:name=".TestActivity" />
     </application>
 
 </manifest>

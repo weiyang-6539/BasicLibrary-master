@@ -42,20 +42,20 @@
                 android:layout_height="56dp"
                 android:src="@drawable/img_avatar" />
 
-            <com.github.android.common.widget.shape_extend.ComplexButton
+            <com.github.android.common.widget.shape.extend.ComplexView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:text="1000W"
-                android:textColor="#eee"
                 android:textSize="15sp"
-                app:cvIconPadding="0dp"
-                app:cvIconTopSize="35dp"
-                app:cvIconTop="@drawable/ic_favorites" />
+                app:shapeIconPadding="0dp"
+                app:shapeTextNormalColor="#eee"
+                app:shapeTopIcon="@drawable/ic_favorites"
+                app:shapeTopIconSize="35dp" />
 
-            <com.github.android.common.widget.shape_extend.ComplexButton
+            <com.github.android.common.widget.shape.extend.ComplexView
                 android:id="@+id/cv_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,13 +63,13 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:text="1000W"
-                android:textColor="#eee"
                 android:textSize="15sp"
-                app:cvIconPadding="0dp"
-                app:cvIconTopSize="35dp"
-                app:cvIconTop="@drawable/ic_comment" />
+                app:shapeIconPadding="0dp"
+                app:shapeTextNormalColor="#eee"
+                app:shapeTopIcon="@drawable/ic_comment"
+                app:shapeTopIconSize="35dp" />
 
-            <com.github.android.common.widget.shape_extend.ComplexButton
+            <com.github.android.common.widget.shape.extend.ComplexView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -78,9 +78,10 @@
                 android:text="1000W"
                 android:textColor="#eee"
                 android:textSize="15sp"
-                app:cvIconPadding="0dp"
-                app:cvIconTopSize="35dp"
-                app:cvIconTop="@drawable/ic_transfer" />
+                app:shapeIconPadding="0dp"
+                app:shapeTextNormalColor="#eee"
+                app:shapeTopIcon="@drawable/ic_transfer"
+                app:shapeTopIconSize="35dp" />
 
             <Space
                 android:layout_width="60dp"

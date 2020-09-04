@@ -4,12 +4,12 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <com.github.android.common.widget.shape_extend.ComplexButton
+    <com.github.android.common.widget.shape.extend.ComplexView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
         android:text="Toast测试测试测试"
-        android:textColor="#eee"
-        app:cvCornersRadius="8dp"
-        app:cvNormalBgColor="#a000" />
+        app:shapeCornersRadius="8dp"
+        app:shapeSelectorNormalColor="#a000"
+        app:shapeTextNormalColor="#eee" />
 </FrameLayout>
