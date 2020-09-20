@@ -279,14 +279,15 @@
         <attr name="shapeGravity" />
     </declare-styleable>
     <declare-styleable name="AvatarImageView">
-        <attr name="aiv_isCircle" format="reference|boolean" />
-        <attr name="aiv_TextSizeRatio" format="reference|float" />
-        <attr name="aiv_TextMaskRatio" format="reference|float" />
-        <attr name="aiv_BoarderColor" format="reference|color" />
-        <attr name="aiv_TextColor" format="reference|color" />
-        <attr name="aiv_BoarderWidth" format="reference|dimension" />
-        <attr name="aiv_ShowBoarder" format="reference|boolean" />
-        <attr name="aiv_CornerRadius" format="reference|dimension" />
+        <attr name="aivCornersRadius" format="dimension" />
+        <attr name="aivCornersTopLeftRadius" format="dimension" />
+        <attr name="aivCornersTopRightRadius" format="dimension" />
+        <attr name="aivCornersBotLeftRadius" format="dimension" />
+        <attr name="aivCornersBotRightRadius" format="dimension" />
+        <attr name="aivBorderWidth" format="dimension" />
+        <attr name="aivBorderColor" format="color" />
+
+        <attr name="mask_color" format="color" />
     </declare-styleable>
     <declare-styleable name="StateLayout">
         <attr name="slLoadingLayoutId" format="reference" />

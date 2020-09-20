@@ -24,7 +24,6 @@ public class ScreenUtils {
         return context.getResources().getDisplayMetrics().heightPixels;
     }
 
-
     /**
      * 包含虚拟导航栏高度
      *

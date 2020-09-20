@@ -10,7 +10,6 @@ import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
-import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.RippleDrawable;
@@ -18,7 +17,6 @@ import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.view.View;
 
 import com.github.android.common.R;
@@ -29,7 +27,7 @@ import java.util.Arrays;
  * Created by fxb on 2020/8/28.
  * View的背景设置类，这里只使用到shape中的rectangle（ring oval line 均未使用）
  */
-public class ShapeBuilder {
+public class ShapeHelper {
     /**
      * shape背景状态色
      */
@@ -76,48 +74,49 @@ public class ShapeBuilder {
      */
     private boolean ripple;
 
-    public ShapeBuilder initAttrs(Context context, AttributeSet attrs) {
-        initAttrs(context, attrs, null);
-        return this;
+    public ShapeHelper initAttrs(Context context, AttributeSet attrs) {
+        return initAttrs(context, attrs, null);
     }
 
-    public ShapeBuilder initAttrs(Context context, AttributeSet attrs, ExposeListener listener) {
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ShapeView);
-        selectorNormalColor = a.getColor(R.styleable.ShapeView_shapeSelectorNormalColor, Color.TRANSPARENT);
-        selectorPressedColor = a.getColor(R.styleable.ShapeView_shapeSelectorPressedColor, Color.TRANSPARENT);
-        selectorDisableColor = a.getColor(R.styleable.ShapeView_shapeSelectorDisableColor, Color.TRANSPARENT);
-        selectorSelectedColor = a.getColor(R.styleable.ShapeView_shapeSelectorSelectedColor, Color.TRANSPARENT);
-        selectorFocusedColor = a.getColor(R.styleable.ShapeView_shapeSelectorFocusedColor, Color.TRANSPARENT);
-        selectorCheckedColor = a.getColor(R.styleable.ShapeView_shapeSelectorCheckedColor, Color.TRANSPARENT);
-        gradientStartColor = a.getColor(R.styleable.ShapeView_shapeGradientStartColor, Color.TRANSPARENT);
-        gradientCenterColor = a.getColor(R.styleable.ShapeView_shapeGradientCenterColor, Color.TRANSPARENT);
-        gradientEndColor = a.getColor(R.styleable.ShapeView_shapeGradientEndColor, Color.TRANSPARENT);
-        gradientAngle = a.getInt(R.styleable.ShapeView_shapeGradientAngle, 0);
-        gradientUseLevel = a.getBoolean(R.styleable.ShapeView_shapeGradientUseLevel, false);
-        strokeWidth = a.getDimensionPixelSize(R.styleable.ShapeView_shapeStrokeWidth, 0);
-        strokeNormalColor = a.getColor(R.styleable.ShapeView_shapeStrokeNormalColor, Color.TRANSPARENT);
-        strokePressedColor = a.getColor(R.styleable.ShapeView_shapeStrokePressedColor, Color.TRANSPARENT);
-        strokeDisableColor = a.getColor(R.styleable.ShapeView_shapeStrokeDisableColor, Color.TRANSPARENT);
-        strokeSelectedColor = a.getColor(R.styleable.ShapeView_shapeStrokeSelectedColor, Color.TRANSPARENT);
-        strokeFocusedColor = a.getColor(R.styleable.ShapeView_shapeStrokeFocusedColor, Color.TRANSPARENT);
-        strokeCheckedColor = a.getColor(R.styleable.ShapeView_shapeStrokeCheckedColor, Color.TRANSPARENT);
-        strokeDashWidth = a.getDimensionPixelSize(R.styleable.ShapeView_shapeStrokeDashWidth, 0);
-        strokeDashGap = a.getDimensionPixelSize(R.styleable.ShapeView_shapeStrokeDashGap, 0);
-        //设置圆角
-        setCornersTopLeftRadius(a.getDimensionPixelSize(R.styleable.ShapeView_shapeCornersTopLeftRadius, 0));
-        setCornersTopRightRadius(a.getDimensionPixelSize(R.styleable.ShapeView_shapeCornersTopRightRadius, 0));
-        setCornersBotLeftRadius(a.getDimensionPixelSize(R.styleable.ShapeView_shapeCornersBotLeftRadius, 0));
-        setCornersBotRightRadius(a.getDimensionPixelSize(R.styleable.ShapeView_shapeCornersBotRightRadius, 0));
-        setCornersRadius(a.getDimensionPixelSize(R.styleable.ShapeView_shapeCornersRadius, 0));
-        elevation = a.getDimensionPixelSize(R.styleable.ShapeView_shapeElevation, 0);
-        clickable = a.getBoolean(R.styleable.ShapeView_shapeClickable, true);
-        ripple = a.getBoolean(R.styleable.ShapeView_shapeRipple, false);
+    public ShapeHelper initAttrs(Context context, AttributeSet attrs, ExposeListener listener) {
+        if (attrs != null) {
+            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ShapeView);
+            selectorNormalColor = a.getColor(R.styleable.ShapeView_shapeSelectorNormalColor, Color.TRANSPARENT);
+            selectorPressedColor = a.getColor(R.styleable.ShapeView_shapeSelectorPressedColor, Color.TRANSPARENT);
+            selectorDisableColor = a.getColor(R.styleable.ShapeView_shapeSelectorDisableColor, Color.TRANSPARENT);
+            selectorSelectedColor = a.getColor(R.styleable.ShapeView_shapeSelectorSelectedColor, Color.TRANSPARENT);
+            selectorFocusedColor = a.getColor(R.styleable.ShapeView_shapeSelectorFocusedColor, Color.TRANSPARENT);
+            selectorCheckedColor = a.getColor(R.styleable.ShapeView_shapeSelectorCheckedColor, Color.TRANSPARENT);
+            gradientStartColor = a.getColor(R.styleable.ShapeView_shapeGradientStartColor, Color.TRANSPARENT);
+            gradientCenterColor = a.getColor(R.styleable.ShapeView_shapeGradientCenterColor, Color.TRANSPARENT);
+            gradientEndColor = a.getColor(R.styleable.ShapeView_shapeGradientEndColor, Color.TRANSPARENT);
+            gradientAngle = a.getInt(R.styleable.ShapeView_shapeGradientAngle, 0);
+            gradientUseLevel = a.getBoolean(R.styleable.ShapeView_shapeGradientUseLevel, false);
+            strokeWidth = a.getDimensionPixelSize(R.styleable.ShapeView_shapeStrokeWidth, 0);
+            strokeNormalColor = a.getColor(R.styleable.ShapeView_shapeStrokeNormalColor, Color.TRANSPARENT);
+            strokePressedColor = a.getColor(R.styleable.ShapeView_shapeStrokePressedColor, Color.TRANSPARENT);
+            strokeDisableColor = a.getColor(R.styleable.ShapeView_shapeStrokeDisableColor, Color.TRANSPARENT);
+            strokeSelectedColor = a.getColor(R.styleable.ShapeView_shapeStrokeSelectedColor, Color.TRANSPARENT);
+            strokeFocusedColor = a.getColor(R.styleable.ShapeView_shapeStrokeFocusedColor, Color.TRANSPARENT);
+            strokeCheckedColor = a.getColor(R.styleable.ShapeView_shapeStrokeCheckedColor, Color.TRANSPARENT);
+            strokeDashWidth = a.getDimensionPixelSize(R.styleable.ShapeView_shapeStrokeDashWidth, 0);
+            strokeDashGap = a.getDimensionPixelSize(R.styleable.ShapeView_shapeStrokeDashGap, 0);
+            //设置圆角
+            setCornersTopLeftRadius(a.getDimensionPixelSize(R.styleable.ShapeView_shapeCornersTopLeftRadius, 0));
+            setCornersTopRightRadius(a.getDimensionPixelSize(R.styleable.ShapeView_shapeCornersTopRightRadius, 0));
+            setCornersBotLeftRadius(a.getDimensionPixelSize(R.styleable.ShapeView_shapeCornersBotLeftRadius, 0));
+            setCornersBotRightRadius(a.getDimensionPixelSize(R.styleable.ShapeView_shapeCornersBotRightRadius, 0));
+            setCornersRadius(a.getDimensionPixelSize(R.styleable.ShapeView_shapeCornersRadius, 0));
+            elevation = a.getDimensionPixelSize(R.styleable.ShapeView_shapeElevation, 0);
+            clickable = a.getBoolean(R.styleable.ShapeView_shapeClickable, true);
+            ripple = a.getBoolean(R.styleable.ShapeView_shapeRipple, false);
 
-        //拓展非Shape属性
-        if (listener != null)
-            listener.expose(a);
+            //拓展非Shape属性
+            if (listener != null)
+                listener.expose(a);
 
-        a.recycle();
+            a.recycle();
+        }
         return this;
     }
 
@@ -125,35 +124,26 @@ public class ShapeBuilder {
         void expose(TypedArray a);
     }
 
-    private ShapeBuilder setCornersTopLeftRadius(float cornersTopLeftRadius) {
-        this.radii[0] = cornersTopLeftRadius;
-        this.radii[1] = cornersTopLeftRadius;
-        return this;
+    private void setCornersTopLeftRadius(float cornersTopLeftRadius) {
+        radii[0] = radii[1] = cornersTopLeftRadius;
     }
 
-    private ShapeBuilder setCornersTopRightRadius(float cornersTopRightRadius) {
-        this.radii[2] = cornersTopRightRadius;
-        this.radii[3] = cornersTopRightRadius;
-        return this;
+    private void setCornersTopRightRadius(float cornersTopRightRadius) {
+        radii[2] = radii[3] = cornersTopRightRadius;
     }
 
-    private ShapeBuilder setCornersBotRightRadius(float cornersBotRightRadius) {
-        this.radii[4] = cornersBotRightRadius;
-        this.radii[5] = cornersBotRightRadius;
-        return this;
+    private void setCornersBotRightRadius(float cornersBotRightRadius) {
+        radii[4] = radii[5] = cornersBotRightRadius;
     }
 
-    private ShapeBuilder setCornersBotLeftRadius(float cornersBotLeftRadius) {
-        this.radii[6] = cornersBotLeftRadius;
-        this.radii[7] = cornersBotLeftRadius;
-        return this;
+    private void setCornersBotLeftRadius(float cornersBotLeftRadius) {
+        radii[6] = radii[7] = cornersBotLeftRadius;
     }
 
-    private ShapeBuilder setCornersRadius(float cornersRadius) {
+    private void setCornersRadius(float cornersRadius) {
         if (cornersRadius != 0) {
             Arrays.fill(radii, cornersRadius);
         }
-        return this;
     }
 
     private GradientDrawable getDrawable(@State int state) {
@@ -288,32 +278,28 @@ public class ShapeBuilder {
     }
 
     private Path mClipPath = new Path();
-    private Region mAreaRegion = new Region();
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private RectF rectF = new RectF();
 
-    void onSizeChanged(View view, int w, int h) {
-        RectF areas = new RectF();
-        areas.left = view.getPaddingLeft();
-        areas.top = view.getPaddingTop();
-        areas.right = w - view.getPaddingRight();
-        areas.bottom = h - view.getPaddingBottom();
-        mClipPath.reset();
-        mClipPath.addRoundRect(areas, radii, Path.Direction.CW);
-
-        Region clip = new Region((int) areas.left, (int) areas.top, (int) areas.right, (int) areas.bottom);
-        mAreaRegion.setPath(mClipPath, clip);
+    RectF getRectF() {
+        return rectF;
     }
 
-    void dispatchDraw(Canvas canvas) {
+    void onSizeChanged(int w, int h) {
+        rectF.set(0, 0, w, h);
+        mClipPath.reset();
+        mClipPath.addRoundRect(rectF, radii, Path.Direction.CW);
+
         // 剪裁
         mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        mPaint.setStrokeWidth(0);
         mPaint.setStyle(Paint.Style.FILL);
-        canvas.drawPath(mClipPath, mPaint);
-        canvas.restore();
     }
 
-    public boolean isEffective(MotionEvent ev) {
-        return mAreaRegion.contains((int) ev.getX(), (int) ev.getY());
+    /**
+     * 切割确保子View不超出圆角范围
+     */
+    void clipCanvas(Canvas canvas) {
+        canvas.drawPath(mClipPath, mPaint);
+        canvas.restore();
     }
 }

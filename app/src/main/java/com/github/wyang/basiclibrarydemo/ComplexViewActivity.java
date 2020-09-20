@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.github.android.common.widget.shape.extend.ComplexView;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * Created by weiyang on 2019-10-12.
@@ -53,7 +54,6 @@ public class ComplexViewActivity extends BaseActivity {
         } else {
             if (!(view instanceof SwitchCompat))
                 view.setEnabled(enable);
-            Log.e(TAG, view.getClass().getSimpleName());
         }
     }
 
@@ -80,5 +80,14 @@ public class ComplexViewActivity extends BaseActivity {
         } else if (view instanceof ComplexView) {
             view.setSelected(selected);
         }
+    }
+
+    @BindView(R.id.cv_prompt)
+    ComplexView cv_prompt;
+
+    @OnClick(R.id.cv_prompt)
+    public void onClickPrompt() {
+        cv_prompt.setSelected(!cv_prompt.isSelected());
+        cv_prompt.setText(cv_prompt.isSelected() ? "已启用" : "启用提醒");
     }
 }

@@ -16,22 +16,27 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.TextViewCompat;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.Gravity;
 
 import com.github.android.common.R;
 import com.github.android.common.utils.ViewUtil;
-import com.github.android.common.widget.shape.ShapeBuilder;
+import com.github.android.common.widget.shape.ShapeHelper;
 import com.github.android.common.widget.shape.State;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Created by fxb on 2020/8/31.
  * 综合型View，支持单文本 单图标 或者 文本 + 图标的模式，支持图标，文字，线框变色
  */
 public class ComplexView extends AppCompatTextView {
-    private ShapeBuilder shapeBuilder = new ShapeBuilder();
+    private ShapeHelper shapeHelper = new ShapeHelper();
 
-    private int[] textColors = new int[4];
+    private int textNormColor;
+    private int textPressedColor;
+    private int textDisableColor;
+    private int textSelectedColor;
     /**
      * 对应图标资源id
      */
@@ -63,11 +68,11 @@ public class ComplexView extends AppCompatTextView {
     public ComplexView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        shapeBuilder.initAttrs(context, attrs, a -> {
-            textColors[3] = a.getColor(R.styleable.ShapeView_shapeTextNormalColor, Color.BLACK);
-            textColors[0] = a.getColor(R.styleable.ShapeView_shapeTextPressedColor, Color.TRANSPARENT);
-            textColors[1] = a.getColor(R.styleable.ShapeView_shapeTextDisableColor, Color.TRANSPARENT);
-            textColors[2] = a.getColor(R.styleable.ShapeView_shapeTextSelectedColor, Color.TRANSPARENT);
+        shapeHelper.initAttrs(context, attrs, a -> {
+            textNormColor = a.getColor(R.styleable.ShapeView_shapeTextNormalColor, Color.BLACK);
+            textPressedColor = a.getColor(R.styleable.ShapeView_shapeTextPressedColor, Color.TRANSPARENT);
+            textDisableColor = a.getColor(R.styleable.ShapeView_shapeTextDisableColor, Color.TRANSPARENT);
+            textSelectedColor = a.getColor(R.styleable.ShapeView_shapeTextSelectedColor, Color.TRANSPARENT);
             iconIds[0] = a.getResourceId(R.styleable.ShapeView_shapeStartIcon, 0);
             iconIds[1] = a.getResourceId(R.styleable.ShapeView_shapeTopIcon, 0);
             iconIds[2] = a.getResourceId(R.styleable.ShapeView_shapeEndIcon, 0);
@@ -123,16 +128,25 @@ public class ComplexView extends AppCompatTextView {
     }
 
     private ColorStateList createTextColor() {
-        for (int i = 0; i < textColors.length; i++) {
-            if (isTransparent(textColors[i]))
-                textColors[i] = textColors[textColors.length - 1];
+        LinkedHashMap<int[], Integer> stateMap = new LinkedHashMap<>();
+        if (isNotTransparent(textPressedColor))
+            stateMap.put(new int[]{State.PRESSED}, textPressedColor);
+        if (isNotTransparent(textDisableColor))
+            stateMap.put(new int[]{State.DISABLE}, textDisableColor);
+        if (isNotTransparent(textSelectedColor))
+            stateMap.put(new int[]{State.SELECTED}, textSelectedColor);
+        if (isNotTransparent(textNormColor))
+            stateMap.put(new int[]{}, textNormColor);
+
+        int[][] states = new int[stateMap.size()][1];
+        int[] colors = new int[stateMap.size()];
+        int index = 0;
+        for (Map.Entry<int[], Integer> entry : stateMap.entrySet()) {
+            states[index] = entry.getKey();
+            colors[index] = entry.getValue();
+            index++;
         }
-        return new ColorStateList(new int[][]{
-                new int[]{State.PRESSED},
-                new int[]{State.DISABLE},
-                new int[]{State.SELECTED},
-                new int[]{}
-        }, textColors);
+        return new ColorStateList(states, colors);
     }
 
     @Override
@@ -228,13 +242,13 @@ public class ComplexView extends AppCompatTextView {
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), iconId);
 
         StateListDrawable drawable = new StateListDrawable();
-        if (!isTransparent(iconColors[index][0]))
+        if (isNotTransparent(iconColors[index][0]))
             drawable.addState(new int[]{State.PRESSED}, getStateIcon(bitmap, iconColors[index][0]));
-        if (!isTransparent(iconColors[index][1]))
+        if (isNotTransparent(iconColors[index][1]))
             drawable.addState(new int[]{State.DISABLE}, getStateIcon(bitmap, iconColors[index][1]));
-        if (!isTransparent(iconColors[index][2]))
+        if (isNotTransparent(iconColors[index][2]))
             drawable.addState(new int[]{State.SELECTED}, getStateIcon(bitmap, iconColors[index][2]));
-        if (!isTransparent(iconColors[index][3]))
+        if (isNotTransparent(iconColors[index][3]))
             drawable.addState(new int[]{}, getStateIcon(bitmap, iconColors[index][3]));
         else
             drawable.addState(new int[]{}, new BitmapDrawable(bitmap));
@@ -281,8 +295,8 @@ public class ComplexView extends AppCompatTextView {
         return iconIds != null && iconIds[0] == 0 && iconIds[1] == 0 && iconIds[2] == 0 && iconIds[3] == 0;
     }
 
-    private boolean isTransparent(int color) {//判断某个颜色是否为透明色
-        return color == Color.TRANSPARENT;
+    private boolean isNotTransparent(int color) {//判断某个颜色是否为透明色
+        return color != Color.TRANSPARENT;
     }
 
     private int dp2px(float dpValue) {

@@ -24,6 +24,7 @@
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".ShapeActivity" />
         <activity android:name=".TestActivity" />
+        <activity android:name=".ImageViewActivity" />
     </application>
 
 </manifest>

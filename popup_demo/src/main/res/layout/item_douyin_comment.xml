@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:padding="8dp">
 
-    <com.github.android.common.widget.AvatarImageView
+    <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/img_avatar" />

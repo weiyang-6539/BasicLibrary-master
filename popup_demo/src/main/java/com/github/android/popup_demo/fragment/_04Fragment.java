@@ -1,6 +1,7 @@
 package com.github.android.popup_demo.fragment;
 
 import com.github.android.common.base.BaseFragment;
+import com.github.android.common.widget.shape.extend.ComplexView;
 import com.github.android.popup_demo.R;
 
 import butterknife.BindView;
@@ -10,9 +11,9 @@ import butterknife.BindView;
  */
 public class _04Fragment extends BaseFragment {
     @BindView(R.id.cv_01)
-    ComplexButton cv_01;
+    ComplexView cv_01;
     @BindView(R.id.cv_02)
-    ComplexButton cv_02;
+    ComplexView cv_02;
 
     @Override
     protected int getLayoutId() {

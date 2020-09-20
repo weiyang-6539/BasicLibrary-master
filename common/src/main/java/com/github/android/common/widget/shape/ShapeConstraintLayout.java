@@ -2,7 +2,6 @@ package com.github.android.common.widget.shape;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.RectF;
 import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 
@@ -10,7 +9,7 @@ import android.util.AttributeSet;
  * Created by fxb on 2020/8/28.
  */
 public class ShapeConstraintLayout extends ConstraintLayout {
-    private ShapeBuilder shapeBuilder = new ShapeBuilder();
+    private ShapeHelper shapeHelper = new ShapeHelper();
 
     public ShapeConstraintLayout(Context context) {
         this(context, null);
@@ -23,21 +22,20 @@ public class ShapeConstraintLayout extends ConstraintLayout {
     public ShapeConstraintLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        shapeBuilder.initAttrs(context, attrs).apply(this);
+        shapeHelper.initAttrs(context, attrs).apply(this);
     }
 
     @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(w, h, oldw, oldh);
+    protected void onSizeChanged(int w, int h, int oldW, int oldH) {
+        super.onSizeChanged(w, h, oldW, oldH);
 
-        shapeBuilder.onSizeChanged(this, w, h);
+        shapeHelper.onSizeChanged(w, h);
     }
 
     @Override
     public void dispatchDraw(Canvas canvas) {
-        canvas.saveLayer(new RectF(0, 0, canvas.getWidth(), canvas.getHeight()),
-                null, Canvas.ALL_SAVE_FLAG);
+        canvas.saveLayer(shapeHelper.getRectF(), null, Canvas.ALL_SAVE_FLAG);
         super.dispatchDraw(canvas);
-        shapeBuilder.dispatchDraw(canvas);
+        shapeHelper.clipCanvas(canvas);
     }
 }

@@ -2,7 +2,6 @@ package com.github.android.common.widget.shape;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.RectF;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -12,7 +11,7 @@ import android.widget.FrameLayout;
  * Created by fxb on 2020/8/28.
  */
 public class ShapeFrameLayout extends FrameLayout {
-    private ShapeBuilder shapeBuilder = new ShapeBuilder();
+    private ShapeHelper shapeHelper = new ShapeHelper();
 
     public ShapeFrameLayout(@NonNull Context context) {
         this(context, null);
@@ -25,22 +24,21 @@ public class ShapeFrameLayout extends FrameLayout {
     public ShapeFrameLayout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        shapeBuilder.initAttrs(context, attrs).apply(this);
+        shapeHelper.initAttrs(context, attrs).apply(this);
     }
 
     @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(w, h, oldw, oldh);
+    protected void onSizeChanged(int w, int h, int oldW, int oldH) {
+        super.onSizeChanged(w, h, oldW, oldH);
 
-        shapeBuilder.onSizeChanged(this, w, h);
+        shapeHelper.onSizeChanged(w, h);
     }
 
     @Override
     protected void dispatchDraw(Canvas canvas) {
-        canvas.saveLayer(new RectF(0, 0, canvas.getWidth(), canvas.getHeight()),
-                null, Canvas.ALL_SAVE_FLAG);
+        canvas.saveLayer(shapeHelper.getRectF(), null, Canvas.ALL_SAVE_FLAG);
         super.dispatchDraw(canvas);
-        shapeBuilder.dispatchDraw(canvas);
+        shapeHelper.clipCanvas(canvas);
     }
 
     /*@Override

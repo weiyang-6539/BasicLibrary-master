@@ -43,8 +43,6 @@ public abstract class BaseFragment extends Fragment {
 
     /**
      * 布局Id，每个子类需要返回
-     *
-     * @return
      */
     protected abstract int getLayoutId();
 
@@ -67,8 +65,6 @@ public abstract class BaseFragment extends Fragment {
 
     /**
      * 当前碎片可见变化，一般用于页面可见时重新网络请求
-     *
-     * @param isVisibleToUser
      */
     protected void onFragmentVisibleChange(boolean isVisibleToUser) {
     }
