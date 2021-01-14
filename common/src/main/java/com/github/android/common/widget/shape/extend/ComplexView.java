@@ -33,7 +33,7 @@ import java.util.Map;
 public class ComplexView extends AppCompatTextView {
     private ShapeHelper shapeHelper = new ShapeHelper();
 
-    private int textNormColor;
+    private int textNormalColor;
     private int textPressedColor;
     private int textDisableColor;
     private int textSelectedColor;
@@ -69,7 +69,7 @@ public class ComplexView extends AppCompatTextView {
         super(context, attrs, defStyleAttr);
 
         shapeHelper.initAttrs(context, attrs, a -> {
-            textNormColor = a.getColor(R.styleable.ShapeView_shapeTextNormalColor, Color.BLACK);
+            textNormalColor = a.getColor(R.styleable.ShapeView_shapeTextNormalColor, Color.BLACK);
             textPressedColor = a.getColor(R.styleable.ShapeView_shapeTextPressedColor, Color.TRANSPARENT);
             textDisableColor = a.getColor(R.styleable.ShapeView_shapeTextDisableColor, Color.TRANSPARENT);
             textSelectedColor = a.getColor(R.styleable.ShapeView_shapeTextSelectedColor, Color.TRANSPARENT);
@@ -135,8 +135,8 @@ public class ComplexView extends AppCompatTextView {
             stateMap.put(new int[]{State.DISABLE}, textDisableColor);
         if (isNotTransparent(textSelectedColor))
             stateMap.put(new int[]{State.SELECTED}, textSelectedColor);
-        if (isNotTransparent(textNormColor))
-            stateMap.put(new int[]{}, textNormColor);
+        if (isNotTransparent(textNormalColor))
+            stateMap.put(new int[]{}, textNormalColor);
 
         int[][] states = new int[stateMap.size()][1];
         int[] colors = new int[stateMap.size()];
@@ -200,25 +200,25 @@ public class ComplexView extends AppCompatTextView {
                 - (bottomIcon == null ? 0 : bottomIcon.getBounds().height() + (textWidth == 0 ? 0 : iconPadding))
                 >> 1;
 
-        if (startIcon != null) {
+        if (startIcon != null && gravity != 2) {
             Rect bounds = startIcon.copyBounds();
             bounds.left += offsetX;
             bounds.right += offsetX;
             startIcon.setBounds(bounds);
         }
-        if (topIcon != null) {
+        if (topIcon != null && gravity != 4) {
             Rect bounds = topIcon.copyBounds();
             bounds.top += offsetY;
             bounds.bottom += offsetY;
             topIcon.setBounds(bounds);
         }
-        if (endIcon != null) {
+        if (endIcon != null && gravity != 3) {
             Rect bounds = endIcon.copyBounds();
             bounds.left -= offsetX;
             bounds.right -= offsetX;
             endIcon.setBounds(bounds);
         }
-        if (bottomIcon != null) {
+        if (bottomIcon != null && gravity != 1) {
             Rect bounds = bottomIcon.copyBounds();
             bounds.top -= offsetY;
             bounds.bottom -= offsetY;

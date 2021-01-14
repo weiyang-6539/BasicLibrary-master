@@ -20,6 +20,28 @@
         </attr>
         <attr name="bnbAutoHideEnabled" format="boolean" />
     </declare-styleable>
+    <declare-styleable name="BannerLayout">
+        <attr name="blInterval" format="integer"/>
+        <attr name="blIndicator" format="enum">
+            <enum name="none" value="0" />
+            <enum name="circle" value="1" />
+            <enum name="text" value="2" />
+        </attr>
+        <attr name="bl_orientation" />
+        <attr name="autoPlaying" />
+        <attr name="indicatorSelectedSrc" format="color|reference" />
+        <attr name="indicatorUnselectedSrc" format="color|reference" />
+        <attr name="indicatorSpace" format="dimension|reference" />
+        <attr name="indicatorMarginLeft" format="dimension|reference" />
+        <attr name="indicatorMarginRight" format="dimension|reference" />
+        <attr name="indicatorMarginBottom" format="dimension|reference" />
+        <attr name="indicatorGravity" format="enum">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="blCornerRadius" format="dimension" />
+    </declare-styleable>
     <declare-styleable name="ShapeView">
         <attr name="shapeSelectorNormalColor" format="color" />
         <attr name="shapeSelectorPressedColor" format="color" />

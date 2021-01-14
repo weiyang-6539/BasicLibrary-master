@@ -14,4 +14,15 @@
         android:divider="@drawable/shape_segment_line"
         android:orientation="horizontal"
         android:showDividers="middle" />
+
+    <com.github.android.common.widget.shape.extend.ComplexView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试文本"
+        app:shapeBottomIcon="@drawable/ic_arrow_down"
+        app:shapeEndIcon="@drawable/ic_arrow_right"
+        app:shapeGravity="left"
+        app:shapeIconPadding="@dimen/dp_0"
+        app:shapeStartIcon="@drawable/ic_arrow_left"
+        app:shapeTopIcon="@drawable/ic_arrow_up" />
 </LinearLayout>

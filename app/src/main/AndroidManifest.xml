@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.github.wyang.basiclibrarydemo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -25,6 +27,7 @@
         <activity android:name=".ShapeActivity" />
         <activity android:name=".TestActivity" />
         <activity android:name=".ImageViewActivity" />
+        <activity android:name=".BannerActivity" />
     </application>
 
 </manifest>

@@ -55,7 +55,7 @@ public class MainActivity extends BaseActivity {
         mData.add(new Item("ComplexView", "结合google md材质设计，自定义Button", ComplexViewActivity.class));
         mData.add(new Item("ImageView拓展", "各种ImageView应用", ImageViewActivity.class));
         mData.add(new Item("底部导航", "结合google md材质设计，自定义Button", BottomNavigationActivity.class));
-        mData.add(new Item("测试用例4", "", null));
+        mData.add(new Item("轮播图-RecyclerView实现", "", BannerActivity.class));
         mData.add(new Item("测试用例4", "", null));
         mData.add(new Item("测试用例4", "", null));
         mData.add(new Item("测试用例4", "", null));

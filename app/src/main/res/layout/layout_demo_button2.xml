@@ -270,11 +270,11 @@
             android:layout_marginEnd="@dimen/dp_40"
             android:layout_marginRight="@dimen/dp_40"
             android:text="领一个劵"
-            app:shapeSelectorPressedColor="#2222"
             app:shapeEndIcon="@drawable/ic_arrow_right"
             app:shapeEndIconNormalColor="@color/colorBtnDefault"
             app:shapeEndIconSize="@dimen/dp_12"
             app:shapeIconPadding="@dimen/dp_5"
+            app:shapeSelectorPressedColor="#2222"
             app:shapeTextNormalColor="@color/colorBtnDefault" />
 
         <com.github.android.common.widget.shape.extend.ComplexView
@@ -551,6 +551,15 @@
                 app:shapeTextSelectedColor="@color/colorBtnDefault" />
         </LinearLayout>
     </LinearLayout>
+
+    <com.github.android.common.widget.shape.extend.ComplexView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="文本测试一"
+        android:textSize="@dimen/sp_19"
+        app:shapeEndIcon="@drawable/ic_arrow_right"
+        app:shapeIconPadding="@dimen/dp_0"
+        app:shapeStartIcon="@drawable/ic_arrow_right" />
 
     <Space
         android:layout_width="wrap_content"
