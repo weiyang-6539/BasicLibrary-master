@@ -9,26 +9,32 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
-
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by fxb on 2020/11/4.
+ * 轮播图RecyclerView适配器
  */
 public abstract class BannerAdapter<T> extends RecyclerView.Adapter<BannerViewHolder> {
     protected int mLayoutResId;
     protected Context mContext;
-    private List<T> mData;
+    private List<T> mData = new ArrayList<>();
 
-    public BannerAdapter(List<T> mData, @LayoutRes int layoutResId) {
-        this.mData = mData;
+    public BannerAdapter(@LayoutRes int layoutResId) {
         if (layoutResId != 0) {
             this.mLayoutResId = layoutResId;
         }
+    }
+
+    public void setNewData(List<T> mData) {
+        if (mData != null)
+            this.mData = mData;
+    }
+
+    public int getDataSize() {
+        return mData.size();
     }
 
     @NotNull
@@ -48,7 +54,7 @@ public abstract class BannerAdapter<T> extends RecyclerView.Adapter<BannerViewHo
 
     @Override
     public void onBindViewHolder(@NonNull BannerViewHolder bannerViewHolder, int position) {
-        if (mData == null || mData.isEmpty()) {
+        if (mData.isEmpty()) {
             return;
         }
         convert(bannerViewHolder, mData.get(position % mData.size()));
@@ -58,15 +64,7 @@ public abstract class BannerAdapter<T> extends RecyclerView.Adapter<BannerViewHo
 
     @Override
     public int getItemCount() {
-        if (mData.size() == 1) {
-            return mData.size();
-        } else {
-            return Integer.MAX_VALUE;
-        }
-    }
-
-    public List<T> getData() {
-        return mData;
+        return mData.size() == 1 ? 1 : Integer.MAX_VALUE;
     }
 
     private OnItemClickListener mOnItemClickListener;
@@ -80,7 +78,7 @@ public abstract class BannerAdapter<T> extends RecyclerView.Adapter<BannerViewHo
     }
 
     public void setOnItemClick(View v, int position) {
-        getOnItemClickListener().onItemClick(this, v, position);
+        getOnItemClickListener().onItemClick(BannerAdapter.this, v, position);
     }
 
     public interface OnItemClickListener {
