@@ -19,8 +19,4 @@ public class _03Fragment extends BaseFragment {
     @Override
     protected void initialize() {
     }
-
-    @OnClick(R.id.aiv_02)
-    public void onClickAiv02() {
-    }
 }
