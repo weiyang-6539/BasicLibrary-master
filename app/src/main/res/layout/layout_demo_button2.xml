@@ -378,7 +378,7 @@
 
             <com.github.android.common.widget.shape.extend.ComplexView
                 android:layout_width="0dp"
-                android:layout_height="@dimen/dp_36"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="按钮1"
                 app:shapeCornersRadius="@dimen/dp_5"

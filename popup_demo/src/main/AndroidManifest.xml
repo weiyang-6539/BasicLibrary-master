@@ -22,7 +22,8 @@
         </activity>
         <activity
             android:name="com.github.android.popup_demo.DouyinActivity"
-            android:theme="@style/BaseAppTheme" />
+            android:theme="@style/BaseAppTheme"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

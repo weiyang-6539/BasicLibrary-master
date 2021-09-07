@@ -1,9 +1,6 @@
 package com.github.android.common.popup.animator;
 
-import android.animation.ValueAnimator;
-import android.os.Build;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
-import android.util.Log;
 import android.view.View;
 
 /**

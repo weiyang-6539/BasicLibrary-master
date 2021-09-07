@@ -8,15 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import butterknife.ButterKnife;
 
 /**
  * Created by fxb on 2020/5/25.
  */
 public abstract class BaseFragment extends Fragment {
-    private String TAG = getClass().getSimpleName();
+    private final String TAG = getClass().getSimpleName();
     private View rootView;
-    private boolean isInitialize;//页面初始化的标记
+    private final AtomicBoolean isInitialize = new AtomicBoolean(false);//页面初始化的标记
 
     @Nullable
     @Override
@@ -54,9 +56,8 @@ public abstract class BaseFragment extends Fragment {
     private void safeInit() {
         if (rootView != null) {
             if (getUserVisibleHint()) {
-                if (!isInitialize) {
+                if (isInitialize.compareAndSet(false, true)) {
                     initialize();
-                    isInitialize = true;
                 }
             }
             onFragmentVisibleChange(getUserVisibleHint());
