@@ -8,7 +8,9 @@
     android:paddingBottom="@dimen/fixed_height_bottom_padding"
     android:paddingLeft="@dimen/fixed_width_padding"
     android:paddingRight="@dimen/fixed_width_padding"
-    android:paddingTop="@dimen/fixed_height_top_padding_inactive">
+    android:paddingTop="@dimen/fixed_height_top_padding_inactive"
+    android:paddingStart="@dimen/fixed_width_padding"
+    android:paddingEnd="@dimen/fixed_width_padding">
 
     <FrameLayout
         android:id="@+id/fixed_bottom_navigation_icon_container"

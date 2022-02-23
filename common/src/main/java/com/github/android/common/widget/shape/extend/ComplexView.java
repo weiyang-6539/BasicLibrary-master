@@ -10,13 +10,15 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
-import android.support.annotation.ColorInt;
-import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.widget.TextViewCompat;
-import android.support.v7.widget.AppCompatTextView;
+
+import androidx.annotation.ColorInt;
+import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.widget.TextViewCompat;
 import android.util.AttributeSet;
 import android.view.Gravity;
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.github.android.common.R;
 import com.github.android.common.utils.ViewUtil;

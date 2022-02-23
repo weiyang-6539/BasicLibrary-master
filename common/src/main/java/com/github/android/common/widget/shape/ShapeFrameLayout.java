@@ -2,16 +2,17 @@ package com.github.android.common.widget.shape;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 /**
  * Created by fxb on 2020/8/28.
  */
 public class ShapeFrameLayout extends FrameLayout {
-    private ShapeHelper shapeHelper = new ShapeHelper();
+    private final ShapeHelper shapeHelper = new ShapeHelper();
 
     public ShapeFrameLayout(@NonNull Context context) {
         this(context, null);

@@ -9,7 +9,7 @@ import android.widget.RelativeLayout;
  * Created by fxb on 2020/8/28.
  */
 public class ShapeRelativeLayout extends RelativeLayout {
-    private ShapeHelper shapeHelper = new ShapeHelper();
+    private final ShapeHelper shapeHelper = new ShapeHelper();
 
     public ShapeRelativeLayout(Context context) {
         this(context, null);

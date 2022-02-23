@@ -245,7 +245,9 @@
             app:shapeCornersBotRightRadius="@dimen/dp_18"
             app:shapeCornersTopRightRadius="@dimen/dp_18"
             app:shapeSelectorNormalColor="#F88904"
-            app:shapeTextNormalColor="#eee" />
+            app:shapeTextNormalColor="#eee"
+            android:paddingEnd="@dimen/dp_16"
+            android:paddingStart="@dimen/dp_16" />
 
         <com.github.android.common.widget.shape.extend.ComplexView
             android:id="@+id/cv_prompt"
@@ -261,7 +263,9 @@
             app:shapeStrokeNormalColor="@color/white"
             app:shapeStrokeSelectedColor="@color/transparent"
             app:shapeStrokeWidth="@dimen/dp_1"
-            app:shapeTextNormalColor="@color/white" />
+            app:shapeTextNormalColor="@color/white"
+            android:paddingEnd="@dimen/dp_8"
+            android:paddingStart="@dimen/dp_8" />
 
         <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="wrap_content"
@@ -280,7 +284,7 @@
         <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="top|right"
+            android:layout_gravity="top|end"
             android:layout_margin="@dimen/dp_3"
             android:minWidth="30dp"
             app:shapeCornersRadius="@dimen/dp_10"
@@ -299,7 +303,9 @@
         android:paddingLeft="12dp"
         android:paddingTop="8dp"
         android:paddingRight="12dp"
-        android:paddingBottom="8dp">
+        android:paddingBottom="8dp"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp">
 
         <com.github.android.common.widget.shape.extend.ComplexView
             android:layout_width="wrap_content"

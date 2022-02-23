@@ -10,10 +10,11 @@ import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
 
 import com.github.android.common.R;
 import com.github.android.common.utils.ViewUtil;
@@ -36,20 +37,20 @@ public class AvatarImageView extends AppCompatImageView {
     private int mBorderWidth; // 边框宽度
     private int mBorderColor = Color.parseColor("#e2e2e2"); // 边框颜色
 
-    private float[] radii = new float[8];
+    private final float[] radii = new float[8];
     private int maskColor; // 遮罩颜色
 
-    private Path mClipPath = new Path();
-    private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Path mClipPath = new Path();
+    private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private RectF rectF;
 
-    private Paint mBorderPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint mBorderPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
-    private String mText = "魏洋";
-    private Paint mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final String mText = "魏洋";
+    private final Paint mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private Paint.FontMetrics mFontMetrics;
 
-    private Paint mPaintTextBackground = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint mPaintTextBackground = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     public AvatarImageView(Context context) {
         this(context, null);

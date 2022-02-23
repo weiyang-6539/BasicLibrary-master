@@ -4,9 +4,10 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.view.Display;
 import android.view.WindowManager;
+
+import androidx.annotation.RequiresApi;
 
 /**
  * Created by fxb on 2020/6/5.

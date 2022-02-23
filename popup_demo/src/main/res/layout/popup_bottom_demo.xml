@@ -34,7 +34,7 @@
         app:shapeSelectorPressedColor="#ccc"
         app:shapeTextNormalColor="#222" />
 
-    <android.support.v4.widget.Space
+    <Space
         android:layout_width="match_parent"
         android:layout_height="10dp" />
 

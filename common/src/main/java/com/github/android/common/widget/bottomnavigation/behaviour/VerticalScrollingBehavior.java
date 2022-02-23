@@ -2,11 +2,12 @@ package com.github.android.common.widget.bottomnavigation.behaviour;
 
 
 import android.content.Context;
-import android.support.annotation.IntDef;
-import android.support.annotation.NonNull;
-import android.support.design.widget.CoordinatorLayout;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.annotation.IntDef;
+import androidx.annotation.NonNull;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -40,7 +41,7 @@ public abstract class VerticalScrollingBehavior<V extends View> extends Coordina
     }
 
     @Retention(RetentionPolicy.SOURCE)
-    @IntDef({ScrollDirection.SCROLL_DIRECTION_UP, ScrollDirection.SCROLL_DIRECTION_DOWN})
+    @IntDef({ScrollDirection.SCROLL_DIRECTION_UP, ScrollDirection.SCROLL_DIRECTION_DOWN, ScrollDirection.SCROLL_NONE})
     public @interface ScrollDirection {
         int SCROLL_DIRECTION_UP = 1;
         int SCROLL_DIRECTION_DOWN = -1;

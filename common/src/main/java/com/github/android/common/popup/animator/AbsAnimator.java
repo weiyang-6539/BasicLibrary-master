@@ -1,7 +1,8 @@
 package com.github.android.common.popup.animator;
 
-import android.support.annotation.IntRange;
 import android.view.View;
+
+import androidx.annotation.IntRange;
 
 /**
  * Created by fxb on 2020/5/7.

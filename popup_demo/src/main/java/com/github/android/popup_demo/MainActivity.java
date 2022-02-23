@@ -1,23 +1,21 @@
 package com.github.android.popup_demo;
 
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
-import com.github.android.common.utils.ScreenUtils;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
 import com.github.android.popup_demo.fragment._01Fragment;
 import com.github.android.popup_demo.fragment._02Fragment;
 import com.github.android.popup_demo.fragment._03Fragment;
 import com.github.android.popup_demo.fragment._04Fragment;
 import com.github.android.popup_demo.fragment._05Fragment;
 import com.github.android.popup_demo.fragment._06Fragment;
+import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
     private TabLayout mTabLayout;

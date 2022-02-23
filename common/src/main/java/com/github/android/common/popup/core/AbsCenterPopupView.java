@@ -1,9 +1,10 @@
 package com.github.android.common.popup.core;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.Gravity;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
 
 import com.github.android.common.popup.util.XPopupUtils;
 

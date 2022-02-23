@@ -1,7 +1,8 @@
 package com.github.android.popup_demo;
 
 import android.graphics.drawable.GradientDrawable;
-import android.support.annotation.ColorInt;
+
+import androidx.annotation.ColorInt;
 
 /**
  * Created by fxb on 2020/6/5.

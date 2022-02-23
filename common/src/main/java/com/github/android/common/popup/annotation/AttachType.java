@@ -1,6 +1,6 @@
 package com.github.android.common.popup.annotation;
 
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 
 /**
  * Created by fxb on 2020/6/18.

@@ -1,9 +1,10 @@
 package com.github.android.common.utils;
 
-import android.support.annotation.IntRange;
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.text.TextUtils;
+
+import androidx.annotation.IntRange;
 
 /**
  * Created by *** on 2019-09-14.

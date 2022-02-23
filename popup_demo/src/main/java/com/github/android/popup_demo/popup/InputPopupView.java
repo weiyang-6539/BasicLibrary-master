@@ -1,7 +1,8 @@
 package com.github.android.popup_demo.popup;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 import com.github.android.common.popup.core.AbsCenterPopupView;
 

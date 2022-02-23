@@ -9,7 +9,9 @@
     android:paddingLeft="@dimen/shifting_width_custom_padding"
     android:paddingTop="@dimen/shifting_height_top_padding_inactive"
     android:paddingRight="@dimen/shifting_width_custom_padding"
-    android:paddingBottom="@dimen/shifting_height_bottom_padding_active">
+    android:paddingBottom="@dimen/shifting_height_bottom_padding_active"
+    android:paddingStart="@dimen/shifting_width_custom_padding"
+    android:paddingEnd="@dimen/shifting_width_custom_padding">
 
     <FrameLayout
         android:id="@+id/shifting_bottom_navigation_icon_container"

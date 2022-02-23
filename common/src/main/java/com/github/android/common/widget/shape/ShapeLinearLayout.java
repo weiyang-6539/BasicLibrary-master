@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
  * Created by fxb on 2020/8/28.
  */
 public class ShapeLinearLayout extends LinearLayout {
-    private ShapeHelper shapeHelper = new ShapeHelper();
+    private final ShapeHelper shapeHelper = new ShapeHelper();
 
     public ShapeLinearLayout(Context context) {
         this(context, null);

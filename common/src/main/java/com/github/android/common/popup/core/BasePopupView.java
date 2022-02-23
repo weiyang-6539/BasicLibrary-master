@@ -3,7 +3,6 @@ package com.github.android.common.popup.core;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
-import android.support.annotation.NonNull;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -13,6 +12,8 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+
+import androidx.annotation.NonNull;
 
 import com.github.android.common.popup.animator.AbsAnimator;
 import com.github.android.common.popup.animator.EmptyAnimator;
@@ -39,7 +40,7 @@ import java.util.Stack;
  * 5.局部阴影弹窗（AbsPartShadowPopupView）
  */
 public abstract class BasePopupView extends FrameLayout implements OnNavigationBarListener {
-    private static Stack<BasePopupView> stack = new Stack<>(); //静态存储所有弹窗对象
+    private static final Stack<BasePopupView> stack = new Stack<>(); //静态存储所有弹窗对象
     protected AbsAnimator popupContentAnimator;
     protected ShadowBgAnimator shadowBgAnimator;
     protected PopupAttrs popupAttrs;//弹窗属性
@@ -47,7 +48,7 @@ public abstract class BasePopupView extends FrameLayout implements OnNavigationB
     @PopupStatus
     protected int status = PopupStatus.HIDE;
 
-    private int touchSlop;
+    private final int touchSlop;
 
     private boolean isCreated = false;
     private boolean hasMoveUp = false;

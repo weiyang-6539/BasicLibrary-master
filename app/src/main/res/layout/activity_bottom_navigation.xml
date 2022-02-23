@@ -92,7 +92,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.design.widget.BottomNavigationView
+        <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/mNavigationView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -113,5 +113,4 @@
             app:bnbInactiveColor="@color/colorLight"
             app:bnbMode="mode_fixed" />
     </FrameLayout>
-
 </LinearLayout>

@@ -2,7 +2,6 @@ package com.github.android.common.popup.core;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.support.annotation.NonNull;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -10,6 +9,8 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+
+import androidx.annotation.NonNull;
 
 import com.github.android.common.popup.animator.AbsAnimator;
 import com.github.android.common.popup.animator.AnimationFactory;

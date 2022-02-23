@@ -3,8 +3,9 @@ package com.github.android.common.popup.animator;
 import android.animation.ArgbEvaluator;
 import android.animation.ValueAnimator;
 import android.graphics.Color;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.view.View;
+
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 
 /**
  * Created by fxb on 2020/5/8.

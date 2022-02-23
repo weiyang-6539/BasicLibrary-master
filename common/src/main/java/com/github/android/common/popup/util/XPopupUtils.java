@@ -12,7 +12,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
 import android.media.MediaScannerConnection;
-import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
@@ -348,58 +347,41 @@ public class XPopupUtils {
         final Handler mainHandler = new Handler(Looper.getMainLooper());
         final ExecutorService executor = Executors.newSingleThreadExecutor();
         mContext = context;
-        executor.execute(new Runnable() {
-            @Override
-            public void run() {
-                File source = imageLoader.getImageFile(mContext, uri);
-                if (source == null) {
-                    mainHandler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(mContext, "图片不存在！", Toast.LENGTH_SHORT).show();
-                            mContext = null;
-                        }
-                    });
-                    return;
-                }
-                //1. create path
-                String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + Environment.DIRECTORY_PICTURES;
-                File dirFile = new File(dirPath);
-                if (!dirFile.exists()) dirFile.mkdirs();
-                try {
-                    int type = ImageHeaderParser.getImageType(new FileInputStream(source));
-                    String ext = getFileExt(type);
-                    final File target = new File(dirPath, System.currentTimeMillis() + "." + ext);
-                    if (target.exists()) target.delete();
-                    target.createNewFile();
-                    //2. save
-                    writeFileFromIS(target, new FileInputStream(source));
-                    //3. notify
-                    MediaScannerConnection.scanFile(mContext, new String[]{target.getAbsolutePath()},
-                            new String[]{"image/" + ext}, new MediaScannerConnection.OnScanCompletedListener() {
-                                @Override
-                                public void onScanCompleted(final String path, Uri uri) {
-                                    mainHandler.post(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            if (mContext != null) {
-                                                Toast.makeText(mContext, "已保存到相册！", Toast.LENGTH_SHORT).show();
-                                                mContext = null;
-                                            }
-                                        }
-                                    });
-                                }
-                            });
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    mainHandler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(mContext, "没有保存权限，保存功能无法使用！", Toast.LENGTH_SHORT).show();
-                            mContext = null;
-                        }
-                    });
-                }
+        executor.execute(() -> {
+            File source = imageLoader.getImageFile(mContext, uri);
+            if (source == null) {
+                mainHandler.post(() -> {
+                    Toast.makeText(mContext, "图片不存在！", Toast.LENGTH_SHORT).show();
+                    mContext = null;
+                });
+                return;
+            }
+            //1. create path
+            String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + Environment.DIRECTORY_PICTURES;
+            File dirFile = new File(dirPath);
+            if (!dirFile.exists()) dirFile.mkdirs();
+            try {
+                int type = ImageHeaderParser.getImageType(new FileInputStream(source));
+                String ext = getFileExt(type);
+                final File target = new File(dirPath, System.currentTimeMillis() + "." + ext);
+                if (target.exists()) target.delete();
+                target.createNewFile();
+                //2. save
+                writeFileFromIS(target, new FileInputStream(source));
+                //3. notify
+                MediaScannerConnection.scanFile(mContext, new String[]{target.getAbsolutePath()},
+                        new String[]{"image/" + ext}, (path, uri1) -> mainHandler.post(() -> {
+                            if (mContext != null) {
+                                Toast.makeText(mContext, "已保存到相册！", Toast.LENGTH_SHORT).show();
+                                mContext = null;
+                            }
+                        }));
+            } catch (IOException e) {
+                e.printStackTrace();
+                mainHandler.post(() -> {
+                    Toast.makeText(mContext, "没有保存权限，保存功能无法使用！", Toast.LENGTH_SHORT).show();
+                    mContext = null;
+                });
             }
         });
     }
@@ -424,7 +406,7 @@ public class XPopupUtils {
         OutputStream os = null;
         try {
             os = new BufferedOutputStream(new FileOutputStream(file));
-            byte data[] = new byte[8192];
+            byte[] data = new byte[8192];
             int len;
             while ((len = is.read(data, 0, 8192)) != -1) {
                 os.write(data, 0, len);
